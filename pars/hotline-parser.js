@@ -354,14 +354,14 @@ class HotlineParser {
                             offers{    
                             totalCount 
                             edges {
-                             node {
-                              id 
-                              price 
-                              }
-                               __typename 
-                               } 
-                               __typename 
-                               }
+                            node {
+                                id 
+                                price 
+                                }
+                                __typename 
+                                } 
+                                    __typename 
+                                    }
                         madeInUkraine
                         userSubscribed
                         __typename

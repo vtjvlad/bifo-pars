@@ -44,6 +44,10 @@ class HotlineCLI {
     // Показываем красивый заголовок
     showHeader() {
         console.clear();
+        
+        // Добавляем отступы для увеличения области взаимодействия
+        console.log('\n'.repeat(2));
+        
         console.log(
             chalk.cyan(
                 figlet.textSync('Hotline Parser', { 
@@ -64,6 +68,9 @@ class HotlineCLI {
                 }
             )
         );
+        
+        // Добавляем дополнительный отступ
+        console.log('\n');
     }
 
     // Главное меню
@@ -82,7 +89,8 @@ class HotlineCLI {
                     { name: '🔑 Тестирование токенов', value: 'test_tokens' },
                     { name: '📊 Статистика и отчеты', value: 'reports' },
                     { name: '❌ Выход', value: 'exit' }
-                ]
+                ],
+                pageSize: 15
             }
         ]);
 
@@ -118,7 +126,35 @@ class HotlineCLI {
     async selectCategoriesFile() {
         this.showHeader();
         console.log(chalk.blue('📁 Выбор файла с категориями'));
-        console.log('');
+        console.log('\n');
+
+        const { selectionType } = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'selectionType',
+                message: 'Выберите тип выбора:',
+                choices: [
+                    { name: '📄 Выбрать одну категорию', value: 'single' },
+                    { name: '📦 Выбрать несколько файлов', value: 'multiple' },
+                    { name: '🔙 Назад', value: 'back' }
+                ]
+            }
+        ]);
+
+        if (selectionType === 'back') {
+            return;
+        } else if (selectionType === 'single') {
+            await this.selectSingleFile();
+        } else if (selectionType === 'multiple') {
+            await this.selectMultipleFiles();
+        }
+    }
+
+    // Выбор одного файла (текущая функциональность)
+    async selectSingleFile() {
+        this.showHeader();
+        console.log(chalk.blue('📄 Выбор одного файла с категориями'));
+        console.log('\n');
 
         const fs = require('fs').promises;
         const path = require('path');
@@ -185,7 +221,8 @@ class HotlineCLI {
                     type: 'list',
                     name: 'selectedFile',
                     message: 'Выберите файл с категориями:',
-                    choices: choices
+                    choices: choices,
+                    pageSize: 20
                 }
             ]);
 
@@ -264,12 +301,210 @@ class HotlineCLI {
         await this.waitForEnter();
     }
 
+    // Выбор нескольких файлов
+    async selectMultipleFiles() {
+        this.showHeader();
+        console.log(chalk.blue('📦 Выбор нескольких файлов с категориями'));
+        console.log('\n');
+
+        const fs = require('fs').promises;
+        const path = require('path');
+
+        try {
+            // Получаем список файлов в директории tctgr и подпапках
+            let allFiles = [];
+            try {
+                allFiles = await this.getAllFilesInDirectory('tctgr');
+            } catch (error) {
+                console.log(chalk.yellow('⚠️  Директория tctgr не найдена, создаем...'));
+                await fs.mkdir('tctgr', { recursive: true });
+            }
+
+            // Фильтруем только нужные типы файлов
+            const files = allFiles.filter(file => 
+                file.endsWith('.txt') || 
+                file.endsWith('.csv') || 
+                file.endsWith('.json')
+            );
+
+            if (files.length === 0) {
+                console.log(chalk.yellow('📁 Нет доступных файлов для выбора'));
+                console.log(chalk.cyan('Создайте файлы с категориями в папке tctgr/'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Группируем файлы по папкам
+            const groupedFiles = this.groupFilesByFolder(files);
+
+            // Создаем список чекбоксов с группировкой
+            const choices = [];
+            
+            // Добавляем файлы из корневой папки
+            if (groupedFiles.root && groupedFiles.root.length > 0) {
+                choices.push(new inquirer.Separator('📂 Корневая папка'));
+                groupedFiles.root.forEach(file => {
+                    choices.push({ 
+                        name: `📄 ${file}`, 
+                        value: file,
+                        checked: false
+                    });
+                });
+            }
+
+            // Добавляем файлы из подпапок
+            Object.keys(groupedFiles).forEach(folder => {
+                if (folder !== 'root' && groupedFiles[folder].length > 0) {
+                    choices.push(new inquirer.Separator(`📁 ${folder}`));
+                    groupedFiles[folder].forEach(file => {
+                        choices.push({ 
+                            name: `📄 ${file}`, 
+                            value: `${folder}/${file}`,
+                            checked: false
+                        });
+                    });
+                }
+            });
+
+            // Добавляем опции действий
+            choices.push(
+                new inquirer.Separator('Действия'),
+                { name: '✅ Выбрать все файлы', value: 'select_all' },
+                { name: '❌ Снять выбор со всех', value: 'deselect_all' },
+                { name: '📝 Добавить файл вручную', value: 'manual' }
+            );
+
+            const { selectedFiles } = await inquirer.prompt([
+                {
+                    type: 'checkbox',
+                    name: 'selectedFiles',
+                    message: 'Выберите файлы с категориями (пробел для выбора):',
+                    choices: choices,
+                    pageSize: 25,
+                    validate: (input) => {
+                        if (input.length === 0) {
+                            return 'Выберите хотя бы один файл';
+                        }
+                        return true;
+                    }
+                }
+            ]);
+
+            if (selectedFiles.length === 0) {
+                console.log(chalk.yellow('⚠️  Файлы не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Обрабатываем специальные действия
+            let finalFiles = [];
+            for (const file of selectedFiles) {
+                if (file === 'select_all') {
+                    // Выбираем все файлы
+                    finalFiles = files.map(f => f.startsWith('tctgr/') ? f : `tctgr/${f}`);
+                    break;
+                } else if (file === 'deselect_all') {
+                    // Снимаем выбор со всех
+                    finalFiles = [];
+                    break;
+                } else if (file === 'manual') {
+                    // Добавляем файл вручную
+                    const { manualPath } = await inquirer.prompt([
+                        {
+                            type: 'input',
+                            name: 'manualPath',
+                            message: 'Введите путь к файлу:',
+                            validate: (input) => {
+                                if (!input.trim()) {
+                                    return 'Путь не может быть пустым';
+                                }
+                                return true;
+                            }
+                        }
+                    ]);
+                    const manualFilePath = manualPath.trim();
+                    if (!finalFiles.includes(manualFilePath)) {
+                        finalFiles.push(manualFilePath);
+                    }
+                } else {
+                    // Обычный файл
+                    const filePath = file.startsWith('tctgr/') ? file : `tctgr/${file}`;
+                    if (!finalFiles.includes(filePath)) {
+                        finalFiles.push(filePath);
+                    }
+                }
+            }
+
+            // Убираем дубликаты
+            finalFiles = [...new Set(finalFiles)];
+
+            if (finalFiles.length === 0) {
+                console.log(chalk.yellow('⚠️  Файлы не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Проверяем существование файлов и показываем статистику
+            console.log(chalk.green(`✅ Выбрано ${finalFiles.length} файлов:`));
+            
+            let totalUrls = 0;
+            const validFiles = [];
+            
+            for (const filePath of finalFiles) {
+                try {
+                    await fs.access(filePath);
+                    const content = await fs.readFile(filePath, 'utf8');
+                    const lines = content.split('\n').filter(line => line.trim().length > 0);
+                    const validUrls = lines.filter(line => line.includes('hotline.ua'));
+                    
+                    console.log(chalk.cyan(`   📄 ${filePath}: ${validUrls.length} URL`));
+                    totalUrls += validUrls.length;
+                    validFiles.push(filePath);
+                    
+                } catch (error) {
+                    console.log(chalk.red(`   ❌ ${filePath}: файл не найден`));
+                }
+            }
+
+            console.log('');
+            console.log(chalk.blue(`📊 Общая статистика:`));
+            console.log(chalk.cyan(`   Файлов: ${validFiles.length}`));
+            console.log(chalk.green(`   Всего URL: ${totalUrls}`));
+
+            if (validFiles.length === 0) {
+                console.log(chalk.red('❌ Нет валидных файлов для парсинга'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Предлагаем запустить парсинг
+            const { startParsing } = await inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'startParsing',
+                    message: `Запустить парсинг ${validFiles.length} файлов?`,
+                    default: true
+                }
+            ]);
+            
+            if (startParsing) {
+                console.log('');
+                await this.parseMultipleFiles(validFiles);
+            }
+
+        } catch (error) {
+            console.log(chalk.red(`❌ Ошибка: ${error.message}`));
+        }
+
+        await this.waitForEnter();
+    }
+
     // Парсинг всех категорий
     async parseAllCategories() {
         this.showHeader();
         console.log(chalk.blue('📦 Парсинг всех категорий из файла'));
         console.log(chalk.cyan(`📁 Используется файл: ${this.selectedCategoriesFile}`));
-        console.log('');
+        console.log('\n');
 
         try {
             // Проверяем наличие файла категорий
@@ -342,7 +577,7 @@ class HotlineCLI {
     async parseSingleCategory() {
         this.showHeader();
         console.log(chalk.blue('🎯 Парсинг одной категории'));
-        console.log('');
+        console.log('\n');
 
         const { categoryUrl } = await inquirer.prompt([
             {
@@ -385,7 +620,7 @@ class HotlineCLI {
     async showSettings() {
         this.showHeader();
         console.log(chalk.blue('⚙️  Настройки парсера'));
-        console.log('');
+        console.log('\n');
 
         const { setting } = await inquirer.prompt([
             {
@@ -399,7 +634,8 @@ class HotlineCLI {
                     { name: `⏱️  Интервал сохранения: ${this.config.saveInterval}`, value: 'save_interval' },
                     { name: `🧪 Максимальный размер батча для тестов: ${this.config.maxBatchSize}`, value: 'max_batch' },
                     { name: '🔙 Назад', value: 'back' }
-                ]
+                ],
+                pageSize: 15
             }
         ]);
 
@@ -523,7 +759,7 @@ class HotlineCLI {
     async testPerformance() {
         this.showHeader();
         console.log(chalk.blue('🧪 Тестирование производительности'));
-        console.log('');
+        console.log('\n');
 
         const { confirm } = await inquirer.prompt([
             {
@@ -559,7 +795,7 @@ class HotlineCLI {
     async testTokens() {
         this.showHeader();
         console.log(chalk.blue('🔑 Тестирование токенов'));
-        console.log('');
+        console.log('\n');
 
         const { confirm } = await inquirer.prompt([
             {
@@ -590,7 +826,7 @@ class HotlineCLI {
     async showReports() {
         this.showHeader();
         console.log(chalk.blue('📊 Статистика и отчеты'));
-        console.log('');
+        console.log('\n');
 
         const fs = require('fs').promises;
         
@@ -714,7 +950,7 @@ class HotlineCLI {
                         name: 'selectedCategory',
                         message: 'Выберите категорию для просмотра деталей:',
                         choices: choices,
-                        pageSize: 15 // Показываем 15 элементов на странице
+                        pageSize: 20 // Показываем 20 элементов на странице
                     }
                 ]);
 
@@ -1109,6 +1345,136 @@ class HotlineCLI {
         await this.waitForEnter();
     }
 
+    // Парсинг нескольких файлов
+    async parseMultipleFiles(filePaths) {
+        this.showHeader();
+        console.log(chalk.blue('📦 Парсинг нескольких файлов'));
+        console.log(chalk.cyan(`📁 Выбрано файлов: ${filePaths.length}`));
+        console.log('');
+
+        try {
+            const fs = require('fs').promises;
+            let allCategories = [];
+            const fileStats = [];
+
+            // Читаем все файлы и собираем категории
+            console.log(chalk.blue('📖 Чтение файлов...'));
+            
+            for (const filePath of filePaths) {
+                try {
+                    const content = await fs.readFile(filePath, 'utf8');
+                    const categories = content
+                        .split('\n')
+                        .map(line => line.trim())
+                        .filter(line => line.length > 0 && !line.startsWith('#'))
+                        .filter(line => line.includes('hotline.ua'));
+
+                    fileStats.push({
+                        file: filePath,
+                        count: categories.length,
+                        categories: categories
+                    });
+
+                    allCategories.push(...categories);
+                    console.log(chalk.cyan(`   📄 ${filePath}: ${categories.length} категорий`));
+
+                } catch (error) {
+                    console.log(chalk.red(`   ❌ ${filePath}: ошибка чтения - ${error.message}`));
+                }
+            }
+
+            // Убираем дубликаты URL
+            const uniqueCategories = [...new Set(allCategories)];
+
+            if (uniqueCategories.length === 0) {
+                console.log(chalk.red('❌ Нет валидных URL во всех файлах!'));
+                await this.waitForEnter();
+                return;
+            }
+
+            console.log('');
+            console.log(chalk.green(`✅ Всего уникальных категорий: ${uniqueCategories.length}`));
+            
+            if (uniqueCategories.length !== allCategories.length) {
+                console.log(chalk.yellow(`⚠️  Удалено ${allCategories.length - uniqueCategories.length} дубликатов`));
+            }
+
+            // Показываем статистику по файлам
+            console.log('');
+            console.log(chalk.blue('📊 Статистика по файлам:'));
+            fileStats.forEach((stat, index) => {
+                const color = stat.count > 50 ? chalk.green : stat.count > 20 ? chalk.yellow : chalk.cyan;
+                console.log(color(`   ${index + 1}. ${stat.file}: ${stat.count} категорий`));
+            });
+
+            console.log('');
+            const { confirm } = await inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'confirm',
+                    message: `Начать парсинг ${uniqueCategories.length} уникальных категорий?`,
+                    default: true
+                }
+            ]);
+
+            if (!confirm) {
+                return;
+            }
+
+            // Показываем прогресс
+            const spinner = ora('🚀 Запуск парсера для нескольких файлов...').start();
+            
+            const results = await this.parser.parseAllCategories(
+                uniqueCategories, 
+                this.config.saveProgressively, 
+                this.config.batchSize, 
+                this.config.autoGetTokens
+            );
+
+            spinner.succeed('✅ Парсинг завершен!');
+
+            // Показываем результаты
+            this.showParseResults(results);
+
+            // Дополнительная статистика по файлам
+            console.log('');
+            console.log(chalk.blue('📊 Результаты по файлам:'));
+            
+            let totalSuccess = 0;
+            let totalErrors = 0;
+            
+            for (const stat of fileStats) {
+                let fileSuccess = 0;
+                let fileErrors = 0;
+                
+                for (const category of stat.categories) {
+                    const categoryName = this.parser.extractPathFromUrl(category);
+                    if (results[categoryName] && !results[categoryName].error) {
+                        fileSuccess++;
+                    } else {
+                        fileErrors++;
+                    }
+                }
+                
+                const color = fileErrors === 0 ? chalk.green : fileErrors > fileSuccess ? chalk.red : chalk.yellow;
+                console.log(color(`   📄 ${stat.file}: ${fileSuccess} успешно, ${fileErrors} ошибок`));
+                
+                totalSuccess += fileSuccess;
+                totalErrors += fileErrors;
+            }
+
+            console.log('');
+            console.log(chalk.blue('📈 Итоговая статистика по файлам:'));
+            console.log(chalk.green(`   Успешно обработано: ${totalSuccess} категорий`));
+            console.log(chalk.red(`   Ошибок: ${totalErrors} категорий`));
+
+        } catch (error) {
+            console.log(chalk.red(`❌ Ошибка: ${error.message}`));
+        }
+
+        await this.waitForEnter();
+    }
+
     // Ручное сопоставление категорий
     async manualCategoryMapping(notFound, categoryMap, categoryUrls) {
         console.log(chalk.blue('🔧 Ручное сопоставление категорий'));
@@ -1142,7 +1508,7 @@ class HotlineCLI {
                     name: 'selectedCategory',
                     message: 'Выберите соответствующую категорию:',
                     choices: choices,
-                    pageSize: 15
+                    pageSize: 20
                 }
             ]);
             
@@ -1292,6 +1658,9 @@ class HotlineCLI {
 
     // Ожидание нажатия Enter
     async waitForEnter() {
+        // Добавляем отступ перед сообщением
+        console.log('\n');
+        
         await inquirer.prompt([
             {
                 type: 'input',
@@ -1299,6 +1668,9 @@ class HotlineCLI {
                 message: 'Нажмите Enter для продолжения...'
             }
         ]);
+        
+        // Добавляем отступ после нажатия Enter
+        console.log('\n');
     }
 
     // Выход

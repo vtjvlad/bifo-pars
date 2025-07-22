@@ -34,7 +34,9 @@
     "dotenv": "^17.0.1",
     "env": "^0.0.2",
     "express": "^4.21.2",
-    "figlet": "^1.6.0",
+    "figlet": "^1.8.2",
+    "ink": "^6.0.1",
+    "ink-select-input": "^6.2.0",
     "inquirer": "^8.2.6",
     "install": "^0.13.0",
     "jsonwebtoken": "^9.0.2",
@@ -43,6 +45,7 @@
     "proxy-agent": "^6.5.0",
     "puppeteer": "^24.11.2",
     "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2"
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "react": "^19.1.0"
   }
 }

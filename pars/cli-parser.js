@@ -90,7 +90,16 @@ class HotlineCLI {
                     { name: '📊 Статистика и отчеты', value: 'reports' },
                     { name: '❌ Выход', value: 'exit' }
                 ],
-                pageSize: 15
+                pageSize: 15,
+                loop: true,
+                highlight: true,
+                transformer: (input, { isFinal }) => {
+                    // Делаем выбранный элемент более заметным
+                    if (isFinal) {
+                        return chalk.bold.cyan(`▶ ${input} ◀`);
+                    }
+                    return chalk.bold.cyan(`▶ ${input} ◀`);
+                }
             }
         ]);
 
@@ -137,7 +146,16 @@ class HotlineCLI {
                     { name: '📄 Выбрать одну категорию', value: 'single' },
                     { name: '📦 Выбрать несколько файлов', value: 'multiple' },
                     { name: '🔙 Назад', value: 'back' }
-                ]
+                ],
+                pageSize: 10,
+                loop: true,
+                highlight: true,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return chalk.bold.cyan(`▶ ${input} ◀`);
+                    }
+                    return chalk.bold.cyan(`▶ ${input} ◀`);
+                }
             }
         ]);
 
@@ -222,7 +240,15 @@ class HotlineCLI {
                     name: 'selectedFile',
                     message: 'Выберите файл с категориями:',
                     choices: choices,
-                    pageSize: 20
+                    pageSize: 20,
+                    loop: true,
+                    highlight: true,
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return chalk.bold.green(`▶ ${input} ◀`);
+                        }
+                        return chalk.bold.green(`▶ ${input} ◀`);
+                    }
                 }
             ]);
 
@@ -279,7 +305,13 @@ class HotlineCLI {
                             type: 'confirm',
                             name: 'startParsing',
                             message: 'Запустить парсинг выбранного файла?',
-                            default: true
+                            default: true,
+                            transformer: (input, { isFinal }) => {
+                                if (isFinal) {
+                                    return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                                }
+                                return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                            }
                         }
                     ]);
                     
@@ -381,11 +413,19 @@ class HotlineCLI {
                     message: 'Выберите файлы с категориями (пробел для выбора):',
                     choices: choices,
                     pageSize: 25,
+                    loop: true,
+                    highlight: true,
                     validate: (input) => {
                         if (input.length === 0) {
                             return 'Выберите хотя бы один файл';
                         }
                         return true;
+                    },
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return chalk.bold.yellow(`▶ ${input} ◀`);
+                        }
+                        return chalk.bold.yellow(`▶ ${input} ◀`);
                     }
                 }
             ]);
@@ -483,7 +523,13 @@ class HotlineCLI {
                     type: 'confirm',
                     name: 'startParsing',
                     message: `Запустить парсинг ${validFiles.length} файлов?`,
-                    default: true
+                    default: true,
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                        }
+                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                    }
                 }
             ]);
             
@@ -543,7 +589,13 @@ class HotlineCLI {
                     type: 'confirm',
                     name: 'confirm',
                     message: 'Начать парсинг всех категорий?',
-                    default: true
+                    default: true,
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                        }
+                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                    }
                 }
             ]);
 
@@ -635,7 +687,15 @@ class HotlineCLI {
                     { name: `🧪 Максимальный размер батча для тестов: ${this.config.maxBatchSize}`, value: 'max_batch' },
                     { name: '🔙 Назад', value: 'back' }
                 ],
-                pageSize: 15
+                pageSize: 15,
+                loop: true,
+                highlight: true,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return chalk.bold.magenta(`▶ ${input} ◀`);
+                    }
+                    return chalk.bold.magenta(`▶ ${input} ◀`);
+                }
             }
         ]);
 
@@ -766,7 +826,13 @@ class HotlineCLI {
                 type: 'confirm',
                 name: 'confirm',
                 message: 'Запустить тестирование производительности с разными размерами батчей?',
-                default: true
+                default: true,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                    }
+                    return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                }
             }
         ]);
 
@@ -802,7 +868,13 @@ class HotlineCLI {
                 type: 'confirm',
                 name: 'confirm',
                 message: 'Запустить тестирование получения токенов для разных категорий?',
-                default: true
+                default: true,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                    }
+                    return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                }
             }
         ]);
 
@@ -950,7 +1022,15 @@ class HotlineCLI {
                         name: 'selectedCategory',
                         message: 'Выберите категорию для просмотра деталей:',
                         choices: choices,
-                        pageSize: 20 // Показываем 20 элементов на странице
+                        pageSize: 20, // Показываем 20 элементов на странице
+                        loop: true,
+                        highlight: true,
+                        transformer: (input, { isFinal }) => {
+                            if (isFinal) {
+                                return chalk.bold.blue(`▶ ${input} ◀`);
+                            }
+                            return chalk.bold.blue(`▶ ${input} ◀`);
+                        }
                     }
                 ]);
 
@@ -1508,7 +1588,15 @@ class HotlineCLI {
                     name: 'selectedCategory',
                     message: 'Выберите соответствующую категорию:',
                     choices: choices,
-                    pageSize: 20
+                    pageSize: 20,
+                    loop: true,
+                    highlight: true,
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return chalk.bold.green(`▶ ${input} ◀`);
+                        }
+                        return chalk.bold.green(`▶ ${input} ◀`);
+                    }
                 }
             ]);
             

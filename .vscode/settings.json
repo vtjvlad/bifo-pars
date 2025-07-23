@@ -2,9 +2,9 @@
     "editor.fontFamily": "'OpenDyslexicM Nerd Font', monoscape",
     "terminal.integrated.fontFamily": "'OpenDyslexicM Nerd Font', monoscape",
     "terminal.integrated.fontSize": 12,
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "chat.editor.fontSize": 17,
-    "editor.minimap.scale": 3,
+    "editor.minimap.scale": 1,
     "editor.minimap.sectionHeaderFontSize": 3,
     "accessibility.underlineLinks": false,
     "editor.definitionLinkOpensInPeek": true,
@@ -18,5 +18,6 @@
     "editor.minimap.maxColumn": 69,
     "editor.minimap.showRegionSectionHeaders": true,
     "editor.minimap.enabled": true,
+    "diffEditor.diffAlgorithm": "advanced",
 
 }

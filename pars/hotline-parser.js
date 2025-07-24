@@ -305,15 +305,19 @@ class HotlineParser {
                 byPathSectionQueryProducts(path: $path, cityId: $cityId, sort: $sort, showFirst: $showFirst, phrase: $phrase, itemsPerPage: $itemsPerPage, page: $page, filters: $filters, excludedFilters: $excludedFilters, priceMin: $priceMin, priceMax: $priceMax) {
                     collection {
                         _id
+                        hlSectionId
                         title
                         date
                         vendor {
                             title
+                            path
                             __typename
                         }
                         section {
                             _id
+                            isAdult
                             productCategoryName
+                            path
                             __typename
                         }
                         isPromo
@@ -321,10 +325,16 @@ class HotlineParser {
                         promoBid
                         lineName
                         linePathNew
+                        guide {
+                            title
+                            url
+                            __typename
+                        }
                         imagesCount
                         videosCount
                         techShortSpecifications
                         techShortSpecificationsList
+                        sizesProduct
                         productValues {
                             edges {
                                 node {
@@ -341,15 +351,36 @@ class HotlineParser {
                             }
                             __typename
                         }
+                        fullDescription
                         reviewsCount
                         questionsCount
                         url
                         imageLinks
+                        videos {
+                            edges {
+                                node {
+                                    _id
+                                    createdAt
+                                    description
+                                    hash
+                                    isConfirmed
+                                    __typename
+                                }
+                                __typename
+                            }
+                            __typename
+                        }
+                        videoInstagramHash
                         minPrice
                         maxPrice
+                        lastHystoryPrice
+                        lastHistoryCurrency
                         salesCount
                         isNew
                         colorsProduct
+                        crossSelling
+                        similarProducts
+                        newProducts
                         offerCount
                         singleOffer {
                             _id
@@ -380,6 +411,13 @@ class HotlineParser {
                                     }
                         madeInUkraine
                         userSubscribed
+                        seo {
+                            titleProduct
+                            descriptionProduct
+                            keywords
+                            __typename
+                        }
+                        promoRelinkList
                         __typename
                     }
                     paginationInfo {

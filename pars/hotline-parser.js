@@ -325,6 +325,22 @@ class HotlineParser {
                         videosCount
                         techShortSpecifications
                         techShortSpecificationsList
+                        productValues {
+                            edges {
+                                node {
+                                    isHeader
+                                    url
+                                    title
+                                    value
+                                    help
+                                    h1Text
+                                    type
+                                    __typename
+                                }
+                                __typename
+                            }
+                            __typename
+                        }
                         reviewsCount
                         questionsCount
                         url

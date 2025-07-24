@@ -24,20 +24,24 @@ const productSchema = new mongoose.Schema({
   videosCount: { type: Number, default: 0 },
   techShortSpecifications: [{ type: String }],
   techShortSpecificationsList: [Object],
+  productValues: [Object],
   reviewsCount: { type: Number, default: 0 },
   questionsCount: { type: Number, default: 0 },
   url: { type: String, required: true },
   imageLinks: [Object],
-  minPrice: { type: Number, required: true },
-  maxPrice: { type: Number, required: true },
+  minPrice: { type: Number, required: false },
+  maxPrice: { type: Number, required: false },
+  currentPrice: { type: Number, required: true },
+  initPrice: { type: Number, required: true },
   salesCount: { type: Number, default: 0 },
   isNew: { type: Number, default: 0 },
   colorsProduct: [Object],
   offerCount: { type: Number, default: 0 },
-  singleOffer: { type: mongoose.Schema.Types.Mixed, default: null },
+  offers: { type: Object, required: true },
+  // singleOffer: { type: mongoose.Schema.Types.Mixed, default: null },
   madeInUkraine: { type: Boolean, default: false },
   userSubscribed: { type: Boolean, default: false },
-  __typename: { type: String, default: 'Product' }
+  __typename: { type: String, default: 'Product' },
 }, {
   timestamps: true, // Добавляет поля createdAt и updatedAt
   collection: 'products' // Указывает имя коллекции в MongoDB
@@ -47,7 +51,7 @@ const productSchema = new mongoose.Schema({
 const Products = mongoose.model('Products', productSchema);
 
 // Чтение JSON-файла
-const jsonFilePath = './test.json'; 
+const jsonFilePath = './test_struct.json'; 
 const jsonData = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
 
 // Функция для сохранения данных в MongoDB
@@ -67,6 +71,3 @@ async function saveToMongo() {
 
 // Запуск функции сохранения
 saveToMongo();
-
-
-

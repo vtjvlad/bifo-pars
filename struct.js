@@ -93,6 +93,7 @@ function destructureNestedObjects(products) {
     techShortSpecifications,
     techShortSpecificationsList,
     productValues,
+    fullDescription,
     sizesProduct,
     reviewsCount,
     questionsCount,
@@ -118,8 +119,8 @@ function destructureNestedObjects(products) {
     promoRelinkList
     } = product;
 
-    const { title: vendorTitle } = vendor;
-    const { productCategoryName, _id: sectionId } = section;
+    const { title: vendorTitle, path: vendorPath } = vendor;
+    const { productCategoryName, _id: sectionId, path: sectionPath, isAdult} = section;
     const aurl = url.split('/')[1];
     const subCategory = linePathNew?.split('/')[1] || aurl.split('-')[0];
     const category = url.split('/')[1];
@@ -127,16 +128,22 @@ function destructureNestedObjects(products) {
     let fourthPrice = null;
     let fifthPrice = null;
 
-    if (offers && Array.isArray(offers.edges)) {
-        totalCount = offers.totalCount ?? null;
-        // Собираем массив node-объектов
-        const nodes = offers.edges.map(e => e.node).filter(Boolean);
-        // Сортируем по цене (price)
-        nodes.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity));
-        // Получаем цены на 4-й и 5-й позиции (индексация с 0)
-        fourthPrice = nodes[3]?.price ?? null;
-        fifthPrice = nodes[4]?.price ?? null;
+    const prices = offers.edges.map(edge => edge.node.price);
+
+    if (prices && Array.isArray(prices)) {
+        fourthPrice = prices[3] ?? null;
+        fifthPrice = prices[4] ?? null;
     }
+    // if (offers && Array.isArray(offers.edges)) {
+    //     totalCount = offers.totalCount ?? null;
+    //     // Собираем массив node-объектов
+    //     const nodes = offers.edges.map(e => e.node).filter(Boolean);
+    //     // Сортируем по цене (price)
+    //     nodes.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity));
+    //     // Получаем цены на 4-й и 5-й позиции (индексация с 0)
+    //     fourthPrice = nodes[3]?.price ?? null;
+    //     fifthPrice = nodes[4]?.price ?? null;
+    // }
     let imageLinksArray = [];
     if (Array.isArray(imageLinks)) {
         imageLinksArray = imageLinks.map(image => {
@@ -162,10 +169,12 @@ function destructureNestedObjects(products) {
 
         return {
             id: _id,
+            hlSectionId,
+            guide,
             title,
             date,
-            vendor: { title: vendorTitle },
-            section: { productCategoryName, _id: sectionId, subCategory, category },
+            vendor: { title: vendorTitle, path: vendorPath },
+            section: { productCategoryName, _id: sectionId, subCategory, category, path: sectionPath, isAdult },
             isPromo,
             toOfficial,
             lineName,
@@ -174,13 +183,19 @@ function destructureNestedObjects(products) {
             videosCount,
             techShortSpecifications,
             techShortSpecificationsList,
+            sizesProduct,
             productValues,
+            fullDescription,
             reviewsCount,
             questionsCount,
             url,
             imageLinks: imageLinksArray,
+            videos,
+            videoInstagramHash,
             minPrice,
             maxPrice,
+            lastHystoryPrice,
+            lastHistoryCurrency,
             currentPrice: fourthPrice ?? Math.round((minPrice + maxPrice) / 2),
             initPrice: fifthPrice ?? Math.round((minPrice + maxPrice) / 2),
             // currentPrice: Math.round((minPrice + maxPrice) / 2),
@@ -188,10 +203,15 @@ function destructureNestedObjects(products) {
             salesCount,
             isNew,
             colorsProduct,
+            crossSelling,
+            similarProducts,
+            newProducts,
             offerCount,
-            offers,
+            offers: prices,
             madeInUkraine,
-            userSubscribed
+            userSubscribed,
+            seo,
+            promoRelinkList
         };
     });
 

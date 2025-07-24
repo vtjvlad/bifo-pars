@@ -1,0 +1,1181 @@
+[
+  {
+    "id": 24179174,
+    "hlSectionId": 872,
+    "guide": {
+      "title": "SSD накопичувачі",
+      "url": "/guides/computer/diski-ssd/"
+    },
+    "title": "P3 Plus 500 GB (CT500P3PSSD8)",
+    "date": "2022-10-07",
+    "vendor": {
+      "title": "Crucial",
+      "path": "crucial"
+    },
+    "section": {
+      "productCategoryName": "SSD накопители",
+      "_id": 156,
+      "subCategory": "computer",
+      "category": "computer-diski-ssd",
+      "path": "/computer/diski-ssd/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "P3 Plus",
+    "linePathNew": "/computer/diski-ssd/301654-20528626/",
+    "imagesCount": 1,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      "SSD накопичувач",
+      " 500 ГБ",
+      " M.2 (PCI-E 4.0)",
+      " тип флеш-пам'яті NAND: 3D NAND",
+      " швидкість читання: 4700  МБ/с",
+      " швидкість запису: 1900  МБ/с"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "SSD накопичувач",
+        "isNoMargin": false
+      },
+      {
+        "value": "500 ГБ",
+        "isNoMargin": false
+      },
+      {
+        "value": "M.2 (PCI-E 4.0)",
+        "isNoMargin": false
+      },
+      {
+        "key": "тип флеш-пам'яті NAND",
+        "value": "3D NAND",
+        "isNoMargin": false
+      },
+      {
+        "key": "швидкість читання",
+        "value": "4700  МБ/с",
+        "isNoMargin": false
+      },
+      {
+        "key": "швидкість запису",
+        "value": "1900  МБ/с",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/crucial/",
+            "title": "vendor",
+            "value": "Crucial",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/301654-20528626/?series=true",
+            "title": "series",
+            "value": "P3 Plus",
+            "help": null,
+            "h1Text": null,
+            "type": "series",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Тип",
+            "value": "SSD накопичувач",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/66703/",
+            "title": "Обсяг, ГБ",
+            "value": "4096",
+            "help": "",
+            "h1Text": "SSD диски от 480 до 512 гб",
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Інтерфейс",
+            "value": "M.2 (PCI-E 4.0)",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/577180/",
+            "title": "Тип флеш-пам'яті NAND",
+            "value": "3D TLC",
+            "help": "",
+            "h1Text": "SSD накопичувач 3D TLC",
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Підтримка TRIM",
+            "value": "є",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Серія",
+            "value": "KC3000",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Фізичні параметри",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/375994/",
+            "title": "Форм-фактор",
+            "value": "M.2 2280",
+            "help": "",
+            "h1Text": "SSD накопичувачі m.2 2280",
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Розміри, мм",
+            "value": "80 x 22 x 3,5",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Маса, г",
+            "value": "9,7",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "# Швидкодія і надійність",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Максимальна швидкість читання, МБ/с",
+            "value": "7000",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Максимальна швидкість запису, МБ/с",
+            "value": "7000",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Швидкість випадкового читання блоками 4KB, IOPS",
+            "value": "1000000",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Швидкість випадкового запису блоками 4KB, IOPS",
+            "value": "1000000",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Ресурс запису (TBW), TB",
+            "value": "3200",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Середній час безвідмовної роботи (MTBF), млн. годин",
+            "value": "1,8",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/663717/",
+            "title": "Наявність радіатора",
+            "value": "є",
+            "help": "",
+            "h1Text": "SSD з радіатором M2",
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "https://www.crucial.com/ssd/p3-plus/ct500p3pssd8",
+            "title": "productOnVendorSite",
+            "value": "https://www.crucial.com/ssd/p3-plus/ct500p3pssd8",
+            "help": null,
+            "h1Text": null,
+            "type": "siteVendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": "Crucial P3 Plus 500 GB (CT500P3PSSD8) - це SSD-накопичувач із місткістю 500 ГБ, виконаний у форм-факторі M.2 2280, що підтримує інтерфейс PCI-E 4.0. Накопичувач використовує флеш-пам'ять типу 3D NAND і підтримує технологію TRIM для оптимізації роботи та ефективного управління ресурсами. Максимальна швидкість послідовного читання досягає 4700 МБ/с, а запису - 1900 МБ/с, що забезпечує швидке опрацювання даних і виконання завдань, пов'язаних з інтенсивним записом. Crucial P3 Plus 500 GB (CT500P3PSSD8) має ресурс запису до 110 TBW і середній час безвідмовної роботи (MTBF) на рівні 1,5 млн годин, що робить його надійним рішенням для довготривалого використання. Пристрій має стійкість до ударів на рівні 1500G, що дозволяє йому витримувати різні умови експлуатації. Компактні розміри M.2 2280 забезпечують сумісність із більшістю сучасних систем, включно з ноутбуками та настільними комп'ютерами. Crucial P3 Plus 500 GB (CT500P3PSSD8) підходить для користувачів, яким потрібна стабільна продуктивність і надійне зберігання даних. Інтерфейс PCI-E 4.0 забезпечує високу швидкість передавання даних, а використання флеш-пам'яті 3D NAND і підтримка TRIM сприяють підвищенню довговічності та ефективності роботи. Цей накопичувач може бути використаний в системах, що вимагають збалансованого поєднання продуктивності та надійності для виконання повсякденних завдань і роботи з файлами великого обсягу.",
+    "reviewsCount": 1,
+    "questionsCount": 0,
+    "url": "/computer-diski-ssd/crucial-p3-plus-500-gb-ct500p3pssd8/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/533/5335912170.jpg",
+        "basic": "https://hotline.ua/img/tx/533/5335912171.jpg",
+        "small": "https://hotline.ua/img/tx/533/533591217_s265.jpg",
+        "big": "https://hotline.ua/img/tx/533/5335912175.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8gpztgnOqw",
+    "minPrice": 1547,
+    "maxPrice": 2547,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 2024,
+    "initPrice": 1898.4,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Материнські плати",
+        "image": "/img/tx/504/5044659951.jpg",
+        "path": "/computer/materinskie-platy/"
+      },
+      {
+        "title": "Процесори",
+        "image": "/img/tx/533/5334197001.jpg",
+        "path": "/computer/processory/"
+      },
+      {
+        "title": "Кишені для дисків",
+        "image": "/img/tx/531/5317328101.jpg",
+        "path": "/computer/karmany-dlya-hdd/"
+      },
+      {
+        "title": "Оперативна пам'ять для ПК і ноутбуків",
+        "image": "/img/tx/533/5332351271.jpg",
+        "path": "/computer/moduli-pamyati-dlya-pk-i-noutbukov/"
+      },
+      {
+        "title": "Жорсткі диски",
+        "image": "/img/tx/533/5334525071.jpg",
+        "path": "/computer/zhestkie-diski/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 24656473,
+          "title": "PX600 500 GB (SSDPR-PX600-500-80)",
+          "path": "/computer-diski-ssd/goodram-px600-500-gb-ssdpr-px600-500-80/",
+          "image": "/img/tx/533/5331894181.jpg",
+          "minPrice": 151100,
+          "quantity": 70,
+          "vendor": "GOODRAM",
+          "vendorId": 1045,
+          "sectionId": 156,
+          "popularity": 2,
+          "isNew": false
+        },
+        {
+          "id": 26028435,
+          "title": "NQ710 500 GB (LNQ710X500G-RNNNG)",
+          "path": "/computer-diski-ssd/lexar-nq710-500-gb-lnq710x500g-rnnng/",
+          "image": "/img/tx/531/5316936551.jpg",
+          "minPrice": 189000,
+          "quantity": 30,
+          "vendor": "Lexar",
+          "vendorId": 605,
+          "sectionId": 156,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24697400,
+          "title": "LEGEND 850 LITE 500 GB (ALEG-850L-500GCS)",
+          "path": "/computer-diski-ssd/adata-legend-850-lite-500-gb-aleg-850l-500gcs/",
+          "image": "/img/tx/521/5212609631.jpg",
+          "minPrice": 184600,
+          "quantity": 1,
+          "vendor": "ADATA",
+          "vendorId": 504,
+          "sectionId": 156,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25298803,
+          "title": "XPG GAMMIX S60 512 GB (AGAMMIXS60-512G-CS)",
+          "path": "/computer-diski-ssd/adata-xpg-gammix-s60-512-gb-agammixs60-512g-cs/",
+          "image": "/img/tx/532/5324835991.jpg",
+          "minPrice": 256300,
+          "quantity": 1,
+          "vendor": "ADATA",
+          "vendorId": 504,
+          "sectionId": 156,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 66703,
+          "filterValueTitle": "480-525",
+          "filterValueTitleUk": "480-525",
+          "filterTitle": "Объем",
+          "filterTitleUk": "Об'єм"
+        },
+        {
+          "filterValueId": 619041,
+          "filterValueTitle": "M.2 (PCI-E 4.0)",
+          "filterValueTitleUk": "M.2 (PCI-E 4.0)",
+          "filterTitle": "Разъем подключения",
+          "filterTitleUk": "Роз'єм підключення"
+        },
+        {
+          "filterValueId": 574411,
+          "filterValueTitle": "внутренний SSD",
+          "filterValueTitleUk": "внутрішній SSD",
+          "filterTitle": "Исполнение",
+          "filterTitleUk": "Виконання"
+        },
+        {
+          "filterValueId": 20074452,
+          "filterValueTitle": "4000-5499",
+          "filterValueTitleUk": "4000-5499",
+          "filterTitle": "Максимальная скорость чтения",
+          "filterTitleUk": "Максимальна швидкість читання"
+        },
+        {
+          "filterValueId": 578931,
+          "filterValueTitle": "1500-2099",
+          "filterValueTitleUk": "1500-2099",
+          "filterTitle": "Максимальная скорость записи",
+          "filterTitleUk": "Максимальна швидкість запису"
+        },
+        {
+          "filterValueId": 375994,
+          "filterValueTitle": "M.2 2280",
+          "filterValueTitleUk": "M.2 2280",
+          "filterTitle": "Форм-фактор (для внутренних)",
+          "filterTitleUk": "Форм-фактор (для внутрішніх)"
+        }
+      ],
+      "priceRange": {
+        "from": 140787,
+        "to": 264637
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26308318,
+        "title": "P510 1 TB with Heatsink (CT1000P510SSD5)",
+        "path": "/computer-diski-ssd/crucial-p510-1-tb-with-heatsink-ct1000p510ssd5/",
+        "image": "/img/tx/533/5335113281.jpg",
+        "minPrice": 659900,
+        "quantity": 3,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": true
+      },
+      {
+        "id": 26264092,
+        "title": "P310 1 TB (CT1000P310SSD5)",
+        "path": "/computer-diski-ssd/crucial-p310-1-tb-ct1000p310ssd5/",
+        "image": "/img/tx/531/5316136111.jpg",
+        "minPrice": 364900,
+        "quantity": 32,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": true
+      },
+      {
+        "id": 26264091,
+        "title": "P310 2 TB (CT2000P310SSD5)",
+        "path": "/computer-diski-ssd/crucial-p310-2-tb-ct2000p310ssd5/",
+        "image": "/img/tx/532/5321532221.jpg",
+        "minPrice": 585900,
+        "quantity": 34,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": true
+      },
+      {
+        "id": 26070819,
+        "title": "E100 480 GB (CT480E100SSD8)",
+        "path": "/computer-diski-ssd/crucial-e100-480-gb-ct480e100ssd8/",
+        "image": "/img/tx/517/5172943091.jpg",
+        "minPrice": 142700,
+        "quantity": 43,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": false
+      },
+      {
+        "id": 25888450,
+        "title": "P310 2 TB (CT2000P310SSD8)",
+        "path": "/computer-diski-ssd/crucial-p310-2-tb-ct2000p310ssd8/",
+        "image": "/img/tx/532/5324093741.jpg",
+        "minPrice": 575900,
+        "quantity": 55,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": false
+      },
+      {
+        "id": 25855768,
+        "title": "T705 2 TB (CT2000T705SSD5)",
+        "path": "/computer-diski-ssd/crucial-t705-2-tb-ct2000t705ssd5/",
+        "image": "/img/tx/496/4965853231.jpg",
+        "minPrice": 1113500,
+        "quantity": 10,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": false
+      },
+      {
+        "id": 25809286,
+        "title": "X9 Pro 2 TB (CT2000X9PROSSD9)",
+        "path": "/computer-diski-ssd/crucial-x9-pro-2-tb-ct2000x9prossd9/",
+        "image": "/img/tx/520/5209832331.jpg",
+        "minPrice": 639500,
+        "quantity": 16,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": false
+      },
+      {
+        "id": 25767983,
+        "title": "X9 1 TB (CT1000X9SSD9)",
+        "path": "/computer-diski-ssd/crucial-x9-1-tb-ct1000x9ssd9/",
+        "image": "/img/tx/532/5325108381.jpg",
+        "minPrice": 328500,
+        "quantity": 11,
+        "vendor": "Crucial",
+        "vendorId": 1300,
+        "isNew": false
+      }
+    ],
+    "offerCount": 9,
+    "offers": [
+      2005.5,
+      2238,
+      1849,
+      2024,
+      1898.4,
+      1999,
+      1999,
+      1547,
+      2547
+    ],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "seo": {
+      "titleProduct": "Kingston KC3000 4096 GB (SKC3000D/4096G) купити в інтернет-магазині: ціни на sSD накопичувач KC3000 4096 GB (SKC3000D/4096G) - відгуки та огляди, фото та характеристики. Порівняти пропозиції в Україні: Київ, Харків, Одеса, Дніпро на Hotline.ua",
+      "descriptionProduct": "Kingston SSD накопичувач KC3000 4096 GB (SKC3000D/4096G) ✓ПОРІВНЯЙ пропозиції всіх інтернет-магазинів і ОБЕРИ найвигідніше! ➤HOTLINE знає, де ДЕШЕВШЕ.",
+      "keywords": "ssd, ssd OCZ, ССД, SSD накопичувач, диск SSD",
+      "__typename": "SectionSeo"
+    },
+    "promoRelinkList": []
+  },
+  {
+    "id": 26302488,
+    "hlSectionId": 872,
+    "guide": {
+      "title": "SSD накопичувачі",
+      "url": "/guides/computer/diski-ssd/"
+    },
+    "title": "PX600 Lite 1 TB (SSDPR-PX600L-01T-80)",
+    "date": "2025-07-14",
+    "vendor": {
+      "title": "GOODRAM",
+      "path": "goodram"
+    },
+    "section": {
+      "productCategoryName": "SSD накопители",
+      "_id": 156,
+      "subCategory": "computer",
+      "category": "computer-diski-ssd",
+      "path": "/computer/diski-ssd/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "PX600 Lite",
+    "linePathNew": "/computer/diski-ssd/301656-21485349/",
+    "imagesCount": 2,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      "SSD накопичувач",
+      " 1000 ГБ",
+      " M.2 (PCI-E 4.0)",
+      " швидкість читання: 3600  МБ/с",
+      " швидкість запису: 2700  МБ/с"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "SSD накопичувач",
+        "isNoMargin": false
+      },
+      {
+        "value": "1000 ГБ",
+        "isNoMargin": false
+      },
+      {
+        "value": "M.2 (PCI-E 4.0)",
+        "isNoMargin": false
+      },
+      {
+        "key": "швидкість читання",
+        "value": "3600  МБ/с",
+        "isNoMargin": false
+      },
+      {
+        "key": "швидкість запису",
+        "value": "2700  МБ/с",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/goodram/",
+            "title": "vendor",
+            "value": "GOODRAM",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/301656-21485349/?series=true",
+            "title": "series",
+            "value": "PX600 Lite",
+            "help": null,
+            "h1Text": null,
+            "type": "series",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Тип",
+            "value": "SSD накопичувач",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/66705/",
+            "title": "Обсяг, ГБ",
+            "value": "120",
+            "help": "",
+            "h1Text": "SSD диски 960-1050 Гб",
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Інтерфейс",
+            "value": "SATA rev. 3.0",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/577180/",
+            "title": "Тип флеш-пам'яті NAND",
+            "value": "TLC",
+            "help": "",
+            "h1Text": "SSD накопичувач 3D TLC",
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Контролер",
+            "value": "Phison PS3108-S8",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Підтримка TRIM",
+            "value": "є",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Серія",
+            "value": "Slim S55",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Фізичні параметри",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/computer/diski-ssd/375994/",
+            "title": "Форм-фактор",
+            "value": "2,5",
+            "help": "",
+            "h1Text": "SSD накопичувачі m.2 2280",
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Розміри, мм",
+            "value": "100x69, 85x7",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Маса, г",
+            "value": "74",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "# Швидкодія і надійність",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Максимальна швидкість читання, МБ/с",
+            "value": "550",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Максимальна швидкість запису, МБ/с",
+            "value": "500",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Стійкість до ударів",
+            "value": "1500G",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": "",
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/computer-diski-ssd/goodram-px600-lite-1-tb-ssdpr-px600l-01t-80/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/532/5326226950.jpg",
+        "basic": "https://hotline.ua/img/tx/532/5326226951.jpg",
+        "small": "https://hotline.ua/img/tx/532/532622695_s265.jpg",
+        "big": "https://hotline.ua/img/tx/532/5326226955.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/532/5326226960.jpg",
+        "basic": "https://hotline.ua/img/tx/532/5326226961.jpg",
+        "small": "https://hotline.ua/img/tx/532/532622696_s265.jpg",
+        "big": "https://hotline.ua/img/tx/532/5326226965.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8bcL3YHGK5",
+    "minPrice": 2486,
+    "maxPrice": 2860,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 2717,
+    "initPrice": 2860,
+    "salesCount": 0,
+    "isNew": 1,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Материнські плати",
+        "image": "/img/tx/504/5044659951.jpg",
+        "path": "/computer/materinskie-platy/"
+      },
+      {
+        "title": "Процесори",
+        "image": "/img/tx/533/5334197001.jpg",
+        "path": "/computer/processory/"
+      },
+      {
+        "title": "Кишені для дисків",
+        "image": "/img/tx/531/5317328101.jpg",
+        "path": "/computer/karmany-dlya-hdd/"
+      },
+      {
+        "title": "Оперативна пам'ять для ПК і ноутбуків",
+        "image": "/img/tx/533/5332351271.jpg",
+        "path": "/computer/moduli-pamyati-dlya-pk-i-noutbukov/"
+      },
+      {
+        "title": "Жорсткі диски",
+        "image": "/img/tx/533/5334525071.jpg",
+        "path": "/computer/zhestkie-diski/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 24506285,
+          "title": "P400 Lite 1 TB (P400LP1KGM28H)",
+          "path": "/computer-diski-ssd/patriot-p400-lite-1-tb-p400lp1kgm28h/",
+          "image": "/img/tx/531/5316935281.jpg",
+          "minPrice": 221300,
+          "quantity": 65,
+          "vendor": "PATRIOT",
+          "vendorId": 1238,
+          "sectionId": 156,
+          "popularity": 51,
+          "isNew": false
+        },
+        {
+          "id": 24006150,
+          "title": "Spatium M450 1 TB (S78-440L690-P83)",
+          "path": "/computer-diski-ssd/msi-spatium-m450-1-tb-s78-440l690-p83/",
+          "image": "/img/tx/532/5325108471.jpg",
+          "minPrice": 299600,
+          "quantity": 2,
+          "vendor": "MSI",
+          "vendorId": 277,
+          "sectionId": 156,
+          "popularity": 2,
+          "isNew": false
+        },
+        {
+          "id": 25074169,
+          "title": "AS2280Q4L 1 TB (AP1TBAS2280Q4L-1)",
+          "path": "/computer-diski-ssd/apacer-as2280q4l-1-tb-ap1tbas2280q4l-1/",
+          "image": "/img/tx/532/5328314001.jpg",
+          "minPrice": 261030,
+          "quantity": 52,
+          "vendor": "Apacer",
+          "vendorId": 310,
+          "sectionId": 156,
+          "popularity": 1,
+          "isNew": false
+        },
+        {
+          "id": 24555565,
+          "title": "LEGEND 800 1 TB (ALEG-800-1000GCS)",
+          "path": "/computer-diski-ssd/adata-legend-800-1-tb-aleg-800-1000gcs/",
+          "image": "/img/tx/532/5325693231.jpg",
+          "minPrice": 290600,
+          "quantity": 6,
+          "vendor": "ADATA",
+          "vendorId": 504,
+          "sectionId": 156,
+          "popularity": 1,
+          "isNew": false
+        },
+        {
+          "id": 24555573,
+          "title": "LEGEND 800 GOLD 1 TB (SLEG-800G-1000GCS-S38)",
+          "path": "/computer-diski-ssd/adata-legend-800-gold-1-tb-sleg-800g-1000gcs-s38/",
+          "image": "/img/tx/531/5318249591.jpg",
+          "minPrice": 277800,
+          "quantity": 2,
+          "vendor": "ADATA",
+          "vendorId": 504,
+          "sectionId": 156,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 66705,
+          "filterValueTitle": "960-1050",
+          "filterValueTitleUk": "960-1050",
+          "filterTitle": "Объем",
+          "filterTitleUk": "Об'єм"
+        },
+        {
+          "filterValueId": 619041,
+          "filterValueTitle": "M.2 (PCI-E 4.0)",
+          "filterValueTitleUk": "M.2 (PCI-E 4.0)",
+          "filterTitle": "Разъем подключения",
+          "filterTitleUk": "Роз'єм підключення"
+        },
+        {
+          "filterValueId": 574411,
+          "filterValueTitle": "внутренний SSD",
+          "filterValueTitleUk": "внутрішній SSD",
+          "filterTitle": "Исполнение",
+          "filterTitleUk": "Виконання"
+        },
+        {
+          "filterValueId": 20074445,
+          "filterValueTitle": "3500-3999",
+          "filterValueTitleUk": "3500-3999",
+          "filterTitle": "Максимальная скорость чтения",
+          "filterTitleUk": "Максимальна швидкість читання"
+        },
+        {
+          "filterValueId": 375994,
+          "filterValueTitle": "M.2 2280",
+          "filterValueTitleUk": "M.2 2280",
+          "filterTitle": "Форм-фактор (для внутренних)",
+          "filterTitleUk": "Форм-фактор (для внутрішніх)"
+        }
+      ],
+      "priceRange": {
+        "from": 181810,
+        "to": 341749
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26302487,
+        "title": "PX600 Lite 512 GB (SSDPR-PX600L-512-80)",
+        "path": "/computer-diski-ssd/goodram-px600-lite-512-gb-ssdpr-px600l-512-80/",
+        "image": "/img/tx/533/5335766221.jpg",
+        "minPrice": 162200,
+        "quantity": 14,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": true
+      },
+      {
+        "id": 25938484,
+        "title": "IRDM PRO GEN 5 2 TB (IRP-SSDPR-P54S-2K0-80)",
+        "path": "/computer-diski-ssd/goodram-irdm-pro-gen-5-2-tb-irp-ssdpr-p54s-2k0-80/",
+        "image": "/img/tx/525/5257429361.jpg",
+        "minPrice": 1173200,
+        "quantity": 36,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": false
+      },
+      {
+        "id": 25809304,
+        "title": "PX500 Gen.3 2 TB  (SSDPR-PX500-02T-80-G3)",
+        "path": "/computer-diski-ssd/goodram-px500-2-tb-ssdpr-px500-02t-80-g3/",
+        "image": "/img/tx/532/5324835771.jpg",
+        "minPrice": 591000,
+        "quantity": 4,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": false
+      },
+      {
+        "id": 25809299,
+        "title": "HX200 2 TB Black (SSDPR-HX200-2K0)",
+        "path": "/computer-diski-ssd/goodram-hx200-2-tb-black-ssdpr-hx200-2k0/",
+        "image": "/img/tx/533/5331895851.jpg",
+        "minPrice": 550600,
+        "quantity": 42,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": false
+      },
+      {
+        "id": 25587974,
+        "title": "IRDM Pro Nano 1 TB (IRP-SSDPR-P44N-01T-30)",
+        "path": "/computer-diski-ssd/goodram-irdm-pro-nano-1-tb-irp-ssdpr-p44n-01t-30/",
+        "image": "/img/tx/533/5335182621.jpg",
+        "minPrice": 482400,
+        "quantity": 3,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": false
+      },
+      {
+        "id": 25109355,
+        "title": "PX700 1 TB (SSDPR-PX700-01T-80)",
+        "path": "/computer-diski-ssd/goodram-px700-1-tb-ssdpr-px700-01t-80/",
+        "image": "/img/tx/533/5331894571.jpg",
+        "minPrice": 327700,
+        "quantity": 53,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": false
+      },
+      {
+        "id": 24812713,
+        "title": "IRDM Pro Slim 1 TB (IRP-SSDPR-P44S-1K0-80)",
+        "path": "/computer-diski-ssd/goodram-irdm-pro-slim-1-tb-irp-ssdpr-p44s-1k0-80/",
+        "image": "/img/tx/533/5331897251.jpg",
+        "minPrice": 417400,
+        "quantity": 27,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": false
+      },
+      {
+        "id": 24718475,
+        "title": "HL200 1 TB (SSDPR-HL200-01T)",
+        "path": "/computer-diski-ssd/goodram-hl200-1-tb-ssdpr-hl200-01t/",
+        "image": "/img/tx/531/5317964121.jpg",
+        "minPrice": 349100,
+        "quantity": 39,
+        "vendor": "GOODRAM",
+        "vendorId": 1045,
+        "isNew": false
+      }
+    ],
+    "offerCount": 12,
+    "offers": [
+      2508,
+      2521,
+      2648,
+      2717,
+      2860,
+      2487,
+      2575,
+      2609,
+      2486,
+      2583,
+      2526,
+      2647.51
+    ],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "seo": {
+      "titleProduct": "Silicon Power Slim S55 SP120GBSS3S55S25 купити в інтернет-магазині: ціни на sSD накопичувач Slim S55 SP120GBSS3S55S25 - відгуки та огляди, фото та характеристики. Порівняти пропозиції в Україні: Київ, Харків, Одеса, Дніпро на Hotline.ua",
+      "descriptionProduct": "Silicon Power SSD накопичувач Slim S55 SP120GBSS3S55S25 ✓ПОРІВНЯЙ пропозиції всіх інтернет-магазинів і ОБЕРИ найвигідніше! ➤HOTLINE знає, де ДЕШЕВШЕ.",
+      "keywords": "ssd, ssd OCZ, ССД, SSD накопичувач, диск SSD",
+      "__typename": "SectionSeo"
+    },
+    "promoRelinkList": []
+  }
+]

@@ -325,11 +325,7 @@ class HotlineParser {
                         promoBid
                         lineName
                         linePathNew
-                        guide {
-                            title
-                            url
-                            __typename
-                        }
+                        guide
                         imagesCount
                         videosCount
                         techShortSpecifications
@@ -373,7 +369,7 @@ class HotlineParser {
                         videoInstagramHash
                         minPrice
                         maxPrice
-                        lastHystoryPrice
+                        lastHistoryPrice
                         lastHistoryCurrency
                         salesCount
                         isNew

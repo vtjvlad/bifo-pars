@@ -78,6 +78,7 @@ function destructureNestedObjects(products) {
         // Деструктурируем вложенные объекты
         const {
     _id,
+    hlSectionId,
     title,
     date,
     vendor = {},
@@ -86,24 +87,35 @@ function destructureNestedObjects(products) {
     toOfficial,
     lineName,
     linePathNew,
+    guide,
     imagesCount,
     videosCount,
     techShortSpecifications,
     techShortSpecificationsList,
     productValues,
+    sizesProduct,
     reviewsCount,
     questionsCount,
     url,
     imageLinks = {} || [],
+    videos,
+    videoInstagramHash,
     minPrice,
     maxPrice,
+    lastHystoryPrice,
+    lastHistoryCurrency,
     salesCount,
     isNew,
     colorsProduct,
+    crossSelling,
+    similarProducts,
+    newProducts,
     offerCount,
     offers = {},
     madeInUkraine,
-    userSubscribed
+    userSubscribed,
+    seo,
+    promoRelinkList
     } = product;
 
     const { title: vendorTitle } = vendor;

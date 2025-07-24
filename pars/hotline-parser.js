@@ -407,12 +407,6 @@ class HotlineParser {
                                     }
                         madeInUkraine
                         userSubscribed
-                        seo {
-                            titleProduct
-                            descriptionProduct
-                            keywords
-                            __typename
-                        }
                         promoRelinkList
                         __typename
                     }

@@ -53,7 +53,6 @@ const productSchema = new mongoose.Schema({
   madeInUkraine: { type: Boolean, default: false },
   userSubscribed: { type: Boolean, default: false },
   __typename: { type: String, default: 'Product' },
-  seo: [Object],
   promoRelinkList: [Object],
 }, {
   timestamps: true, // Добавляет поля createdAt и updatedAt

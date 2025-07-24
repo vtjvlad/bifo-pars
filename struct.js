@@ -107,7 +107,8 @@ function destructureNestedObjects(products) {
     lastHistoryCurrency,
     salesCount,
     isNew,
-    colorsProduct,
+    // colorsProduct,
+    colorsProduct = [],
     crossSelling,
     similarProducts,
     newProducts,
@@ -115,7 +116,6 @@ function destructureNestedObjects(products) {
     offers = {},
     madeInUkraine,
     userSubscribed,
-    seo,
     promoRelinkList
     } = product;
 
@@ -167,6 +167,32 @@ function destructureNestedObjects(products) {
         }];
     }
 
+        // bcghfdbnm ye;yj (переписать проще)
+        let processedColorsProduct = [];
+
+        if (Array.isArray(colorsProduct)) {
+            processedColorsProduct = colorsProduct.map(color => {
+                if (color && typeof color === 'object' && color.pathImgBig) {
+                    return {
+                        ...color,
+                        pathImgBig: `https://hotline.ua${color.pathImgBig}`
+                    };
+                }
+                return color;
+            });
+        } else if (colorsProduct && typeof colorsProduct === 'object') {
+            processedColorsProduct = [{
+                ...colorsProduct,
+                ...(colorsProduct.pathImgBig && {
+                    pathImgBig: `https://hotline.ua${colorsProduct.pathImgBig}`
+                })
+            }];
+        }
+    // Обработка свойств, которые могут быть массивами или объектами
+        // Если свойство является массивом, то преобразуем его в массив объектов
+        // Если свойство является объектом, то преобразуем его в массив с одним объектом
+        // Если свойство не является ни массивом, ни объектом, то оставляем его как есть
+
         return {
             id: _id,
             hlSectionId,
@@ -202,7 +228,24 @@ function destructureNestedObjects(products) {
             // initPrice: Math.round((minPrice + maxPrice) / 2),
             salesCount,
             isNew,
-            colorsProduct,
+            colorsProduct: Array.isArray(processedColorsProduct)
+                ? processedColorsProduct.map(color => ({
+                    id: color.id || null,
+                    title: color.title || null,
+                    imageId: color.imageId || null,
+                    productPath: color.productPath || null,
+                    sectionId: color.sectionId || null,
+                    colorsId: color.colorsId || null,
+                    alias: color.alias || null,
+                    colorName: color.colorName || null,
+                    sizeId: color.sizeId || null,
+                    sizeName: color.sizeName || null,
+                    sizeChart: color.sizeChart || null,
+                    pathImg: color.pathImg || null,
+                    pathImgBig: color.pathImgBig ? color.pathImgBig : null,
+                    pathImgSmall: color.pathImgSmall || null,
+                }))
+                : [],
             crossSelling,
             similarProducts,
             newProducts,
@@ -210,7 +253,6 @@ function destructureNestedObjects(products) {
             offers: prices,
             madeInUkraine,
             userSubscribed,
-            seo,
             promoRelinkList
         };
     });

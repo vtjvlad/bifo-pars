@@ -1,0 +1,43 @@
+{
+  "name": "hotline-filters-parser",
+  "version": "1.0.0",
+  "description": "Парсер фильтров категорий для сайта Hotline.ua",
+  "main": "hotline-filters-parser.js",
+  "scripts": {
+    "start": "node hotline-filters-parser.js",
+    "test": "node test-filters-parser.js",
+    "example": "node example-filters-usage.js",
+    "parse-single": "node -e \"const parser = require('./hotline-filters-parser'); const p = new parser(); p.getCategoryFilters(386, 'https://hotline.ua/mobile/mobilnye-telefony-i-smartfony/').then(f => console.log('Получено фильтров:', f.length)).catch(console.error);\"",
+    "parse-all": "node -e \"const parser = require('./hotline-filters-parser'); const p = new parser(); p.loadCategoriesFromFile('categories.txt').then(cats => p.getAllCategoryFilters(cats, true, true)).then(r => console.log('Парсинг завершен')).catch(console.error);\""
+  },
+  "keywords": [
+    "hotline",
+    "parser",
+    "filters",
+    "graphql",
+    "scraping",
+    "ukraine",
+    "ecommerce"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cli-progress": "^3.12.0",
+    "puppeteer": "^21.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/hotline-filters-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/hotline-filters-parser/issues"
+  },
+  "homepage": "https://github.com/yourusername/hotline-filters-parser#readme"
+} 

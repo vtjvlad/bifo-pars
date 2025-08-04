@@ -24,6 +24,7 @@ app.use('/api/categories', require('./routes/categories'));
 app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/filters', require('./routes/filters'));
 
 // Serve main page
 app.get('/', (req, res) => {

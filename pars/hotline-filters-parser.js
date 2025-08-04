@@ -627,7 +627,7 @@ class HotlineFiltersParser {
     }
 
     // Чтение категорий из файла
-    async loadCategoriesFromFile(filename = './tctgr/categories.txt') {
+    async loadCategoriesFromFile(filename = './tctgr/categories-example.txt') {
         try {
             const content = await fs.readFile(filename, 'utf8');
             const categories = content
@@ -681,14 +681,14 @@ async function main() {
     // Настройки парсинга
     const PARSE_ALL_CATEGORIES = true; // Установите true для парсинга всех категорий из файла
     const SINGLE_CATEGORY_URL = 'https://hotline.ua/mobile/mobilnye-telefony-i-smartfony/'; // URL для парсинга одной категории
-    const SINGLE_SECTION_ID = 386; // ID секции для одной категории
+    const SINGLE_SECTION_ID = 11; // ID секции для одной категории
     const AUTO_GET_TOKENS = true; // Автоматическое получение токенов для каждой категории
     
     try {
         if (PARSE_ALL_CATEGORIES) {
             // Парсим фильтры всех категорий из файла
             parser.log('📁 Загружаем категории из файла...');
-            const categories = await parser.loadCategoriesFromFile('categories.txt');
+            const categories = await parser.loadCategoriesFromFile('categories-example.txt');
             
             if (categories.length === 0) {
                 parser.log('❌ Не найдено категорий для парсинга');

@@ -11,11 +11,21 @@ function parseImageLinks(jsonFilePath, outputFilePath) {
         
         // Проходим по всем объектам в массиве
         data.forEach((item, index) => {
-            // Извлекаем ссылки из imageLinks.big
+            // Извлекаем ссылки из imageLinks
             if (item.imageLinks && Array.isArray(item.imageLinks)) {
                 item.imageLinks.forEach(imageLink => {
+                    // Извлекаем ссылки из всех доступных полей
                     if (imageLink.big && typeof imageLink.big === 'string') {
                         imageLinks.push(imageLink.big);
+                    }
+                    if (imageLink.thumb && typeof imageLink.thumb === 'string') {
+                        imageLinks.push(imageLink.thumb);
+                    }
+                    if (imageLink.basic && typeof imageLink.basic === 'string') {
+                        imageLinks.push(imageLink.basic);
+                    }
+                    if (imageLink.small && typeof imageLink.small === 'string') {
+                        imageLinks.push(imageLink.small);
                     }
                 });
             }

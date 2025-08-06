@@ -249,8 +249,9 @@ function destructureNestedObjects(products) {
             crossSelling,
             similarProducts,
             newProducts,
-            offerCount,
-            offers: prices,
+            prcCount: offerCount,
+            prcArray: prices,
+            offers:[],
             madeInUkraine,
             userSubscribed,
             promoRelinkList

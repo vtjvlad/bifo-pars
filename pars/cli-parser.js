@@ -36,7 +36,8 @@ class HotlineCLI {
             saveProgressively: true,
             saveInterval: 25,
             testPerformance: false,
-            maxBatchSize: 25
+            maxBatchSize: 25,
+            createCommonCSV: true
         };
         this.selectedCategoriesFile = 'tctgr/categories.txt'; // Файл по умолчанию
     }
@@ -685,6 +686,7 @@ class HotlineCLI {
                     { name: `💾 Постепенное сохранение: ${this.config.saveProgressively ? 'ВКЛ' : 'ВЫКЛ'}`, value: 'save_progressive' },
                     { name: `⏱️  Интервал сохранения: ${this.config.saveInterval}`, value: 'save_interval' },
                     { name: `🧪 Максимальный размер батча для тестов: ${this.config.maxBatchSize}`, value: 'max_batch' },
+                    { name: `📄 Создание общих CSV файлов: ${this.config.createCommonCSV ? 'ВКЛ' : 'ВЫКЛ'}`, value: 'common_csv' },
                     { name: '🔙 Назад', value: 'back' }
                 ],
                 pageSize: 15,
@@ -714,6 +716,9 @@ class HotlineCLI {
                 break;
             case 'max_batch':
                 await this.changeMaxBatchSize();
+                break;
+            case 'common_csv':
+                await this.toggleCommonCSV();
                 break;
             case 'back':
                 return;
@@ -813,6 +818,35 @@ class HotlineCLI {
 
         this.config.maxBatchSize = maxBatchSize;
         console.log(chalk.green(`✅ Максимальный размер батча изменен на ${maxBatchSize}`));
+    }
+
+    // Переключение создания общих CSV файлов
+    async toggleCommonCSV() {
+        const { createCommonCSV } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'createCommonCSV',
+                message: 'Создавать общие CSV файлы со всеми товарами?',
+                default: this.config.createCommonCSV,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                    }
+                    return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                }
+            }
+        ]);
+
+        this.config.createCommonCSV = createCommonCSV;
+        console.log(chalk.green(`✅ Создание общих CSV файлов: ${createCommonCSV ? 'ВКЛ' : 'ВЫКЛ'}`));
+        
+        if (createCommonCSV) {
+            console.log(chalk.cyan('   📄 Будут создаваться общие CSV файлы со всеми товарами'));
+            console.log(chalk.cyan('   📊 Файлы будут сохранены в папке CSV/'));
+        } else {
+            console.log(chalk.yellow('   ⚠️  Общие CSV файлы создаваться не будут'));
+            console.log(chalk.yellow('   📁 Будут создаваться только отдельные файлы для каждой категории'));
+        }
     }
 
     // Тестирование производительности
@@ -1508,7 +1542,8 @@ class HotlineCLI {
                 uniqueCategories, 
                 this.config.saveProgressively, 
                 this.config.batchSize, 
-                this.config.autoGetTokens
+                this.config.autoGetTokens,
+                this.config.createCommonCSV
             );
 
             spinner.succeed('✅ Парсинг завершен!');

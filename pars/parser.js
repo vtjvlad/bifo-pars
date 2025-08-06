@@ -805,7 +805,7 @@ class HotlineParser {
     }
 
     // Парсинг всех категорий
-    async parseAllCategories(categories, saveProgressively = true, batchSize = 15, autoGetTokens = true) {
+    async parseAllCategories(categories, saveProgressively = true, batchSize = 15, autoGetTokens = true, createCommonCSV = true) {
         const allResults = {};
         let totalProducts = 0;
         
@@ -887,25 +887,29 @@ class HotlineParser {
         await this.saveToFile(report, 'JSON/hotline-all-categories-report.json');
         this.log('📊 Отчет сохранен в JSON/hotline-all-categories-report.json');
         
-        // Создаем общий CSV файл со всеми товарами
-        this.log('📊 Создание общего CSV файла...');
-        const allProducts = [];
-        Object.keys(allResults).forEach(categoryName => {
-            const result = allResults[categoryName];
-            if (result.products && result.products.length > 0) {
-                // Добавляем информацию о категории к каждому товару
-                const productsWithCategory = result.products.map(product => ({
-                    ...product,
-                    category: categoryName,
-                    categoryUrl: result.url
-                }));
-                allProducts.push(...productsWithCategory);
+        // Создаем общий CSV файл со всеми товарами (если включено)
+        if (createCommonCSV) {
+            this.log('📊 Создание общего CSV файла...');
+            const allProducts = [];
+            Object.keys(allResults).forEach(categoryName => {
+                const result = allResults[categoryName];
+                if (result.products && result.products.length > 0) {
+                    // Добавляем информацию о категории к каждому товару
+                    const productsWithCategory = result.products.map(product => ({
+                        ...product,
+                        category: categoryName,
+                        categoryUrl: result.url
+                    }));
+                    allProducts.push(...productsWithCategory);
+                }
+            });
+            
+            if (allProducts.length > 0) {
+                await this.saveToCSV(allProducts, 'CSV/hotline-all-categories.csv');
+                this.log(`📊 Общий CSV файл создан: CSV/hotline-all-categories.csv (${allProducts.length} товаров)`);
             }
-        });
-        
-        if (allProducts.length > 0) {
-            await this.saveToCSV(allProducts, 'CSV/hotline-all-categories.csv');
-            this.log(`📊 Общий CSV файл создан: CSV/hotline-all-categories.csv (${allProducts.length} товаров)`);
+        } else {
+            this.log('📄 Создание общего CSV файла отключено в настройках');
         }
         
         return allResults;
@@ -986,7 +990,7 @@ async function main() {
             }
             
             // Парсим все категории
-            const allResults = await parser.parseAllCategories(categories, true, BATCH_SIZE, AUTO_GET_TOKENS);
+            const allResults = await parser.parseAllCategories(categories, true, BATCH_SIZE, AUTO_GET_TOKENS, true);
             
             // Выводим итоговую статистику
             parser.log('\n📊 Итоговая статистика:');

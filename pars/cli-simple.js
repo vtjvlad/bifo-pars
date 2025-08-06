@@ -12,7 +12,8 @@ class SimpleCLI {
             autoGetTokens: true,
             saveProgressively: true,
             saveInterval: 25,
-            maxBatchSize: 25
+            maxBatchSize: 25,
+            createCommonCSV: true
         };
         this.rl = readline.createInterface({
             input: process.stdin,
@@ -137,7 +138,8 @@ class SimpleCLI {
                 categories, 
                 this.config.saveProgressively, 
                 this.config.batchSize, 
-                this.config.autoGetTokens
+                this.config.autoGetTokens,
+                this.config.createCommonCSV
             );
 
             console.log(this.colors.green('✅ Парсинг завершен!'));
@@ -201,10 +203,11 @@ class SimpleCLI {
         console.log(`3. 💾 Постепенное сохранение: ${this.config.saveProgressively ? 'ВКЛ' : 'ВЫКЛ'}`);
         console.log(`4. ⏱️  Интервал сохранения: ${this.config.saveInterval}`);
         console.log(`5. 🧪 Максимальный размер батча для тестов: ${this.config.maxBatchSize}`);
+        console.log(`6. 📄 Создание общих CSV файлов: ${this.config.createCommonCSV ? 'ВКЛ' : 'ВЫКЛ'}`);
         console.log('0. 🔙 Назад');
         console.log('');
 
-        const choice = await this.question('Выберите настройку для изменения (0-5): ');
+        const choice = await this.question('Выберите настройку для изменения (0-6): ');
 
         switch (choice.trim()) {
             case '1':
@@ -221,6 +224,9 @@ class SimpleCLI {
                 break;
             case '5':
                 await this.changeMaxBatchSize();
+                break;
+            case '6':
+                await this.toggleCommonCSV();
                 break;
             case '0':
                 return;
@@ -290,6 +296,23 @@ class SimpleCLI {
 
         this.config.maxBatchSize = maxBatchSize;
         console.log(this.colors.green(`✅ Максимальный размер батча изменен на ${maxBatchSize}`));
+    }
+
+    // Переключение создания общих CSV файлов
+    async toggleCommonCSV() {
+        const input = await this.question(`Создание общих CSV файлов: ${this.config.createCommonCSV ? 'ВКЛ' : 'ВЫКЛ'} (y/n): `);
+        const createCommonCSV = input.toLowerCase() === 'y' || input.toLowerCase() === 'yes';
+        
+        this.config.createCommonCSV = createCommonCSV;
+        console.log(this.colors.green(`✅ Создание общих CSV файлов: ${createCommonCSV ? 'ВКЛ' : 'ВЫКЛ'}`));
+        
+        if (createCommonCSV) {
+            console.log(this.colors.cyan('   📄 Будут создаваться общие CSV файлы со всеми товарами'));
+            console.log(this.colors.cyan('   📊 Файлы будут сохранены в папке CSV/'));
+        } else {
+            console.log(this.colors.yellow('   ⚠️  Общие CSV файлы создаваться не будут'));
+            console.log(this.colors.yellow('   📁 Будут создаваться только отдельные файлы для каждой категории'));
+        }
     }
 
     // Тестирование производительности

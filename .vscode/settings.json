@@ -19,5 +19,30 @@
     "editor.minimap.showRegionSectionHeaders": true,
     "editor.minimap.enabled": true,
     "diffEditor.diffAlgorithm": "advanced",
+    "semantic-highlighting.highlightGlobals": true,
+    "semantic-highlighting.isEnable": true,
+    "notebook.find.filters": {
+        "markupSource": true,
+        "markupPreview": true,
+        "codeSource": true,
+        "codeOutput": true
+    },
+    "nvim-ui.nvimColorCustomizationKeys": [
+
+        "editorCursor.foreground"
+    ],
+    "editor.semanticHighlighting.enabled": true,
+
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "source.sass variable.other",
+                "settings": {
+                    "foreground": "#00ffff",
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
 
 }

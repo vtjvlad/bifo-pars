@@ -1,0 +1,3562 @@
+[
+  {
+    "id": 24661780,
+    "hlSectionId": 1598,
+    "guide": {
+      "title": "Аксесуари для смартфонів і планшетів",
+      "url": "/guides/mobile/aksessuary-dlya-planshetov/"
+    },
+    "title": "Велокрепление  Eagle X7 для телефона 3,5- 6,2\" (A-O-B-P-0433)",
+    "date": "2023-05-23",
+    "vendor": {
+      "title": "ProX",
+      "path": "prox-velo"
+    },
+    "section": {
+      "productCategoryName": "Аксессуары для смартфонов и планшетов",
+      "_id": 614,
+      "subCategory": "mobile",
+      "category": "mobile-aksessuary-dlya-planshetov",
+      "path": "/mobile/aksessuary-dlya-planshetov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 1,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      "Велосипедний тримач для смартфона",
+      " сумісність: універсальний"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "Велосипедний тримач для смартфона",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "універсальний",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/prox-velo/",
+            "title": "vendor",
+            "value": "ProX",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/aksessuary-dlya-planshetov/623203/",
+            "title": "Тип",
+            "value": "Підставка для смартфона",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "універсальна",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-aksessuary-dlya-planshetov/prox-velokreplenie-eagle-x7-dlya-telefona-35-62-a-o-b-p-0433/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/531/5319279120.jpg",
+        "basic": "https://hotline.ua/img/tx/531/5319279121.jpg",
+        "small": "https://hotline.ua/img/tx/531/531927912_s265.jpg",
+        "big": "https://hotline.ua/img/tx/531/5319279125.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B03ESgxoWqB",
+    "minPrice": 668,
+    "maxPrice": 668,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 668,
+    "initPrice": 668,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [],
+    "similarProducts": [],
+    "newProducts": [],
+    "prcCount": 1,
+    "prcArray": [
+      668
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 23741905,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "SmartAir Series Samsung A73 A736 Camera cover Transparent (ARM60887)",
+    "date": "2022-02-24",
+    "vendor": {
+      "title": "ArmorStandart",
+      "path": "armorstandart"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 3,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Samsung Galaxy A73 2022",
+      " матеріал: термополіуретан"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Samsung Galaxy A73 2022",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "термополіуретан",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/armorstandart/",
+            "title": "vendor",
+            "value": "ArmorStandart",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "чохол-книжка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Oppo A15/A15s",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "Штучна шкіра + TPU",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "чорний",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Вбудована підставка",
+            "value": "є",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Ще",
+            "value": "Купуючи новий гаджет, перед користувачем гостро постає питання: як і який чохол для телефону краще вибрати? Можна, звичайно, обійтися і без нього, проте в такому випадку пристрій постійно перебуватиме під загрозою, і дуже скоро на ньому з'являться подряпини, потертості, а при особливо неакуратному поводженні - сколи і тріщини, а чохол не тільки захистить гаджет, а й зможе наголосити на смакі його власника. Найпопулярніший різновид – чохол-книга. Книга BeCover Exclusive – це чохол для смартфонів, оснащені кришкою, що відкидається (кришка, що відкривається вбік), що дозволяє мати постійний доступ до дисплея телефону та його роз'ємів. Звертаємо вашу увагу на захисну рамку по всьому периметру – з її допомогою телефон буде надійно зафіксований та з торців захищений від подряпин. Також аксесуар має магніт, що унеможливлює його довільне відкриття в сумці. І отвір для динаміка на передній панелі, що дозволить вам розмовляти, не відкриваючи чохол.",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-smartair-series-samsung-a73-a736-camera-cover-transparent-arm60887/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/499/4995846510.jpg",
+        "basic": "https://hotline.ua/img/tx/499/4995846511.jpg",
+        "small": "https://hotline.ua/img/tx/499/499584651_s265.jpg",
+        "big": "https://hotline.ua/img/tx/499/4995846515.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/499/4995846540.jpg",
+        "basic": "https://hotline.ua/img/tx/499/4995846541.jpg",
+        "small": "https://hotline.ua/img/tx/499/499584654_s265.jpg",
+        "big": "https://hotline.ua/img/tx/499/4995846545.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/499/4995846560.jpg",
+        "basic": "https://hotline.ua/img/tx/499/4995846561.jpg",
+        "small": "https://hotline.ua/img/tx/499/499584656_s265.jpg",
+        "big": "https://hotline.ua/img/tx/499/4995846565.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8Y5yK9HvNG",
+    "minPrice": 79,
+    "maxPrice": 243,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 131,
+    "initPrice": 79,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 24022560,
+          "title": "Панель Anti-Shock  для Samsung Galaxy A73 SM-A736 Clear (707503)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/becover-panel-anti-shock-dlya-samsung-galaxy-a73-sm-a736-clear-707503/",
+          "image": "/img/tx/344/3444577201.jpg",
+          "minPrice": 12400,
+          "quantity": 19,
+          "vendor": "BeCover",
+          "vendorId": 94697,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24382167,
+          "title": "Air Series Samsung A73 5G (A736) Transparent (ARM65982)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-air-series-samsung-a73-5g-a736-transparent-arm65982/",
+          "image": "/img/tx/535/5352252881.jpg",
+          "minPrice": 13300,
+          "quantity": 12,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25499183,
+          "title": "Cross Pattern Case для Samsung Galaxy A73 Blue",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/aioria-cross-pattern-case-dlya-samsung-galaxy-a73-blue/",
+          "image": "/img/tx/502/5024399531.jpg",
+          "minPrice": 10900,
+          "quantity": 1,
+          "vendor": "AIORIA",
+          "vendorId": 223505,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25499192,
+          "title": "Cross Pattern Case для Samsung Galaxy A73 Red",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/aioria-cross-pattern-case-dlya-samsung-galaxy-a73-red/",
+          "image": "/img/tx/502/5024399471.jpg",
+          "minPrice": 10900,
+          "quantity": 1,
+          "vendor": "AIORIA",
+          "vendorId": 223505,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25562521,
+          "title": "Cross Pattern Case для Samsung Galaxy A73 Green",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/aioria-cross-pattern-case-dlya-samsung-galaxy-a73-green/",
+          "image": "/img/tx/497/4971085581.jpg",
+          "minPrice": 10900,
+          "quantity": 1,
+          "vendor": "AIORIA",
+          "vendorId": 223505,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 893557,
+          "filterValueTitle": "Samsung Galaxy A73",
+          "filterValueTitleUk": "Samsung Galaxy A73",
+          "filterTitle": "Совместимость",
+          "filterTitleUk": "Сумісність"
+        },
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33670,
+          "filterValueTitle": "Силикон/резина",
+          "filterValueTitleUk": "Силікон / резина",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        }
+      ],
+      "priceRange": {
+        "from": 9988,
+        "to": 18775
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26325888,
+        "title": "OneFold Case для OPPO A5 Pro 4G / A5 Pro 5G Lavender (ARM85371)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-onefold-case-dlya-oppo-a5-pro-4g-a5-pro-5g-lavender-arm85371/",
+        "image": "/img/tx/534/5342649951.jpg",
+        "minPrice": 39900,
+        "quantity": 9,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325896,
+        "title": "Frame для Xiaomi Poco M7 Pro 5G Dark Green (ARM83162)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-frame-dlya-xiaomi-poco-m7-pro-5g-dark-green-arm83162/",
+        "image": "/img/tx/534/5343417681.jpg",
+        "minPrice": 24900,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325904,
+        "title": "Frame для Motorola Edge 60 Fusion 5G Dark Green (ARM85602)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-frame-dlya-motorola-edge-60-fusion-5g-dark-green-arm85602/",
+        "image": "/img/tx/534/5343417551.jpg",
+        "minPrice": 24900,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325912,
+        "title": "Air для Samsung A07 4G Camera cover Clear (ARM86531)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-air-dlya-samsung-a07-4g-camera-cover-clear-arm86531/",
+        "image": "/img/tx/535/5350903851.jpg",
+        "minPrice": 22900,
+        "quantity": 6,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325922,
+        "title": "Air Force для Infinix Note 50 4G Camera cover Clear (ARM84724)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-air-force-dlya-infinix-note-50-4g-camera-cover-clear-arm84724/",
+        "image": "/img/tx/535/5353707081.jpg",
+        "minPrice": 23900,
+        "quantity": 4,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325933,
+        "title": "Shade для Samsung A56 5G Blue (ARM82599)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-shade-dlya-samsung-a56-5g-blue-arm82599/",
+        "image": "/img/tx/534/5346541391.jpg",
+        "minPrice": 24900,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325941,
+        "title": "G-Case для Xiaomi Poco C71 4G Blue (ARM84884)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-g-case-dlya-xiaomi-poco-c71-4g-blue-arm84884/",
+        "image": "/img/tx/534/5348673071.jpg",
+        "minPrice": 34900,
+        "quantity": 7,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325949,
+        "title": "OneFold Case для Xiaomi Poco C71 4G Green (ARM84889)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-onefold-case-dlya-xiaomi-poco-c71-4g-green-arm84889/",
+        "image": "/img/tx/534/5342649541.jpg",
+        "minPrice": 35000,
+        "quantity": 9,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      }
+    ],
+    "prcCount": 16,
+    "prcArray": [
+      149,
+      149,
+      79,
+      131,
+      79,
+      149,
+      100,
+      149,
+      149,
+      149,
+      149,
+      243,
+      219,
+      194,
+      79,
+      116
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 22682283,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "Clic Air Case Smoke iPhone 12 mini (CAIR-SMO-NP20S)",
+    "date": "2021-04-28",
+    "vendor": {
+      "title": "NATIVE UNION",
+      "path": "native-union"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 1,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Apple iPhone 12 mini",
+      " матеріал: поліпропілен"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Apple iPhone 12 mini",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "поліпропілен",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/native-union/",
+            "title": "vendor",
+            "value": "NATIVE UNION",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "чохол-накладка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Samsung Galaxy A52 2021",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "силікон",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "чорний",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Ще",
+            "value": "М'яка підкладка з мікрофібри. Виступає над поверхнею дисплея.",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "https://www.nativeunion.com/products/clic-air-iphone-12-mini?variant=34316671746187",
+            "title": "productOnVendorSite",
+            "value": "https://www.nativeunion.com/products/clic-air-i...",
+            "help": null,
+            "h1Text": null,
+            "type": "siteVendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-clic-air-case-smoke-iphone-12-mini-cair-smo-np20s/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/517/5172221720.jpg",
+        "basic": "https://hotline.ua/img/tx/517/5172221721.jpg",
+        "small": "https://hotline.ua/img/tx/517/517222172_s265.jpg",
+        "big": "https://hotline.ua/img/tx/517/5172221725.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B03ESgxoWqB",
+    "minPrice": 289,
+    "maxPrice": 999,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 644,
+    "initPrice": 644,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 21485832,
+          "title": "iPhone 12 Mini Monarch Crimson (112341119494)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/urban-armor-gear-iphone-12-mini-monarch-crimson-112341119494/",
+          "image": "/img/tx/526/5265220921.jpg",
+          "minPrice": 39900,
+          "quantity": 6,
+          "vendor": "URBAN ARMOR GEAR",
+          "vendorId": 37548,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 21816931,
+          "title": "iPhone 12 Mini Civilian Olive (11234D117272)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/urban-armor-gear-iphone-12-mini-civilian-olive-11234d117272/",
+          "image": "/img/tx/528/5286231851.jpg",
+          "minPrice": 49300,
+          "quantity": 5,
+          "vendor": "URBAN ARMOR GEAR",
+          "vendorId": 37548,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22541921,
+          "title": "Fusion X iPhone 12 Mini Black (RCA4820)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/ringke-fusion-x-iphone-12-mini-black-rca4820/",
+          "image": "/img/tx/393/3933072361.jpg",
+          "minPrice": 48900,
+          "quantity": 4,
+          "vendor": "Ringke",
+          "vendorId": 84103,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22541942,
+          "title": "Fusion X Desing iPhone 12 Mini Camo Black (RCA4821)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/ringke-fusion-x-desing-iphone-12-mini-camo-black-rca4821/",
+          "image": "/img/tx/500/5009228471.jpg",
+          "minPrice": 50900,
+          "quantity": 3,
+          "vendor": "Ringke",
+          "vendorId": 84103,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 21421477,
+          "title": "iPhone 12 mini Hybrid NX Matte Black (ACS01541)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-iphone-12-mini-hybrid-nx-matte-black-acs01541/",
+          "image": "/img/tx/524/5243258571.jpg",
+          "minPrice": 24900,
+          "quantity": 2,
+          "vendor": "Spigen",
+          "vendorId": 3187,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 21371871,
+          "title": "Air Armor Clear Hard Clear for iPhone 12 mini (3C01201160301)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/esr-air-armor-clear-hard-clear-for-iphone-12-mini-3c01201160301/",
+          "image": "/img/tx/533/5332881711.jpg",
+          "minPrice": 49900,
+          "quantity": 1,
+          "vendor": "ESR",
+          "vendorId": 109590,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 645482,
+          "filterValueTitle": "Apple iPhone 12 mini",
+          "filterValueTitleUk": "Apple iPhone 12 mini",
+          "filterTitle": "Совместимость",
+          "filterTitleUk": "Сумісність"
+        },
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33668,
+          "filterValueTitle": "Пластик",
+          "filterValueTitleUk": "Пластик",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        }
+      ],
+      "priceRange": {
+        "from": 45080,
+        "to": 84737
+      }
+    },
+    "newProducts": [
+      {
+        "id": 25836463,
+        "title": "Active Case Black для iPhone 16 (ACTCSE-BLK-NP24)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-active-case-black-dlya-iphone-16-actcse-blk-np24/",
+        "image": "/img/tx/527/5274958251.jpg",
+        "minPrice": 199400,
+        "quantity": 8,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      },
+      {
+        "id": 25836471,
+        "title": "(RE) Classic Case Kraft для iPhone 16 (RECLA-KFT-NP24)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-re-classic-case-kraft-dlya-iphone-16-recla-kft-np24/",
+        "image": "/img/tx/527/5274956941.jpg",
+        "minPrice": 239200,
+        "quantity": 9,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      },
+      {
+        "id": 25836479,
+        "title": "(RE) Classic Case Black для iPhone 16 Pro (RECLA-BLK-NP24P)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-re-classic-case-black-dlya-iphone-16-pro-recla-blk-np24p/",
+        "image": "/img/tx/527/5274955081.jpg",
+        "minPrice": 239200,
+        "quantity": 11,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      },
+      {
+        "id": 25836462,
+        "title": "Active Case Lemon для iPhone 16 Pro Max (ACTCSE-LMO-NP24PM)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-active-case-lemon-dlya-iphone-16-pro-max-actcse-lmo-np24pm/",
+        "image": "/img/tx/527/5274958201.jpg",
+        "minPrice": 199400,
+        "quantity": 9,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      },
+      {
+        "id": 25836470,
+        "title": "(RE) Classic Case Slate Green для iPhone 16 Pro Max (RECLA-GRN-NP24PM)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-re-classic-case-slate-green-dlya-iphone-16-pro-max-recla-grn-np24pm/",
+        "image": "/img/tx/532/5324970231.jpg",
+        "minPrice": 239200,
+        "quantity": 11,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      },
+      {
+        "id": 25836478,
+        "title": "Active Case Slate Green для iPhone 16 Pro (ACTCSE-GRN-NP24P)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-active-case-slate-green-dlya-iphone-16-pro-actcse-grn-np24p/",
+        "image": "/img/tx/527/5274955511.jpg",
+        "minPrice": 199400,
+        "quantity": 12,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      },
+      {
+        "id": 25836461,
+        "title": "Active Case Black для iPhone 16 Pro Max (ACTCSE-BLK-NP24PM)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-active-case-black-dlya-iphone-16-pro-max-actcse-blk-np24pm/",
+        "image": "/img/tx/530/5303231671.jpg",
+        "minPrice": 229900,
+        "quantity": 5,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      },
+      {
+        "id": 25836469,
+        "title": "Active Case Sandstone для iPhone 16 Pro (ACTCSE-SAN-NP24P)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/native-union-active-case-sandstone-dlya-iphone-16-pro-actcse-san-np24p/",
+        "image": "/img/tx/533/5336577811.jpg",
+        "minPrice": 229900,
+        "quantity": 5,
+        "vendor": "NATIVE UNION",
+        "vendorId": 7564,
+        "isNew": false
+      }
+    ],
+    "prcCount": 2,
+    "prcArray": [
+      289,
+      999
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 24776772,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "Air Series Infinix Hot 30 Play NFC (X6835B) Camera cover Transparent (ARM68454)",
+    "date": "2023-06-29",
+    "vendor": {
+      "title": "ArmorStandart",
+      "path": "armorstandart"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 2,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Infinix Hot 30 Play",
+      " матеріал: силікон"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Infinix Hot 30 Play",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "силікон",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/armorstandart/",
+            "title": "vendor",
+            "value": "ArmorStandart",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "чохол-накладка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Vivo Y33s",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "силікон",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "прозорий",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-air-series-infinix-hot-30-play-nfc-x6835b-camera-cover-transparent-arm68454/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/535/5352245570.jpg",
+        "basic": "https://hotline.ua/img/tx/535/5352245571.jpg",
+        "small": "https://hotline.ua/img/tx/535/535224557_s265.jpg",
+        "big": "https://hotline.ua/img/tx/535/5352245575.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/535/5352245600.jpg",
+        "basic": "https://hotline.ua/img/tx/535/5352245601.jpg",
+        "small": "https://hotline.ua/img/tx/535/535224560_s265.jpg",
+        "big": "https://hotline.ua/img/tx/535/5352245605.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8OZFbFnlGc",
+    "minPrice": 122,
+    "maxPrice": 258,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 149,
+    "initPrice": 149,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 24836214,
+          "title": "Силіконовий чохол  для Infinix HOT 30 Play NFC (X6835B) Black (709618)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/becover-silkonovij-chohol-dlya-infinix-hot-30-play-nfc-x6835b-black-709618/",
+          "image": "/img/tx/407/4070342691.jpg",
+          "minPrice": 15600,
+          "quantity": 16,
+          "vendor": "BeCover",
+          "vendorId": 94697,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24836215,
+          "title": "Силіконовий чохол  для Infinix HOT 30 Play NFC (X6835B) Transparancy (709619)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/becover-silkonovij-chohol-dlya-infinix-hot-30-play-nfc-x6835b-transparancy-709619/",
+          "image": "/img/tx/407/4070342711.jpg",
+          "minPrice": 15600,
+          "quantity": 14,
+          "vendor": "BeCover",
+          "vendorId": 94697,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24776760,
+          "title": "Matte Slim Fit Infinix Hot 30 Play NFC (X6835B) Camera cover Black (ARM68450)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-matte-slim-fit-infinix-hot-30-play-nfc-x6835b-camera-cover-black-arm68450/",
+          "image": "/img/tx/535/5352242971.jpg",
+          "minPrice": 12200,
+          "quantity": 12,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25240936,
+          "title": "Панель Anti-Shock  для Infinix HOT 30 Play NFC (X6835B) Clear (710601)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/becover-panel-anti-shock-dlya-infinix-hot-30-play-nfc-x6835b-clear-710601/",
+          "image": "/img/tx/447/4478619791.jpg",
+          "minPrice": 17900,
+          "quantity": 1,
+          "vendor": "BeCover",
+          "vendorId": 94697,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 20605028,
+          "filterValueTitle": "Infinix Hot 30 Play",
+          "filterValueTitleUk": "Infinix Hot 30 Play",
+          "filterTitle": "Совместимость",
+          "filterTitleUk": "Сумісність"
+        },
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33670,
+          "filterValueTitle": "Силикон/резина",
+          "filterValueTitleUk": "Силікон / резина",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        }
+      ],
+      "priceRange": {
+        "from": 10801,
+        "to": 20303
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26325893,
+        "title": "Air для Apple iPhone 17 Clear (ARM86740)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-air-dlya-apple-iphone-17-clear-arm86740/",
+        "image": "/img/tx/535/5353003461.jpg",
+        "minPrice": 23700,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325901,
+        "title": "Frame для Motorola Edge 60 Pro 5G Blue (ARM86091)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-frame-dlya-motorola-edge-60-pro-5g-blue-arm86091/",
+        "image": "/img/tx/534/5343417581.jpg",
+        "minPrice": 24900,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325909,
+        "title": "Frame для Motorola Edge 60 5G Black (ARM85839)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-frame-dlya-motorola-edge-60-5g-black-arm85839/",
+        "image": "/img/tx/534/5343417501.jpg",
+        "minPrice": 24900,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325918,
+        "title": "OneFold Case для Realme 14T Green (ARM84016)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-onefold-case-dlya-realme-14t-green-arm84016/",
+        "image": "/img/tx/534/5345642011.jpg",
+        "minPrice": 39900,
+        "quantity": 7,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325930,
+        "title": "Shade для Samsung A56 5G White (ARM82602)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-shade-dlya-samsung-a56-5g-white-arm82602/",
+        "image": "/img/tx/534/5346541411.jpg",
+        "minPrice": 24900,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325938,
+        "title": "OneFold Case для Xiaomi Poco C71 4G Dark Blue (ARM84888)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-onefold-case-dlya-xiaomi-poco-c71-4g-dark-blue-arm84888/",
+        "image": "/img/tx/534/5342649651.jpg",
+        "minPrice": 35000,
+        "quantity": 9,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325946,
+        "title": "Shade для OPPO A5 Pro 4G / A5 Pro 5G Dark Green (ARM85616)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-shade-dlya-oppo-a5-pro-4g-a5-pro-5g-dark-green-arm85616/",
+        "image": "/img/tx/534/5342649571.jpg",
+        "minPrice": 24900,
+        "quantity": 5,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      },
+      {
+        "id": 26325954,
+        "title": "ICON для Motorola Edge 60 Fusion 5G Camera cover Dark Blue (ARM85593)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-dlya-motorola-edge-60-fusion-5g-camera-cover-dark-blue-arm85593/",
+        "image": "/img/tx/534/5342649471.jpg",
+        "minPrice": 30000,
+        "quantity": 9,
+        "vendor": "ArmorStandart",
+        "vendorId": 130428,
+        "isNew": true
+      }
+    ],
+    "prcCount": 10,
+    "prcArray": [
+      149,
+      122,
+      149,
+      149,
+      149,
+      148,
+      148,
+      149,
+      122,
+      258
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 22005616,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "G995 Galaxy S21 Plus Clear Cover Transparancy (EF-QG996TTEG)",
+    "date": "2021-01-26",
+    "vendor": {
+      "title": "Samsung",
+      "path": "samsung"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 1,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Samsung Galaxy G995 S21 Plus",
+      " матеріал: силікон"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Samsung Galaxy G995 S21 Plus",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "силікон",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/samsung/",
+            "title": "vendor",
+            "value": "Samsung",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "Чохол-накладка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Apple iPhone 12 Pro Max",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "силікон, мікрофібра",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "салатовий",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Ще",
+            "value": "Захист від відбитків пальців",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-g995-galaxy-s21-plus-clear-cover-transparancy-ef-qg996tteg/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/262/2622263280.jpg",
+        "basic": "https://hotline.ua/img/tx/262/2622263281.jpg",
+        "small": "https://hotline.ua/img/tx/262/262226328_s265.jpg",
+        "big": "https://hotline.ua/img/tx/262/2622263285.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8ycp68nfoZ",
+    "minPrice": 460,
+    "maxPrice": 636,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 460,
+    "initPrice": 508,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 22465089,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus Flowers 41718-up1000",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-flowers-41718-up1000/",
+          "image": "/img/tx/272/2727846951.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22465119,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus Cat 41718-up276",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-cat-41718-up276/",
+          "image": "/img/tx/272/2727847251.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22465120,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus M&Ms 41718-up306",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-mms-41718-up306/",
+          "image": "/img/tx/515/5157152801.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22465122,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus Space Landscape 41718-up425",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-space-landscape-41718-up425/",
+          "image": "/img/tx/272/2727847271.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22465123,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus Audi A7 41718-up503",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-audi-a7-41718-up503/",
+          "image": "/img/tx/272/2727847281.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22465124,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus Dont touch 41718-up535",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-dont-touch-41718-up535/",
+          "image": "/img/tx/515/5157152731.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22465126,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus Marilyn Monroe Bubble Gum 41718-up572",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-marilyn-monroe-bubble-gum-41718-up572/",
+          "image": "/img/tx/272/2727847301.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 22465127,
+          "title": "Silicone Case Samsung Galaxy G996 S21 Plus Owl 41718-up591",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/boxface-silicone-case-samsung-galaxy-g996-s21-plus-owl-41718-up591/",
+          "image": "/img/tx/272/2727847311.jpg",
+          "minPrice": 40900,
+          "quantity": 1,
+          "vendor": "Boxface",
+          "vendorId": 167399,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 654088,
+          "filterValueTitle": "Samsung Galaxy S21 Plus",
+          "filterValueTitleUk": "Samsung Galaxy S21 Plus",
+          "filterTitle": "Совместимость",
+          "filterTitleUk": "Сумісність"
+        },
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33670,
+          "filterValueTitle": "Силикон/резина",
+          "filterValueTitleUk": "Силікон / резина",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        }
+      ],
+      "priceRange": {
+        "from": 36182,
+        "to": 68011
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26344564,
+        "title": "F766 Galaxy Flip 7 Clear Case Transparency (EF-AF766CTEG)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-f766-galaxy-flip-7-clear-case-transparency-ef-af766cteg/",
+        "image": "/img/tx/535/5350600111.jpg",
+        "minPrice": 139900,
+        "quantity": 7,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      },
+      {
+        "id": 26344562,
+        "title": "F766 Galaxy Flip 7 Flipsuit Case Transparency (EF-ZF766CTEG)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-f766-galaxy-flip-7-flipsuit-case-transparency-ef-zf766cteg/",
+        "image": "/img/tx/535/5350600151.jpg",
+        "minPrice": 179900,
+        "quantity": 2,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      },
+      {
+        "id": 26344561,
+        "title": "F966 Galaxy Fold 7 Clear Grip Case Transparency (EF-QF966CTEG)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-f966-galaxy-fold-7-clear-grip-case-transparency-ef-qf966cteg/",
+        "image": "/img/tx/535/5350600141.jpg",
+        "minPrice": 179900,
+        "quantity": 4,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      },
+      {
+        "id": 26344560,
+        "title": "F966 Galaxy Fold 7 Clear Case Transparency (EF-AF966CTEG)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-f966-galaxy-fold-7-clear-case-transparency-ef-af966cteg/",
+        "image": "/img/tx/535/5352941941.jpg",
+        "minPrice": 159900,
+        "quantity": 6,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      },
+      {
+        "id": 26344555,
+        "title": "F766 Galaxy Flip 7 Clear Case with Ring Transparency (EF-QF766CTEG)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-f766-galaxy-flip-7-clear-case-with-ring-transparency-ef-qf766cteg/",
+        "image": "/img/tx/535/5350600211.jpg",
+        "minPrice": 179900,
+        "quantity": 4,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      },
+      {
+        "id": 26261986,
+        "title": "M215 Galaxy M21 KD Lab M Cover Transparency (GP-FPM215KDATW)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-m215-galaxy-m21-kd-lab-m-cover-transparency-gp-fpm215kdatw/",
+        "image": "/img/tx/533/5339814071.jpg",
+        "minPrice": 9700,
+        "quantity": 6,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      },
+      {
+        "id": 26262532,
+        "title": "Galaxy Flip 4 Cat Catching Fish Case Transparent (GP-FPF721HIAWW)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-galaxy-flip-4-cat-catching-fish-case-transparent-gp-fpf721hiaww/",
+        "image": "/img/tx/529/5292735911.jpg",
+        "minPrice": 27500,
+        "quantity": 4,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      },
+      {
+        "id": 26262531,
+        "title": "G780 Galaxy S20 FE Clear View Cover Lavender (EF-ZG780CVEG)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/samsung-g780-galaxy-s20-fe-clear-view-cover-lavender-ef-zg780cveg/",
+        "image": "/img/tx/535/5353532541.jpg",
+        "minPrice": 188100,
+        "quantity": 7,
+        "vendor": "Samsung",
+        "vendorId": 17,
+        "isNew": true
+      }
+    ],
+    "prcCount": 8,
+    "prcArray": [
+      486,
+      493,
+      499,
+      460,
+      508,
+      569,
+      636,
+      484
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 21148039,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "Carbon для Vivo Y15 Blue (DG-TPU-CRBN-98)",
+    "date": "2020-09-25",
+    "vendor": {
+      "title": "DENGOS",
+      "path": "dengos"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 4,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Vivo Y15",
+      " матеріал: силікон"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Vivo Y15",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "силікон",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/dengos/",
+            "title": "vendor",
+            "value": "DENGOS",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "чохол-накладка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Samsung Galaxy A11 2020",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "силікон",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "синій",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-carbon-dlya-vivo-y15-blue-dg-tpu-crbn-98/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/535/5352269690.jpg",
+        "basic": "https://hotline.ua/img/tx/535/5352269691.jpg",
+        "small": "https://hotline.ua/img/tx/535/535226969_s265.jpg",
+        "big": "https://hotline.ua/img/tx/535/5352269695.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/535/5352269710.jpg",
+        "basic": "https://hotline.ua/img/tx/535/5352269711.jpg",
+        "small": "https://hotline.ua/img/tx/535/535226971_s265.jpg",
+        "big": "https://hotline.ua/img/tx/535/5352269715.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/535/5352269740.jpg",
+        "basic": "https://hotline.ua/img/tx/535/5352269741.jpg",
+        "small": "https://hotline.ua/img/tx/535/535226974_s265.jpg",
+        "big": "https://hotline.ua/img/tx/535/5352269745.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/535/5352269760.jpg",
+        "basic": "https://hotline.ua/img/tx/535/5352269761.jpg",
+        "small": "https://hotline.ua/img/tx/535/535226976_s265.jpg",
+        "big": "https://hotline.ua/img/tx/535/5352269765.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8ycp68nfoZ",
+    "minPrice": 160,
+    "maxPrice": 285,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 160,
+    "initPrice": 160,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 20357421,
+          "title": "Icon для Xiaomi Mi Note 10 Pro Blue (ARM56365)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-dlya-xiaomi-mi-note-10-pro-blue-arm56365/",
+          "image": "/img/tx/535/5352092311.jpg",
+          "minPrice": 13700,
+          "quantity": 13,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 1,
+          "isNew": false
+        },
+        {
+          "id": 24541034,
+          "title": "Icon Case для Xiaomi Redmi 12C / 11A / C55 Camera cover Dark Blue (ARM65967)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-dlya-xiaomi-redmi-12c-11a-c55-camera-cover-dark-blue-arm65967/",
+          "image": "/img/tx/508/5083921331.jpg",
+          "minPrice": 9900,
+          "quantity": 22,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24618455,
+          "title": "ICON Case Xiaomi Redmi Note 12 4G Camera cover Dark Blue (ARM67701)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-xiaomi-redmi-note-12-4g-camera-cover-dark-blue-arm67701/",
+          "image": "/img/tx/508/5083920521.jpg",
+          "minPrice": 9900,
+          "quantity": 22,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24618655,
+          "title": "Icon Case для Samsung Galaxy A34 5G (A346) Camera cover Dark Blue (ARM66174)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-dlya-samsung-galaxy-a34-5g-a346-camera-cover-dark-blue-arm66174/",
+          "image": "/img/tx/535/5352248031.jpg",
+          "minPrice": 9900,
+          "quantity": 21,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24761649,
+          "title": "ICON Case Xiaomi Redmi Note 12S 4G Camera cover Dark Blue (ARM67505)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-xiaomi-redmi-note-12s-4g-camera-cover-dark-blue-arm67505/",
+          "image": "/img/tx/508/5083919641.jpg",
+          "minPrice": 9900,
+          "quantity": 21,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24382150,
+          "title": "ICON Case Samsung A04 (A045) Dark Blue (ARM66077)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-samsung-a04-a045-dark-blue-arm66077/",
+          "image": "/img/tx/508/5083922041.jpg",
+          "minPrice": 9900,
+          "quantity": 21,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24101845,
+          "title": "ICON Case OPPO A55 4G Dark Blue (ARM61432)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-oppo-a55-4g-dark-blue-arm61432/",
+          "image": "/img/tx/348/3480712041.jpg",
+          "minPrice": 10000,
+          "quantity": 20,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24423835,
+          "title": "ICON Case Xiaomi Redmi Note 12 5G Dark Blue (ARM65194)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-xiaomi-redmi-note-12-5g-dark-blue-arm65194/",
+          "image": "/img/tx/508/5083922171.jpg",
+          "minPrice": 9900,
+          "quantity": 20,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33670,
+          "filterValueTitle": "Силикон/резина",
+          "filterValueTitleUk": "Силікон / резина",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        },
+        {
+          "filterValueId": 20768663,
+          "filterValueTitle": "Синий",
+          "filterValueTitleUk": "Синій",
+          "filterTitle": "Цвет",
+          "filterTitleUk": "Колір"
+        }
+      ],
+      "priceRange": {
+        "from": 12775,
+        "to": 24013
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26238539,
+        "title": "Панель Carbon для Poco X7 5G Purple (DG-TPU-CRBN-230)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-panel-carbon-dlya-poco-x7-5g-purple-dg-tpu-crbn-230/",
+        "image": "/img/tx/526/5262771711.jpg",
+        "minPrice": 24300,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      },
+      {
+        "id": 26238554,
+        "title": "Комплект панель + скло 2 шт Carbon для Samsung Galaxy A16 Blue (DG-CTG2P-07)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-komplekt-panel-plus-sklo-2-sht-carbon-dlya-samsung-galaxy-a16-blue-dg-ctg2p-07/",
+        "image": "/img/tx/535/5352092511.jpg",
+        "minPrice": 58700,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      },
+      {
+        "id": 26238538,
+        "title": "Комплект панель + скло 2 шт Matte для Samsung Galaxy A36 Black (DG-CTG2P-15)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-komplekt-panel-plus-sklo-2-sht-matte-dlya-samsung-galaxy-a36-black-dg-ctg2p-15/",
+        "image": "/img/tx/535/5352107551.jpg",
+        "minPrice": 58700,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      },
+      {
+        "id": 26238553,
+        "title": "Комплект панель + скло 2 шт Soft для Samsung Galaxy A16 Mint (DG-CTG2P-11)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-komplekt-panel-plus-sklo-2-sht-soft-dlya-samsung-galaxy-a16-mint-dg-ctg2p-11/",
+        "image": "/img/tx/535/5352092841.jpg",
+        "minPrice": 58700,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      },
+      {
+        "id": 26238537,
+        "title": "Панель Carbon для Xiaomi Redmi Note 14S Purple (DG-TPU-CRBN-228)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-panel-carbon-dlya-xiaomi-redmi-note-14s-purple-dg-tpu-crbn-228/",
+        "image": "/img/tx/526/5262771741.jpg",
+        "minPrice": 24300,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      },
+      {
+        "id": 26238552,
+        "title": "Комплект панель + скло 2 шт Soft для Xiaomi Redmi Note 14 5G Mint (DG-CTG2P-14)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-komplekt-panel-plus-sklo-2-sht-soft-dlya-xiaomi-redmi-note-14-5g-mint-dg-ctg2p-14/",
+        "image": "/img/tx/535/5352107241.jpg",
+        "minPrice": 58700,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      },
+      {
+        "id": 26238536,
+        "title": "Панель Carbon для Motorola Moto G15/G15 Power Grey (DG-TPU-CRBN-229)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-panel-carbon-dlya-motorola-moto-g15g15-power-grey-dg-tpu-crbn-229/",
+        "image": "/img/tx/526/5262771821.jpg",
+        "minPrice": 24300,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      },
+      {
+        "id": 26238551,
+        "title": "Комплект панель + скло 2 шт Matte для Samsung Galaxy A16 Black (DG-CTG2P-04)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-komplekt-panel-plus-sklo-2-sht-matte-dlya-samsung-galaxy-a16-black-dg-ctg2p-04/",
+        "image": "/img/tx/535/5352092991.jpg",
+        "minPrice": 58700,
+        "quantity": 6,
+        "vendor": "DENGOS",
+        "vendorId": 81880,
+        "isNew": false
+      }
+    ],
+    "prcCount": 6,
+    "prcArray": [
+      160,
+      170,
+      160,
+      160,
+      160,
+      285
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 23966367,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "Frame для Galaxy A53 5G Black (MCMF-SA53BK)",
+    "date": "2022-07-01",
+    "vendor": {
+      "title": "MakeFuture",
+      "path": "makefuture"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 1,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Samsung Galaxy A53 2022",
+      " матеріал: TPU"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Samsung Galaxy A53 2022",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "TPU",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/makefuture/",
+            "title": "vendor",
+            "value": "MakeFuture",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "чохол-накладка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Samsung Galaxy M23 2022",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "силікон",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "рожевий",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-frame-dlya-galaxy-a53-5g-black-mcmf-sa53bk/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/497/4979324450.jpg",
+        "basic": "https://hotline.ua/img/tx/497/4979324451.jpg",
+        "small": "https://hotline.ua/img/tx/497/497932445_s265.jpg",
+        "big": "https://hotline.ua/img/tx/497/4979324455.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8OZFbFnlGc",
+    "minPrice": 232,
+    "maxPrice": 232,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 232,
+    "initPrice": 232,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 23966291,
+          "title": "ICON Case Samsung A53 Black (ARM61656)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-icon-case-samsung-a53-black-arm61656/",
+          "image": "/img/tx/535/5352259421.jpg",
+          "minPrice": 10000,
+          "quantity": 17,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 23966519,
+          "title": "Matte Samsung Galaxy A53 black (DG-TPU-MATT-100)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/dengos-matte-samsung-galaxy-a53-black-dg-tpu-matt-100/",
+          "image": "/img/tx/535/5352259131.jpg",
+          "minPrice": 16200,
+          "quantity": 7,
+          "vendor": "DENGOS",
+          "vendorId": 81880,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 23986896,
+          "title": "Skin Matte TPU для Samsung Galaxy A53 Black (MCS-SA53BK)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-skin-matte-tpu-dlya-samsung-galaxy-a53-black-mcs-sa53bk/",
+          "image": "/img/tx/497/4979324281.jpg",
+          "minPrice": 23200,
+          "quantity": 4,
+          "vendor": "MakeFuture",
+          "vendorId": 133158,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24571663,
+          "title": "Colorful Case TPU для Samsung A536 Galaxy A53 5G Black",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/wave-colorful-case-tpu-dlya-samsung-a536-galaxy-a53-5g-black/",
+          "image": "/img/tx/531/5319505771.jpg",
+          "minPrice": 17700,
+          "quantity": 4,
+          "vendor": "WAVE",
+          "vendorId": 224372,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 893552,
+          "filterValueTitle": "Samsung Galaxy A53",
+          "filterValueTitleUk": "Samsung Galaxy A53",
+          "filterTitle": "Совместимость",
+          "filterTitleUk": "Сумісність"
+        },
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33670,
+          "filterValueTitle": "Силикон/резина",
+          "filterValueTitleUk": "Силікон / резина",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        },
+        {
+          "filterValueId": 33684,
+          "filterValueTitle": "Черный",
+          "filterValueTitleUk": "Чорний",
+          "filterTitle": "Цвет",
+          "filterTitleUk": "Колір"
+        }
+      ],
+      "priceRange": {
+        "from": 16240,
+        "to": 30526
+      }
+    },
+    "newProducts": [
+      {
+        "id": 25234363,
+        "title": "Samsung A05s Flip Black (MCP-SA05SBK) (4890021089995)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-samsung-a05s-flip-black-mcp-sa05sbk-4890021089995/",
+        "image": "/img/tx/530/5303445571.jpg",
+        "minPrice": 39900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      },
+      {
+        "id": 25234362,
+        "title": "Samsung A05s Silicone Black (MCL-SA05SBK) (4890021090137)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-samsung-a05s-silicone-black-mcl-sa05sbk-4890021090137/",
+        "image": "/img/tx/530/5303447511.jpg",
+        "minPrice": 44900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      },
+      {
+        "id": 25234360,
+        "title": "Samsung A05 Silicone Silver (MCL-SA05SI) (4890021090120)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-samsung-a05-silicone-silver-mcl-sa05si-4890021090120/",
+        "image": "/img/tx/535/5350501021.jpg",
+        "minPrice": 44900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      },
+      {
+        "id": 25045239,
+        "title": "Чохол  Silicone Green для Samsung A24 (A246) (MCL-SA24LG)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-chohol-silicone-green-dlya-samsung-a24-a246-mcl-sa24lg/",
+        "image": "/img/tx/530/5303447531.jpg",
+        "minPrice": 44900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      },
+      {
+        "id": 25045237,
+        "title": "Чохол  AirShield для Samsung M34 (M346) (MCAS-SM34)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-chohol-airshield-dlya-samsung-m34-m346-mcas-sm34/",
+        "image": "/img/tx/530/5303447541.jpg",
+        "minPrice": 29900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      },
+      {
+        "id": 25045236,
+        "title": "Чохол  Skin Black для Samsung M34 (M346) (MCS-SM34BK)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-chohol-skin-black-dlya-samsung-m34-m346-mcs-sm34bk/",
+        "image": "/img/tx/530/5303434401.jpg",
+        "minPrice": 19900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      },
+      {
+        "id": 25045235,
+        "title": "Чохол  Silicone Dark Blue для Samsung M34 (M346) (MCL-SM34DB)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-chohol-silicone-dark-blue-dlya-samsung-m34-m346-mcl-sm34db/",
+        "image": "/img/tx/530/5303434431.jpg",
+        "minPrice": 44900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      },
+      {
+        "id": 25045232,
+        "title": "Чохол  Silicone Phantom Black для Samsung S23 (S911) (MCL-SS23PB)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/makefuture-chohol-silicone-phantom-black-dlya-samsung-s23-s911-mcl-ss23pb/",
+        "image": "/img/tx/530/5303434461.jpg",
+        "minPrice": 44900,
+        "quantity": 1,
+        "vendor": "MakeFuture",
+        "vendorId": 133158,
+        "isNew": false
+      }
+    ],
+    "prcCount": 1,
+    "prcArray": [
+      232
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 26290826,
+    "hlSectionId": 1598,
+    "guide": {
+      "title": "Аксесуари для смартфонів і планшетів",
+      "url": "/guides/mobile/aksessuary-dlya-planshetov/"
+    },
+    "title": "Tracker E-V2201 White",
+    "date": "2025-07-03",
+    "vendor": {
+      "title": "Smart Band",
+      "path": "smart-band"
+    },
+    "section": {
+      "productCategoryName": "Аксессуары для смартфонов и планшетов",
+      "_id": 614,
+      "subCategory": "mobile",
+      "category": "mobile-aksessuary-dlya-planshetov",
+      "path": "/mobile/aksessuary-dlya-planshetov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 5,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      "Пошуковий брелок",
+      " сумісність: Пристрої (смартфони, ..."
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "Пошуковий брелок",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Пристрої (смартфони, ...",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/smart-band/",
+            "title": "vendor",
+            "value": "Smart Band",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/aksessuary-dlya-planshetov/592311/",
+            "title": "Тип",
+            "value": "Чохол для стилуса",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": "",
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-aksessuary-dlya-planshetov/smart-band-tracker-e-v2201-white/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/530/5308304810.jpg",
+        "basic": "https://hotline.ua/img/tx/530/5308304811.jpg",
+        "small": "https://hotline.ua/img/tx/530/530830481_s265.jpg",
+        "big": "https://hotline.ua/img/tx/530/5308304815.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/530/5308304830.jpg",
+        "basic": "https://hotline.ua/img/tx/530/5308304831.jpg",
+        "small": "https://hotline.ua/img/tx/530/530830483_s265.jpg",
+        "big": "https://hotline.ua/img/tx/530/5308304835.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/530/5308304850.jpg",
+        "basic": "https://hotline.ua/img/tx/530/5308304851.jpg",
+        "small": "https://hotline.ua/img/tx/530/530830485_s265.jpg",
+        "big": "https://hotline.ua/img/tx/530/5308304855.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/530/5308304860.jpg",
+        "basic": "https://hotline.ua/img/tx/530/5308304861.jpg",
+        "small": "https://hotline.ua/img/tx/530/530830486_s265.jpg",
+        "big": "https://hotline.ua/img/tx/530/5308304865.jpg"
+      },
+      {
+        "thumb": "https://hotline.ua/img/tx/530/5308304870.jpg",
+        "basic": "https://hotline.ua/img/tx/530/5308304871.jpg",
+        "small": "https://hotline.ua/img/tx/530/530830487_s265.jpg",
+        "big": "https://hotline.ua/img/tx/530/5308304875.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8ycp68nfoZ",
+    "minPrice": 399,
+    "maxPrice": 399,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 399,
+    "initPrice": 399,
+    "salesCount": 0,
+    "isNew": 1,
+    "colorsProduct": [],
+    "crossSelling": [],
+    "similarProducts": [],
+    "newProducts": [
+      {
+        "id": 26290825,
+        "title": "TidoTag White",
+        "path": "/mobile-aksessuary-dlya-planshetov/smart-band-tidotag-white/",
+        "image": "/img/tx/530/5308304781.jpg",
+        "minPrice": 44500,
+        "quantity": 2,
+        "vendor": "Smart Band",
+        "vendorId": 163517,
+        "isNew": true
+      },
+      {
+        "id": 26290824,
+        "title": "MiTag White",
+        "path": "/mobile-aksessuary-dlya-planshetov/smart-band-mitag-white/",
+        "image": "/img/tx/530/5308304881.jpg",
+        "minPrice": 87600,
+        "quantity": 2,
+        "vendor": "Smart Band",
+        "vendorId": 163517,
+        "isNew": true
+      },
+      {
+        "id": 26290828,
+        "title": "MiTag Black",
+        "path": "/mobile-aksessuary-dlya-planshetov/smart-band-mitag-black/",
+        "image": "/img/tx/530/5308304751.jpg",
+        "minPrice": 87600,
+        "quantity": 2,
+        "vendor": "Smart Band",
+        "vendorId": 163517,
+        "isNew": true
+      },
+      {
+        "id": 26290827,
+        "title": "Tracker E-V2201 Black",
+        "path": "/mobile-aksessuary-dlya-planshetov/smart-band-tracker-e-v2201-black/",
+        "image": "/img/tx/530/5308304721.jpg",
+        "minPrice": 39900,
+        "quantity": 1,
+        "vendor": "Smart Band",
+        "vendorId": 163517,
+        "isNew": true
+      },
+      {
+        "id": 26288563,
+        "title": "Пошуковий брелок E-V2201 White",
+        "path": "/mobile-aksessuary-dlya-planshetov/smart-band-poshukovij-brelok-e-v2201-white/",
+        "image": "/img/tx/530/5305861291.jpg",
+        "minPrice": 40100,
+        "quantity": 1,
+        "vendor": "Smart Band",
+        "vendorId": 163517,
+        "isNew": true
+      },
+      {
+        "id": 26288562,
+        "title": "Пошуковий брелок E-V2201 Black",
+        "path": "/mobile-aksessuary-dlya-planshetov/smart-band-poshukovij-brelok-e-v2201-black/",
+        "image": "/img/tx/530/5305861321.jpg",
+        "minPrice": 40100,
+        "quantity": 1,
+        "vendor": "Smart Band",
+        "vendorId": 163517,
+        "isNew": true
+      }
+    ],
+    "prcCount": 1,
+    "prcArray": [
+      399
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 24393322,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "iPhone 14 Pro Max - Ultra Hybrid MagFit Frost Black (ACS05582)",
+    "date": "2023-02-03",
+    "vendor": {
+      "title": "Spigen",
+      "path": "sgp"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 1,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Apple iPhone 14 Pro",
+      " матеріал: Поліуретан"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Apple iPhone 14 Pro",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "Поліуретан",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/sgp/",
+            "title": "vendor",
+            "value": "Spigen",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "чохол-накладка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Samsung Galaxy A04 2022",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "силікон",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "червоний",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "https://www.spigen.com/products/iphone-14-pro-max-case-ultra-hybrid-mag-magfit?variant=41386089414703",
+            "title": "productOnVendorSite",
+            "value": "https://www.spigen.com/products/iphone-14-pro-m...",
+            "help": null,
+            "h1Text": null,
+            "type": "siteVendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-iphone-14-pro-max-ultra-hybrid-magfit-frost-black-acs05582/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/510/5101074340.jpg",
+        "basic": "https://hotline.ua/img/tx/510/5101074341.jpg",
+        "small": "https://hotline.ua/img/tx/510/510107434_s265.jpg",
+        "big": "https://hotline.ua/img/tx/510/5101074345.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8gpztgnOqw",
+    "minPrice": 419,
+    "maxPrice": 419,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 419,
+    "initPrice": 419,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 24612706,
+          "title": "Unit MagSafe для Apple iPhone 14 Pro Black (ARM66949)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-unit-magsafe-dlya-apple-iphone-14-pro-black-arm66949/",
+          "image": "/img/tx/530/5300689131.jpg",
+          "minPrice": 29700,
+          "quantity": 17,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25632283,
+          "title": "Bounce для Apple iPhone 14 Pro Black (ARM75239)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-bounce-dlya-apple-iphone-14-pro-black-arm75239/",
+          "image": "/img/tx/535/5352187931.jpg",
+          "minPrice": 26800,
+          "quantity": 14,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25712761,
+          "title": "Bounce Apple iPhone 14 Pro Matte Black (ARM75243)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-bounce-apple-iphone-14-pro-matte-black-arm75243/",
+          "image": "/img/tx/535/5352180971.jpg",
+          "minPrice": 36000,
+          "quantity": 13,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25632557,
+          "title": "Replica Apple iPhone 14 Pro Black (ARM76200)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-replica-apple-iphone-14-pro-black-arm76200/",
+          "image": "/img/tx/514/5143476901.jpg",
+          "minPrice": 31300,
+          "quantity": 13,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24831025,
+          "title": "Y23 MagSafe Apple iPhone 14 Pro Transparent Black (ARM68333)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-y23-magsafe-apple-iphone-14-pro-transparent-black-arm68333/",
+          "image": "/img/tx/523/5238889801.jpg",
+          "minPrice": 33800,
+          "quantity": 13,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25632313,
+          "title": "Unit MagSafe SE для Apple iPhone 14 Pro Black/Orange (ARM75366)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-unit-magsafe-se-dlya-apple-iphone-14-pro-blackorange-arm75366/",
+          "image": "/img/tx/535/5352186731.jpg",
+          "minPrice": 35300,
+          "quantity": 12,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25987543,
+          "title": "Silicone Case with Magnetic Ring для Apple iPhone 14 Pro Black (573420001)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/proove-silicone-case-with-magnetic-ring-dlya-apple-iphone-14-pro-black-573420001/",
+          "image": "/img/tx/523/5233991241.jpg",
+          "minPrice": 32900,
+          "quantity": 5,
+          "vendor": "Proove",
+          "vendorId": 145413,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 24194748,
+          "title": "Apple iPhone 14 Pro Silicone Black (MCL-AI14PBK)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/make-apple-iphone-14-pro-silicone-black-mcl-ai14pbk/",
+          "image": "/img/tx/533/5332892591.jpg",
+          "minPrice": 38200,
+          "quantity": 4,
+          "vendor": "MAKE",
+          "vendorId": 227265,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 961242,
+          "filterValueTitle": "Apple iPhone 14 Pro",
+          "filterValueTitleUk": "Apple iPhone 14 Pro",
+          "filterTitle": "Совместимость",
+          "filterTitleUk": "Сумісність"
+        },
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33670,
+          "filterValueTitle": "Силикон/резина",
+          "filterValueTitleUk": "Силікон / резина",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        },
+        {
+          "filterValueId": 33684,
+          "filterValueTitle": "Черный",
+          "filterValueTitleUk": "Чорний",
+          "filterTitle": "Цвет",
+          "filterTitleUk": "Колір"
+        }
+      ],
+      "priceRange": {
+        "from": 29330,
+        "to": 55132
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26274796,
+        "title": "Samsung Galaxy S25 Edge Liquid Crystal Crystal Clear (ACS09425)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-samsung-galaxy-s25-edge-liquid-crystal-crystal-clear-acs09425/",
+        "image": "/img/tx/529/5296029611.jpg",
+        "minPrice": 79900,
+        "quantity": 1,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": true
+      },
+      {
+        "id": 26274795,
+        "title": "Samsung Galaxy S25 Edge Liquid Air Case Matte Black (ACS09420)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-samsung-galaxy-s25-edge-liquid-air-case-matte-black-acs09420/",
+        "image": "/img/tx/529/5296029631.jpg",
+        "minPrice": 79900,
+        "quantity": 2,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": true
+      },
+      {
+        "id": 26265079,
+        "title": "Google Pixel 8 Ultra Hybrid Metal Ring MagFit Transparent/Black (ACS06281)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-google-pixel-8-ultra-hybrid-metal-ring-magfit-transparentblack-acs06281/",
+        "image": "/img/tx/533/5337053231.jpg",
+        "minPrice": 149900,
+        "quantity": 1,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": true
+      },
+      {
+        "id": 26255656,
+        "title": "Nothing Phone (3a) Ultra Hybrid Space Crystal (ACS09373)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-nothing-phone-3a-ultra-hybrid-space-crystal-acs09373/",
+        "image": "/img/tx/533/5335592651.jpg",
+        "minPrice": 99900,
+        "quantity": 1,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": true
+      },
+      {
+        "id": 26241290,
+        "title": "Samsung Galaxy S10+ Slim Armor Crystal Clear (606CS25394)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-samsung-galaxy-s10plus-slim-armor-crystal-clear-606cs25394/",
+        "image": "/img/tx/529/5292736171.jpg",
+        "minPrice": 49300,
+        "quantity": 6,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": false
+      },
+      {
+        "id": 26241309,
+        "title": "iPhone 14 Pro Crystal Hybrid with MagFit Clear (ACS04670)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-iphone-14-pro-crystal-hybrid-with-magfit-clear-acs04670/",
+        "image": "/img/tx/529/5292735941.jpg",
+        "minPrice": 95300,
+        "quantity": 6,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": false
+      },
+      {
+        "id": 26241289,
+        "title": "iPhone 14 Pro Max Crystal Flex Rose Crystal (ACS04638)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-iphone-14-pro-max-crystal-flex-rose-crystal-acs04638/",
+        "image": "/img/tx/529/5292735521.jpg",
+        "minPrice": 26100,
+        "quantity": 5,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": false
+      },
+      {
+        "id": 26241307,
+        "title": "iPhone 14 Pro Max Thin Fit Black (ACS04765)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-iphone-14-pro-max-thin-fit-black-acs04765/",
+        "image": "/img/tx/529/5292736091.jpg",
+        "minPrice": 69100,
+        "quantity": 6,
+        "vendor": "Spigen",
+        "vendorId": 3187,
+        "isNew": false
+      }
+    ],
+    "prcCount": 1,
+    "prcArray": [
+      419
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  },
+  {
+    "id": 23164317,
+    "hlSectionId": 703,
+    "guide": {
+      "title": "Чохли для смартфонів",
+      "url": "/guides/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/"
+    },
+    "title": "iPhone 12 Pro Max Presidio2 Grip Case Vintage Rose/Royal Pink/Lush Burgundy (1385009286)",
+    "date": "2021-08-12",
+    "vendor": {
+      "title": "Speck",
+      "path": "speck"
+    },
+    "section": {
+      "productCategoryName": "Чехлы для смартфонов",
+      "_id": 599,
+      "subCategory": "mobile",
+      "category": "mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov",
+      "path": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/",
+      "isAdult": false
+    },
+    "isPromo": false,
+    "toOfficial": false,
+    "lineName": "",
+    "linePathNew": null,
+    "imagesCount": 1,
+    "videosCount": 0,
+    "techShortSpecifications": [
+      " чохол-накладка",
+      " сумісність: Apple iPhone 12 Pro Max",
+      " матеріал: полікарбонат"
+    ],
+    "techShortSpecificationsList": [
+      {
+        "value": "чохол-накладка",
+        "isNoMargin": false
+      },
+      {
+        "key": "сумісність",
+        "value": "Apple iPhone 12 Pro Max",
+        "isNoMargin": false
+      },
+      {
+        "key": "матеріал",
+        "value": "полікарбонат",
+        "isNoMargin": false
+      }
+    ],
+    "sizesProduct": [],
+    "productValues": {
+      "edges": [
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/brands/speck/",
+            "title": "vendor",
+            "value": "Speck",
+            "help": null,
+            "h1Text": null,
+            "type": "vendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "/mobile/chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/33623/",
+            "title": "Тип",
+            "value": "чохол-накладка",
+            "help": "",
+            "h1Text": null,
+            "type": "catalog",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Сумісність",
+            "value": "Nokia 1.4",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Матеріал",
+            "value": "силікон",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": null,
+            "title": "Колір",
+            "value": "прозорий",
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": true,
+            "url": null,
+            "title": "#Додатково",
+            "value": null,
+            "help": "",
+            "h1Text": null,
+            "type": null,
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        },
+        {
+          "node": {
+            "isHeader": false,
+            "url": "https://www.speckproducts.com/apple/iphone-cases/iphone-12-pro-max-cases/presidio2-grip-iphone-12-pro-max-cases/IPXP20-PR2-GRIP.html",
+            "title": "productOnVendorSite",
+            "value": "https://www.speckproducts.com/apple/iphone-case...",
+            "help": null,
+            "h1Text": null,
+            "type": "siteVendor",
+            "__typename": "ProductValues"
+          },
+          "__typename": "ProductValuesEdge"
+        }
+      ],
+      "__typename": "ProductValuesConnection"
+    },
+    "fullDescription": null,
+    "reviewsCount": 0,
+    "questionsCount": 0,
+    "url": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-iphone-12-pro-max-presidio2-grip-case-vintage-roseroyal-pinklush-burgundy-1385009286/",
+    "imageLinks": [
+      {
+        "thumb": "https://hotline.ua/img/tx/524/5243258490.jpg",
+        "basic": "https://hotline.ua/img/tx/524/5243258491.jpg",
+        "small": "https://hotline.ua/img/tx/524/524325849_s265.jpg",
+        "big": "https://hotline.ua/img/tx/524/5243258495.jpg"
+      }
+    ],
+    "videos": {
+      "edges": [],
+      "__typename": "VideoLinkProductConnection"
+    },
+    "videoInstagramHash": "B8q-pSvHjAP",
+    "minPrice": 499,
+    "maxPrice": 950,
+    "lastHistoryCurrency": "UAH",
+    "currentPrice": 725,
+    "initPrice": 725,
+    "salesCount": 0,
+    "isNew": 0,
+    "colorsProduct": [],
+    "crossSelling": [
+      {
+        "title": "Захисні плівки та скло для смартфонів",
+        "image": "/img/tx/534/5341274971.jpg",
+        "path": "/mobile/zaschitnaya-plenka-dlya-mobilnyh-telefonov/"
+      },
+      {
+        "title": "Стилуси для смартфонів і планшетів",
+        "image": "/img/tx/458/4588483191.jpg",
+        "path": "/mobile/stilusy-dlya-smartfonov-i-planshetov/"
+      }
+    ],
+    "similarProducts": {
+      "products": [
+        {
+          "id": 21485865,
+          "title": "iPhone 12 Pro Max Pathfinder Silver (112367113333)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/urban-armor-gear-iphone-12-pro-max-pathfinder-silver-112367113333/",
+          "image": "/img/tx/534/5340402461.jpg",
+          "minPrice": 59900,
+          "quantity": 6,
+          "vendor": "URBAN ARMOR GEAR",
+          "vendorId": 37548,
+          "sectionId": 599,
+          "popularity": 2,
+          "isNew": false
+        },
+        {
+          "id": 25454496,
+          "title": "Unit MagSafe Apple iPhone 12 Pro Max Light Blue (ARM74852)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-unit-magsafe-apple-iphone-12-pro-max-light-blue-arm74852/",
+          "image": "/img/tx/535/5350350081.jpg",
+          "minPrice": 35300,
+          "quantity": 12,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25454504,
+          "title": "Unit MagSafe Apple iPhone 12 Pro Max Purple (ARM74850)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-unit-magsafe-apple-iphone-12-pro-max-purple-arm74850/",
+          "image": "/img/tx/526/5260450041.jpg",
+          "minPrice": 35300,
+          "quantity": 12,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25454490,
+          "title": "Unit MagSafe Apple iPhone 12 Pro Max Grey (ARM75222)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-unit-magsafe-apple-iphone-12-pro-max-grey-arm75222/",
+          "image": "/img/tx/520/5206421451.jpg",
+          "minPrice": 35300,
+          "quantity": 12,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 25454500,
+          "title": "Unit MagSafe Apple iPhone 12 Pro Max Pink (ARM75223)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/armorstandart-unit-magsafe-apple-iphone-12-pro-max-pink-arm75223/",
+          "image": "/img/tx/520/5206421141.jpg",
+          "minPrice": 35300,
+          "quantity": 12,
+          "vendor": "ArmorStandart",
+          "vendorId": 130428,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 21553029,
+          "title": "iPhone 12 Pro Max Quartz Hybrid Crystal Clear (ACS01621)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/spigen-iphone-12-pro-max-quartz-hybrid-crystal-clear-acs01621/",
+          "image": "/img/tx/529/5292738091.jpg",
+          "minPrice": 37900,
+          "quantity": 12,
+          "vendor": "Spigen",
+          "vendorId": 3187,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 21371803,
+          "title": "Grip Case for iPhone 12 Pro Max Black (IPH-1892-BLK)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/incipio-grip-case-for-iphone-12-pro-max-black-iph-1892-blk/",
+          "image": "/img/tx/514/5144664911.jpg",
+          "minPrice": 28900,
+          "quantity": 10,
+          "vendor": "Incipio",
+          "vendorId": 4724,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        },
+        {
+          "id": 21485864,
+          "title": "iPhone 12 Pro Max Pathfinder Orange (112367119797)",
+          "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/urban-armor-gear-iphone-12-pro-max-pathfinder-orange-112367119797/",
+          "image": "/img/tx/497/4973707411.jpg",
+          "minPrice": 59900,
+          "quantity": 6,
+          "vendor": "URBAN ARMOR GEAR",
+          "vendorId": 37548,
+          "sectionId": 599,
+          "popularity": 0,
+          "isNew": false
+        }
+      ],
+      "filters": [
+        {
+          "filterValueId": 645481,
+          "filterValueTitle": "Apple iPhone 12 Pro Max",
+          "filterValueTitleUk": "Apple iPhone 12 Pro Max",
+          "filterTitle": "Совместимость",
+          "filterTitleUk": "Сумісність"
+        },
+        {
+          "filterValueId": 33623,
+          "filterValueTitle": "Чехол-накладка",
+          "filterValueTitleUk": "Чохол-накладка",
+          "filterTitle": "Тип",
+          "filterTitleUk": "Тип"
+        },
+        {
+          "filterValueId": 33668,
+          "filterValueTitle": "Пластик",
+          "filterValueTitleUk": "Пластик",
+          "filterTitle": "Материал",
+          "filterTitleUk": "Матеріал"
+        }
+      ],
+      "priceRange": {
+        "from": 50715,
+        "to": 95329
+      }
+    },
+    "newProducts": [
+      {
+        "id": 26262590,
+        "title": "Samsung Galaxy A70/A70s Presidio Pro Black (128238-1050)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-samsung-galaxy-a70a70s-presidio-pro-black-128238-1050/",
+        "image": "/img/tx/528/5285209091.jpg",
+        "minPrice": 36600,
+        "quantity": 3,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      },
+      {
+        "id": 26262589,
+        "title": "Samsung Galaxy A50/A30s/A50s Presidio Grip Coastal Blue (127546-6587)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-samsung-galaxy-a50a30sa50s-presidio-grip-coastal-blue-127546-6587/",
+        "image": "/img/tx/528/5285146331.jpg",
+        "minPrice": 36600,
+        "quantity": 3,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      },
+      {
+        "id": 26262588,
+        "title": "Samsung Galaxy S10+ Presidio Pro Black (124605-1050)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-samsung-galaxy-s10plus-presidio-pro-black-124605-1050/",
+        "image": "/img/tx/529/5293636191.jpg",
+        "minPrice": 47000,
+        "quantity": 3,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      },
+      {
+        "id": 26262587,
+        "title": "OnePlus 8 Presidio Perfect Clear-Gold Glitter (137003-5636)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-oneplus-8-presidio-perfect-clear-gold-glitter-137003-5636/",
+        "image": "/img/tx/528/5285146311.jpg",
+        "minPrice": 31300,
+        "quantity": 3,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      },
+      {
+        "id": 26262586,
+        "title": "Google Pixel 7a Impact Hero Blue (150373-9627)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-google-pixel-7a-impact-hero-blue-150373-9627/",
+        "image": "/img/tx/528/5285146361.jpg",
+        "minPrice": 81000,
+        "quantity": 4,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      },
+      {
+        "id": 26262585,
+        "title": "Google Pixel 6a Impact Hero Black (150012-B565)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-google-pixel-6a-impact-hero-black-150012-b565/",
+        "image": "/img/tx/528/5285146481.jpg",
+        "minPrice": 64900,
+        "quantity": 4,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      },
+      {
+        "id": 26262584,
+        "title": "Samsung Galaxy A51 Presidio Grip Black (137181-1050)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-samsung-galaxy-a51-presidio-grip-black-137181-1050/",
+        "image": "/img/tx/528/5285146391.jpg",
+        "minPrice": 36600,
+        "quantity": 4,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      },
+      {
+        "id": 26262592,
+        "title": "Samsung Galaxy S20+ Presidio Pro Black (136367-1050)",
+        "path": "/mobile-chehly-sumki-futlyary-dlya-mobilnyh-i-smartfonov/speck-samsung-galaxy-s20plus-presidio-pro-black-136367-1050/",
+        "image": "/img/tx/528/5285209071.jpg",
+        "minPrice": 36600,
+        "quantity": 3,
+        "vendor": "Speck",
+        "vendorId": 4755,
+        "isNew": true
+      }
+    ],
+    "prcCount": 2,
+    "prcArray": [
+      499,
+      950
+    ],
+    "offers": [],
+    "madeInUkraine": false,
+    "userSubscribed": false,
+    "promoRelinkList": []
+  }
+]

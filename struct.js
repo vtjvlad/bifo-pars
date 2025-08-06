@@ -265,7 +265,7 @@ function destructureNestedObjects(products) {
 const processedProducts = destructureNestedObjects(productsToProcess);
 
 // Определяем имя выходного файла
-const outputFile = testMode ? `./test_struct_${documentsCount}_${orderType}.json` : './test_struct.json';
+const outputFile = testMode ? `./test_struct_${documentsCount}_${orderType}.json` : './test_struct4.json';
 
 // Сохраняем результат в новый файл
 fs.writeFileSync(outputFile, JSON.stringify(processedProducts, null, 2));

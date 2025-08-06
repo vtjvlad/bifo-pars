@@ -43,12 +43,28 @@ function parseImageLinks(jsonFilePath, outputFilePath) {
         // Удаляем дубликаты
         const uniqueLinks = [...new Set(imageLinks)];
         
+        // Читаем существующие ссылки из файла (если файл существует)
+        let existingLinks = [];
+        if (fs.existsSync(outputFilePath)) {
+            try {
+                const existingContent = fs.readFileSync(outputFilePath, 'utf8');
+                existingLinks = existingContent.split('\n').filter(link => link.trim() !== '');
+            } catch (error) {
+                console.warn('Предупреждение: не удалось прочитать существующий файл:', error.message);
+            }
+        }
+        
+        // Объединяем существующие и новые ссылки, удаляем дубликаты
+        const allLinks = [...new Set([...existingLinks, ...uniqueLinks])];
+        
         // Сохраняем в текстовый файл
-        const outputContent = uniqueLinks.join('\n');
+        const outputContent = allLinks.join('\n');
         fs.writeFileSync(outputFilePath, outputContent, 'utf8');
         
         console.log(`Обработано объектов: ${data.length}`);
-        console.log(`Найдено уникальных ссылок: ${uniqueLinks.length}`);
+        console.log(`Найдено новых уникальных ссылок: ${uniqueLinks.length}`);
+        console.log(`Было существующих ссылок: ${existingLinks.length}`);
+        console.log(`Всего уникальных ссылок в файле: ${allLinks.length}`);
         console.log(`Результат сохранен в файл: ${outputFilePath}`);
         
     } catch (error) {

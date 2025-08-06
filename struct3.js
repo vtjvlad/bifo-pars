@@ -184,6 +184,12 @@ function destructureNestedObjects(products) {
                     image: `https://bifo.in.ua${item.image}`
                 };
             });
+        } 
+        if (similarProducts.priceRange && typeof similarProducts.priceRange === 'object') {
+            processedSimilarProductsProducts.push({
+                from: similarProducts.priceRange.from,
+                to: similarProducts.priceRange.to
+            });
         }
 
         return {
@@ -262,7 +268,7 @@ function destructureNestedObjects(products) {
                         isNew: item.isNew || null,
                     }))
                     : [],
-                filters: Array.isArray(similarProducts.filters)
+                    filters: Array.isArray(similarProducts.filters)
                     ? similarProducts.filters.map(item => ({
                         filterValueId: item.filterValueId || null,
                         filterValueTitle: item.filterValueTitle || null,
@@ -272,8 +278,8 @@ function destructureNestedObjects(products) {
                     }))
                     :   [],
                     priceRange: {
-                        from: similarProducts.priceRange.from || null,
-                        to: similarProducts.priceRange.to || null
+                        from: similarProducts.priceRange?.from || null,
+                        to: similarProducts.priceRange?.to || null
                     }
             },
             newProducts: Array.isArray(processedNewProducts)
@@ -305,7 +311,7 @@ function destructureNestedObjects(products) {
 const processedProducts = destructureNestedObjects(productsToProcess);
 
 // Определяем имя выходного файла
-const outputFile = testMode ? `./test_struct2_${documentsCount}_${orderType}.json` : './test_struct3.json';
+const outputFile = testMode ? `./test_struct2_${documentsCount}_${orderType}.json` : './test_struct-3-3.json';
 
 // Сохраняем результат в новый файл
 fs.writeFileSync(outputFile, JSON.stringify(processedProducts, null, 2));

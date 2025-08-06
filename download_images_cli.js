@@ -489,7 +489,7 @@ class ImageDownloaderCLI {
                 message: 'Введите количество одновременных загрузок (1-10):',
                 default: this.config.concurrent,
                 validate: (input) => {
-                    if (input < 1 || input > 10) {
+                    if (input < 1 || input > 137) {
                         return 'Количество одновременных загрузок должно быть от 1 до 10';
                     }
                     return true;

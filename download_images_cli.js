@@ -38,7 +38,9 @@ class ImageDownloaderCLI {
             delay: 100,
             maxRetries: 3,
             concurrent: 1,
-            linksFile: 'image_links.txt'
+            linksFile: 'image_links.txt',
+            showDetailedProgress: false,
+            skipExistingFiles: true
         };
     }
 
@@ -349,6 +351,8 @@ class ImageDownloaderCLI {
                     { name: `⏳ Задержка между запросами: ${this.config.delay}мс`, value: 'delay' },
                     { name: `🔄 Повторные попытки: ${this.config.maxRetries}`, value: 'retries' },
                     { name: `⚡ Одновременные загрузки: ${this.config.concurrent}`, value: 'concurrent' },
+                    { name: `📋 Детальный прогресс: ${this.config.showDetailedProgress ? 'ВКЛ' : 'ВЫКЛ'}`, value: 'detailed_progress' },
+                    { name: `⏭️  Пропускать существующие файлы: ${this.config.skipExistingFiles ? 'ВКЛ' : 'ВЫКЛ'}`, value: 'skip_existing' },
                     { name: '🔙 Назад', value: 'back' }
                 ],
                 pageSize: 15,
@@ -378,6 +382,12 @@ class ImageDownloaderCLI {
                 break;
             case 'concurrent':
                 await this.changeConcurrent();
+                break;
+            case 'detailed_progress':
+                await this.toggleDetailedProgress();
+                break;
+            case 'skip_existing':
+                await this.toggleSkipExisting();
                 break;
             case 'back':
                 return;
@@ -489,6 +499,65 @@ class ImageDownloaderCLI {
 
         this.config.concurrent = concurrent;
         console.log(chalk.green(`✅ Количество одновременных загрузок изменено на ${concurrent}`));
+    }
+
+    // Переключение детального прогресса
+    async toggleDetailedProgress() {
+        const { showDetailedProgress } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'showDetailedProgress',
+                message: 'Показывать детальную информацию о каждом загружаемом файле?',
+                default: this.config.showDetailedProgress,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                    }
+                    return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                }
+            }
+        ]);
+
+        this.config.showDetailedProgress = showDetailedProgress;
+        console.log(chalk.green(`✅ Детальный прогресс: ${showDetailedProgress ? 'ВКЛ' : 'ВЫКЛ'}`));
+        
+        if (showDetailedProgress) {
+            console.log(chalk.cyan('   📋 Будет показываться информация о каждом файле'));
+            console.log(chalk.cyan('   📊 Прогресс-бар будет менее информативным'));
+        } else {
+            console.log(chalk.cyan('   📊 Будет показываться только прогресс-бар'));
+            console.log(chalk.cyan('   🚀 Более быстрый и чистый вывод'));
+        }
+    }
+
+    // Переключение пропуска существующих файлов
+    async toggleSkipExisting() {
+        const { skipExistingFiles } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'skipExistingFiles',
+                message: 'Пропускать уже существующие файлы при загрузке?',
+                default: this.config.skipExistingFiles,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                    }
+                    return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                }
+            }
+        ]);
+
+        this.config.skipExistingFiles = skipExistingFiles;
+        console.log(chalk.green(`✅ Пропуск существующих файлов: ${skipExistingFiles ? 'ВКЛ' : 'ВЫКЛ'}`));
+        
+        if (skipExistingFiles) {
+            console.log(chalk.cyan('   ⏭️  Существующие файлы будут пропускаться'));
+            console.log(chalk.cyan('   🚀 Ускорение загрузки при повторном запуске'));
+            console.log(chalk.cyan('   💾 Экономия трафика и времени'));
+        } else {
+            console.log(chalk.yellow('   ⚠️  Все файлы будут загружаться заново'));
+            console.log(chalk.yellow('   🔄 Существующие файлы будут перезаписаны'));
+        }
     }
 
     // Показ статистики
@@ -748,10 +817,28 @@ class ImageDownloaderCLI {
             }
 
             // Показываем прогресс
-            const spinner = ora('📥 Загружаю изображения...').start();
+            let progressBar;
+            if (!this.config.showDetailedProgress) {
+                progressBar = new cliProgress.SingleBar({
+                    format: '📥 Загрузка |{bar}| {percentage}% | {value}/{total} | Успешно: {success} | Пропущено: {skipped} | Ошибок: {errors}',
+                    barCompleteChar: '█',
+                    barIncompleteChar: '░',
+                    hideCursor: true
+                });
+                
+                progressBar.start(links.length, 0, {
+                    success: 0,
+                    errors: 0,
+                    skipped: 0
+                });
+            } else {
+                console.log(chalk.blue('📥 Начинаю загрузку изображений...'));
+                console.log('');
+            }
             
             let successCount = 0;
             let errorCount = 0;
+            let skippedCount = 0;
             const results = [];
 
             // Загружаем изображения
@@ -765,9 +852,22 @@ class ImageDownloaderCLI {
                     results.push(result);
                     
                     if (result.success) {
-                        successCount++;
+                        if (result.skipped) {
+                            skippedCount++;
+                        } else {
+                            successCount++;
+                        }
                     } else {
                         errorCount++;
+                    }
+                    
+                    // Обновляем прогресс-бар
+                    if (!this.config.showDetailedProgress) {
+                        progressBar.update(i + 1, {
+                            success: successCount,
+                            errors: errorCount,
+                            skipped: skippedCount
+                        });
                     }
                 }
             } else {
@@ -777,6 +877,7 @@ class ImageDownloaderCLI {
                     chunks.push(links.slice(i, i + this.config.concurrent));
                 }
                 
+                let processedCount = 0;
                 for (let chunkIndex = 0; chunkIndex < chunks.length; chunkIndex++) {
                     const chunk = chunks[chunkIndex];
                     const promises = chunk.map((url, index) => {
@@ -789,20 +890,40 @@ class ImageDownloaderCLI {
                     
                     for (const result of chunkResults) {
                         if (result.success) {
-                            successCount++;
+                            if (result.skipped) {
+                                skippedCount++;
+                            } else {
+                                successCount++;
+                            }
                         } else {
                             errorCount++;
                         }
                     }
+                    
+                    processedCount += chunk.length;
+                    // Обновляем прогресс-бар
+                    if (!this.config.showDetailedProgress) {
+                        progressBar.update(processedCount, {
+                            success: successCount,
+                            errors: errorCount,
+                            skipped: skippedCount
+                        });
+                    }
                 }
             }
 
-            spinner.succeed('✅ Загрузка завершена!');
+            if (!this.config.showDetailedProgress) {
+                progressBar.stop();
+            }
+            console.log(chalk.green('✅ Загрузка завершена!'));
 
             // Показываем результаты
             console.log('');
             console.log(chalk.green('📊 Результаты загрузки:'));
             console.log(chalk.cyan(`   Успешно загружено: ${successCount}`));
+            if (skippedCount > 0) {
+                console.log(chalk.yellow(`   Пропущено (уже существуют): ${skippedCount}`));
+            }
             console.log(chalk.red(`   Ошибок: ${errorCount}`));
             console.log(chalk.blue(`   Всего обработано: ${links.length}`));
 
@@ -912,8 +1033,21 @@ class ImageDownloaderCLI {
             const relativePath = path.dirname(urlPath);
             const fullOutputPath = path.join(outputDir, relativePath, fileName);
             
-            console.log(`[${index + 1}/${total}] Скачиваю: ${url}`);
-            console.log(`  → ${fullOutputPath}`);
+            // Проверяем существование файла если включена настройка пропуска
+            if (this.config.skipExistingFiles && fs.existsSync(fullOutputPath)) {
+                // Показываем детальную информацию если включено
+                if (this.config.showDetailedProgress) {
+                    console.log(chalk.cyan(`[${index + 1}/${total}] Пропускаю: ${url}`));
+                    console.log(chalk.yellow(`  ⏭️  Файл уже существует: ${fullOutputPath}`));
+                }
+                return { success: true, url, filePath: fullOutputPath, skipped: true };
+            }
+            
+            // Показываем детальную информацию если включено
+            if (this.config.showDetailedProgress) {
+                console.log(chalk.cyan(`[${index + 1}/${total}] Скачиваю: ${url}`));
+                console.log(chalk.blue(`  → ${fullOutputPath}`));
+            }
             
             await this.downloadFile(url, fullOutputPath, options.timeout, options.maxRetries);
             
@@ -922,10 +1056,18 @@ class ImageDownloaderCLI {
                 await new Promise(resolve => setTimeout(resolve, options.delay));
             }
             
-            return { success: true, url, filePath: fullOutputPath };
+            // Показываем результат если включен детальный прогресс
+            if (this.config.showDetailedProgress) {
+                console.log(chalk.green(`  ✅ Успешно загружено`));
+            }
+            
+            return { success: true, url, filePath: fullOutputPath, skipped: false };
         } catch (error) {
-            console.error(`Ошибка при скачивании ${url}: ${error.message}`);
-            return { success: false, url, error: error.message };
+            // Показываем ошибку если включен детальный прогресс
+            if (this.config.showDetailedProgress) {
+                console.log(chalk.red(`  ❌ Ошибка: ${error.message}`));
+            }
+            return { success: false, url, error: error.message, skipped: false };
         }
     }
 

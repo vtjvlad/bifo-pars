@@ -95,6 +95,7 @@ class HotlineCLI {
                 message: 'Выберите действие:',
                 choices: [
                     { name: '📦 Парсить все категории из файла', value: 'parse_all' },
+                    { name: '✅ Парсить выбранные категории из файла', value: 'parse_selected' },
                     { name: '📁 Выбрать файл с категориями', value: 'select_file' },
                     { name: '🎯 Парсить одну категорию', value: 'parse_single' },
                     { name: '⚙️  Настройки', value: 'settings' },
@@ -119,6 +120,9 @@ class HotlineCLI {
         switch (action) {
             case 'parse_all':
                 await this.parseAllCategories();
+                break;
+            case 'parse_selected':
+                await this.parseSelectedCategories();
                 break;
             case 'select_file':
                 await this.selectCategoriesFile();
@@ -312,25 +316,37 @@ class HotlineCLI {
                 if (validUrls.length === 0) {
                     console.log(chalk.yellow('⚠️  В файле нет валидных URL hotline.ua'));
                 } else {
-                    // Предлагаем запустить парсинг
-                    const { startParsing } = await inquirer.prompt([
+                    // Предлагаем варианты действий
+                    const { action } = await inquirer.prompt([
                         {
-                            type: 'confirm',
-                            name: 'startParsing',
-                            message: 'Запустить парсинг выбранного файла?',
-                            default: true,
+                            type: 'list',
+                            name: 'action',
+                            message: 'Выберите действие:',
+                            choices: [
+                                { name: '📦 Парсить все категории из файла', value: 'parse_all' },
+                                { name: '✅ Парсить выбранные категории из файла', value: 'parse_selected' },
+                                { name: '🔙 Назад', value: 'back' }
+                            ],
+                            pageSize: 10,
+                            loop: true,
+                            highlight: true,
                             transformer: (input, { isFinal }) => {
                                 if (isFinal) {
-                                    return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                                    return chalk.bold.blue(`▶ ${input} ◀`);
                                 }
-                                return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                                return chalk.bold.blue(`▶ ${input} ◀`);
                             }
                         }
                     ]);
-                    
-                    if (startParsing) {
+
+                    if (action === 'back') {
+                        return;
+                    } else if (action === 'parse_all') {
                         console.log('');
                         await this.parseSelectedFile();
+                    } else if (action === 'parse_selected') {
+                        console.log('');
+                        await this.parseSelectedCategoriesFromFile(filePath);
                     }
                 }
 
@@ -530,25 +546,37 @@ class HotlineCLI {
                 return;
             }
 
-            // Предлагаем запустить парсинг
-            const { startParsing } = await inquirer.prompt([
+            // Предлагаем варианты действий
+            const { action } = await inquirer.prompt([
                 {
-                    type: 'confirm',
-                    name: 'startParsing',
-                    message: `Запустить парсинг ${validFiles.length} файлов?`,
-                    default: true,
+                    type: 'list',
+                    name: 'action',
+                    message: 'Выберите действие:',
+                    choices: [
+                        { name: '📦 Парсить все категории из всех файлов', value: 'parse_all' },
+                        { name: '✅ Парсить выбранные категории из всех файлов', value: 'parse_selected' },
+                        { name: '🔙 Назад', value: 'back' }
+                    ],
+                    pageSize: 10,
+                    loop: true,
+                    highlight: true,
                     transformer: (input, { isFinal }) => {
                         if (isFinal) {
-                            return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                            return chalk.bold.blue(`▶ ${input} ◀`);
                         }
-                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                        return chalk.bold.blue(`▶ ${input} ◀`);
                     }
                 }
             ]);
-            
-            if (startParsing) {
+
+            if (action === 'back') {
+                return;
+            } else if (action === 'parse_all') {
                 console.log('');
                 await this.parseMultipleFiles(validFiles);
+            } else if (action === 'parse_selected') {
+                console.log('');
+                await this.parseSelectedCategoriesFromMultipleFiles(validFiles);
             }
 
         } catch (error) {
@@ -639,6 +667,463 @@ class HotlineCLI {
         }
 
         await this.waitForEnter();
+    }
+
+    // Парсинг выбранных категорий
+    async parseSelectedCategories() {
+        this.showHeader();
+        console.log(chalk.blue('✅ Парсинг выбранных категорий из файла'));
+        console.log(chalk.cyan(`📁 Используется файл: ${this.selectedCategoriesFile}`));
+        console.log('\n');
+
+        try {
+            // Проверяем наличие файла категорий
+            const fs = require('fs').promises;
+            let categories;
+            
+            try {
+                const content = await fs.readFile(this.selectedCategoriesFile, 'utf8');
+                categories = content
+                    .split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0 && !line.startsWith('#'))
+                    .filter(line => line.includes('hotline.ua'));
+            } catch (error) {
+                console.log(chalk.red(`❌ Файл ${this.selectedCategoriesFile} не найден!`));
+                console.log(chalk.yellow('Используйте "Выбрать файл с категориями" для выбора другого файла'));
+                await this.waitForEnter();
+                return;
+            }
+
+            if (categories.length === 0) {
+                console.log(chalk.red('❌ В файле нет валидных URL!'));
+                await this.waitForEnter();
+                return;
+            }
+
+            console.log(chalk.green(`✅ Найдено ${categories.length} категорий в файле`));
+            console.log(chalk.cyan('Выберите категории для парсинга:'));
+
+            // Создаем список категорий с чекбоксами
+            const categoryChoices = categories.map((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                return {
+                    name: `${categoryName}`,
+                    value: url,
+                    short: categoryName,
+                    checked: false
+                };
+            });
+
+            // Добавляем опции действий
+            categoryChoices.push(
+                new inquirer.Separator('Действия'),
+                { name: '✅ Выбрать все категории', value: 'select_all' },
+                { name: '❌ Снять выбор со всех', value: 'deselect_all' },
+                { name: '🔍 Показать статистику выбранных', value: 'show_stats' },
+                { name: '💾 Сохранить выбор в файл', value: 'save_selection' },
+                { name: '📂 Загрузить сохраненный выбор', value: 'load_selection' }
+            );
+
+            const { selectedCategories } = await inquirer.prompt([
+                {
+                    type: 'checkbox',
+                    name: 'selectedCategories',
+                    message: 'Выберите категории для парсинга (пробел для выбора):',
+                    choices: categoryChoices,
+                    pageSize: 20,
+                    loop: true,
+                    highlight: true,
+                    validate: (input) => {
+                        if (input.length === 0) {
+                            return 'Выберите хотя бы одну категорию';
+                        }
+                        return true;
+                    },
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return chalk.bold.yellow(`▶ ${input} ◀`);
+                        }
+                        return chalk.bold.yellow(`▶ ${input} ◀`);
+                    }
+                }
+            ]);
+
+            if (selectedCategories.length === 0) {
+                console.log(chalk.yellow('⚠️  Категории не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Обрабатываем специальные действия
+            let finalCategories = [];
+            for (const category of selectedCategories) {
+                if (category === 'select_all') {
+                    // Выбираем все категории
+                    finalCategories = categories;
+                    break;
+                } else if (category === 'deselect_all') {
+                    // Снимаем выбор со всех
+                    finalCategories = [];
+                    break;
+                } else if (category === 'show_stats') {
+                    // Показываем статистику выбранных
+                    const selectedUrls = selectedCategories.filter(cat => 
+                        cat !== 'select_all' && cat !== 'deselect_all' && cat !== 'show_stats' &&
+                        cat !== 'save_selection' && cat !== 'load_selection'
+                    );
+                    this.showSelectedCategoriesStats(selectedUrls);
+                    continue;
+                } else if (category === 'save_selection') {
+                    // Сохраняем выбор в файл
+                    const selectedUrls = selectedCategories.filter(cat => 
+                        cat !== 'select_all' && cat !== 'deselect_all' && cat !== 'show_stats' &&
+                        cat !== 'save_selection' && cat !== 'load_selection'
+                    );
+                    await this.saveCategorySelection(selectedUrls);
+                    continue;
+                } else if (category === 'load_selection') {
+                    // Загружаем сохраненный выбор
+                    const loadedSelection = await this.loadCategorySelection();
+                    if (loadedSelection.length > 0) {
+                        console.log(chalk.green(`✅ Загружено ${loadedSelection.length} сохраненных категорий`));
+                        finalCategories = loadedSelection;
+                    }
+                    continue;
+                } else {
+                    // Обычная категория
+                    if (!finalCategories.includes(category)) {
+                        finalCategories.push(category);
+                    }
+                }
+            }
+
+            // Убираем дубликаты
+            finalCategories = [...new Set(finalCategories)];
+
+            if (finalCategories.length === 0) {
+                console.log(chalk.yellow('⚠️  Категории не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Показываем выбранные категории
+            console.log('');
+            console.log(chalk.green(`✅ Выбрано ${finalCategories.length} категорий:`));
+            finalCategories.forEach((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                console.log(chalk.cyan(`   ${index + 1}. ${categoryName}`));
+            });
+
+            console.log('');
+            const { confirm } = await inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'confirm',
+                    message: `Начать парсинг ${finalCategories.length} выбранных категорий?`,
+                    default: true,
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                        }
+                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                    }
+                }
+            ]);
+
+            if (!confirm) {
+                return;
+            }
+
+            // Показываем прогресс
+            const spinner = ora('🚀 Запуск парсера для выбранных категорий...').start();
+            
+            const results = await this.parser.parseAllCategories(
+                finalCategories, 
+                this.config.saveProgressively, 
+                this.config.batchSize, 
+                this.config.autoGetTokens,
+                this.config.createCommonCSV,
+                this.config.createCommonJSON,
+                this.config.saveFormats
+            );
+
+            spinner.succeed('✅ Парсинг выбранных категорий завершен!');
+
+            // Показываем результаты
+            this.showParseResults(results);
+
+        } catch (error) {
+            console.log(chalk.red(`❌ Ошибка: ${error.message}`));
+        }
+
+        await this.waitForEnter();
+    }
+
+    // Показ статистики выбранных категорий
+    showSelectedCategoriesStats(selectedUrls) {
+        console.log('');
+        console.log(chalk.blue('📊 Статистика выбранных категорий:'));
+        console.log(chalk.cyan(`   Выбрано категорий: ${selectedUrls.length}`));
+        
+        // Группируем по группам товаров
+        const groups = {};
+        selectedUrls.forEach(url => {
+            const categoryName = this.parser.extractPathFromUrl(url);
+            const group = this.extractGroupFromCategory(categoryName);
+            
+            if (!groups[group]) {
+                groups[group] = [];
+            }
+            groups[group].push(categoryName);
+        });
+
+        console.log('');
+        console.log(chalk.green('📁 Группировка по категориям:'));
+        Object.keys(groups).forEach(group => {
+            console.log(chalk.yellow(`   ${group}: ${groups[group].length} категорий`));
+            groups[group].forEach(category => {
+                console.log(chalk.cyan(`     - ${category}`));
+            });
+        });
+
+        console.log('');
+        console.log(chalk.blue('🔗 Примеры выбранных URL:'));
+        selectedUrls.slice(0, 5).forEach((url, index) => {
+            const categoryName = this.parser.extractPathFromUrl(url);
+            console.log(chalk.cyan(`   ${index + 1}. ${categoryName}`));
+            console.log(chalk.blue(`      ${url}`));
+        });
+
+        if (selectedUrls.length > 5) {
+            console.log(chalk.cyan(`   ... и еще ${selectedUrls.length - 5} категорий`));
+        }
+    }
+
+    // Извлечение группы из названия категории
+    extractGroupFromCategory(categoryName) {
+        // Простая логика извлечения группы
+        const groupMap = {
+            'mobile': 'Мобильные устройства',
+            'computer': 'Компьютеры',
+            'tv': 'Телевизоры',
+            'audio': 'Аудио',
+            'photo': 'Фото и видео',
+            'game': 'Игры',
+            'sport': 'Спорт',
+            'home': 'Дом и сад',
+            'auto': 'Авто',
+            'kids': 'Детские товары',
+            'beauty': 'Красота и здоровье',
+            'fashion': 'Мода'
+        };
+
+        const categoryLower = categoryName.toLowerCase();
+        
+        for (const [key, value] of Object.entries(groupMap)) {
+            if (categoryLower.includes(key)) {
+                return value;
+            }
+        }
+
+        return 'Другие';
+    }
+
+    // Сохранение выбора категорий в файл
+    async saveCategorySelection(selectedUrls) {
+        if (selectedUrls.length === 0) {
+            console.log(chalk.yellow('⚠️  Нет выбранных категорий для сохранения'));
+            return;
+        }
+
+        const { fileName, includeUrls } = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'fileName',
+                message: 'Введите имя файла для сохранения:',
+                default: `selected_categories_${new Date().toISOString().slice(0, 10)}.txt`,
+                validate: (input) => {
+                    if (!input.trim()) {
+                        return 'Имя файла не может быть пустым';
+                    }
+                    return true;
+                }
+            },
+            {
+                type: 'confirm',
+                name: 'includeUrls',
+                message: 'Включить полные URL в файл?',
+                default: true
+            }
+        ]);
+
+        try {
+            const fs = require('fs').promises;
+            
+            const content = [
+                `# Сохраненный выбор категорий (${selectedUrls.length} шт.)`,
+                `# Дата создания: ${new Date().toLocaleString('ru-RU')}`,
+                `# Файл категорий: ${this.selectedCategoriesFile}`,
+                includeUrls ? `# Включены полные URL` : `# Только названия категорий`,
+                '',
+                ...selectedUrls.map(url => {
+                    const categoryName = this.parser.extractPathFromUrl(url);
+                    if (includeUrls) {
+                        return `${categoryName}\n${url}`;
+                    } else {
+                        return categoryName;
+                    }
+                })
+            ].join('\n');
+
+            const filePath = `tctgr/${fileName}`;
+            await fs.writeFile(filePath, content, 'utf8');
+            
+            console.log(chalk.green(`✅ Выбор категорий сохранен в файл: ${filePath}`));
+            console.log(chalk.cyan(`📊 Сохранено ${selectedUrls.length} категорий`));
+            
+            // Показываем первые несколько категорий
+            console.log(chalk.yellow('📋 Первые 5 сохраненных категорий:'));
+            selectedUrls.slice(0, 5).forEach((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                console.log(chalk.cyan(`   ${index + 1}. ${categoryName}`));
+                if (includeUrls) {
+                    console.log(chalk.blue(`      🔗 ${url}`));
+                }
+            });
+            
+            if (selectedUrls.length > 5) {
+                console.log(chalk.cyan(`   ... и еще ${selectedUrls.length - 5} категорий`));
+            }
+
+        } catch (error) {
+            console.log(chalk.red(`❌ Ошибка при сохранении файла: ${error.message}`));
+        }
+    }
+
+    // Загрузка сохраненного выбора категорий
+    async loadCategorySelection() {
+        const fs = require('fs').promises;
+        
+        try {
+            // Ищем файлы с сохраненными выборами
+            const files = await this.getAllFilesInDirectory('tctgr');
+            const selectionFiles = files.filter(file => 
+                file.includes('selected_categories') || 
+                file.includes('selection') ||
+                file.includes('saved')
+            );
+
+            if (selectionFiles.length === 0) {
+                console.log(chalk.yellow('📁 Нет сохраненных файлов с выбором категорий'));
+                return [];
+            }
+
+            // Показываем доступные файлы
+            console.log(chalk.blue('📂 Доступные сохраненные выборы:'));
+            const choices = selectionFiles.map(file => ({
+                name: file,
+                value: file
+            }));
+
+            choices.push(
+                { name: '❌ Отмена', value: 'cancel' }
+            );
+
+            const { selectedFile } = await inquirer.prompt([
+                {
+                    type: 'list',
+                    name: 'selectedFile',
+                    message: 'Выберите файл с сохраненным выбором:',
+                    choices: choices,
+                    pageSize: 15,
+                    loop: true,
+                    highlight: true
+                }
+            ]);
+
+            if (selectedFile === 'cancel') {
+                return [];
+            }
+
+            // Читаем выбранный файл
+            const filePath = `tctgr/${selectedFile}`;
+            const content = await fs.readFile(filePath, 'utf8');
+            
+            // Парсим содержимое файла
+            const lines = content.split('\n').map(line => line.trim()).filter(line => 
+                line.length > 0 && !line.startsWith('#')
+            );
+
+            const loadedUrls = [];
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                if (line.includes('hotline.ua')) {
+                    loadedUrls.push(line);
+                } else if (i + 1 < lines.length && lines[i + 1].includes('hotline.ua')) {
+                    // Если это название категории, а следующая строка - URL
+                    continue;
+                } else {
+                    // Пытаемся найти URL для названия категории
+                    const categoryName = line;
+                    const url = await this.findUrlForCategory(categoryName);
+                    if (url) {
+                        loadedUrls.push(url);
+                    }
+                }
+            }
+
+            console.log(chalk.green(`✅ Загружено ${loadedUrls.length} категорий из файла ${selectedFile}`));
+            
+            // Показываем загруженные категории
+            console.log(chalk.yellow('📋 Загруженные категории:'));
+            loadedUrls.slice(0, 5).forEach((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                console.log(chalk.cyan(`   ${index + 1}. ${categoryName}`));
+            });
+            
+            if (loadedUrls.length > 5) {
+                console.log(chalk.cyan(`   ... и еще ${loadedUrls.length - 5} категорий`));
+            }
+
+            return loadedUrls;
+
+        } catch (error) {
+            console.log(chalk.red(`❌ Ошибка при загрузке файла: ${error.message}`));
+            return [];
+        }
+    }
+
+    // Поиск URL для названия категории
+    async findUrlForCategory(categoryName) {
+        try {
+            const fs = require('fs').promises;
+            const content = await fs.readFile(this.selectedCategoriesFile, 'utf8');
+            const lines = content.split('\n').map(line => line.trim()).filter(line => 
+                line.length > 0 && !line.startsWith('#') && line.includes('hotline.ua')
+            );
+
+            // Ищем точное совпадение
+            for (const line of lines) {
+                const extractedName = this.parser.extractPathFromUrl(line);
+                if (extractedName === categoryName) {
+                    return line;
+                }
+            }
+
+            // Ищем частичное совпадение
+            for (const line of lines) {
+                const extractedName = this.parser.extractPathFromUrl(line);
+                if (extractedName.toLowerCase().includes(categoryName.toLowerCase()) ||
+                    categoryName.toLowerCase().includes(extractedName.toLowerCase())) {
+                    return line;
+                }
+            }
+
+            return null;
+        } catch (error) {
+            return null;
+        }
     }
 
     // Парсинг одной категории
@@ -1559,6 +2044,196 @@ class HotlineCLI {
         await this.waitForEnter();
     }
 
+    // Парсинг выбранных категорий из конкретного файла
+    async parseSelectedCategoriesFromFile(filePath) {
+        this.showHeader();
+        console.log(chalk.blue('✅ Парсинг выбранных категорий из файла'));
+        console.log(chalk.cyan(`📁 Файл: ${filePath}`));
+        console.log('\n');
+
+        try {
+            // Проверяем наличие файла категорий
+            const fs = require('fs').promises;
+            let categories;
+            
+            try {
+                const content = await fs.readFile(filePath, 'utf8');
+                categories = content
+                    .split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0 && !line.startsWith('#'))
+                    .filter(line => line.includes('hotline.ua'));
+            } catch (error) {
+                console.log(chalk.red(`❌ Файл ${filePath} не найден!`));
+                await this.waitForEnter();
+                return;
+            }
+
+            if (categories.length === 0) {
+                console.log(chalk.red('❌ В файле нет валидных URL!'));
+                await this.waitForEnter();
+                return;
+            }
+
+            console.log(chalk.green(`✅ Найдено ${categories.length} категорий в файле`));
+            console.log(chalk.cyan('Выберите категории для парсинга:'));
+
+            // Создаем список категорий с чекбоксами
+            const categoryChoices = categories.map((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                return {
+                    name: `${categoryName}`,
+                    value: url,
+                    short: categoryName,
+                    checked: false
+                };
+            });
+
+            // Добавляем опции действий
+            categoryChoices.push(
+                new inquirer.Separator('Действия'),
+                { name: '✅ Выбрать все категории', value: 'select_all' },
+                { name: '❌ Снять выбор со всех', value: 'deselect_all' },
+                { name: '🔍 Показать статистику выбранных', value: 'show_stats' },
+                { name: '💾 Сохранить выбор в файл', value: 'save_selection' },
+                { name: '📂 Загрузить сохраненный выбор', value: 'load_selection' }
+            );
+
+            const { selectedCategories } = await inquirer.prompt([
+                {
+                    type: 'checkbox',
+                    name: 'selectedCategories',
+                    message: 'Выберите категории для парсинга (пробел для выбора):',
+                    choices: categoryChoices,
+                    pageSize: 20,
+                    loop: true,
+                    highlight: true,
+                    validate: (input) => {
+                        if (input.length === 0) {
+                            return 'Выберите хотя бы одну категорию';
+                        }
+                        return true;
+                    },
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return chalk.bold.yellow(`▶ ${input} ◀`);
+                        }
+                        return chalk.bold.yellow(`▶ ${input} ◀`);
+                    }
+                }
+            ]);
+
+            if (selectedCategories.length === 0) {
+                console.log(chalk.yellow('⚠️  Категории не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Обрабатываем специальные действия
+            let finalCategories = [];
+            for (const category of selectedCategories) {
+                if (category === 'select_all') {
+                    // Выбираем все категории
+                    finalCategories = categories;
+                    break;
+                } else if (category === 'deselect_all') {
+                    // Снимаем выбор со всех
+                    finalCategories = [];
+                    break;
+                } else if (category === 'show_stats') {
+                    // Показываем статистику выбранных
+                    const selectedUrls = selectedCategories.filter(cat => 
+                        cat !== 'select_all' && cat !== 'deselect_all' && cat !== 'show_stats' &&
+                        cat !== 'save_selection' && cat !== 'load_selection'
+                    );
+                    this.showSelectedCategoriesStats(selectedUrls);
+                    continue;
+                } else if (category === 'save_selection') {
+                    // Сохраняем выбор в файл
+                    const selectedUrls = selectedCategories.filter(cat => 
+                        cat !== 'select_all' && cat !== 'deselect_all' && cat !== 'show_stats' &&
+                        cat !== 'save_selection' && cat !== 'load_selection'
+                    );
+                    await this.saveCategorySelection(selectedUrls);
+                    continue;
+                } else if (category === 'load_selection') {
+                    // Загружаем сохраненный выбор
+                    const loadedSelection = await this.loadCategorySelection();
+                    if (loadedSelection.length > 0) {
+                        console.log(chalk.green(`✅ Загружено ${loadedSelection.length} сохраненных категорий`));
+                        finalCategories = loadedSelection;
+                    }
+                    continue;
+                } else {
+                    // Обычная категория
+                    if (!finalCategories.includes(category)) {
+                        finalCategories.push(category);
+                    }
+                }
+            }
+
+            // Убираем дубликаты
+            finalCategories = [...new Set(finalCategories)];
+
+            if (finalCategories.length === 0) {
+                console.log(chalk.yellow('⚠️  Категории не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Показываем выбранные категории
+            console.log('');
+            console.log(chalk.green(`✅ Выбрано ${finalCategories.length} категорий:`));
+            finalCategories.forEach((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                console.log(chalk.cyan(`   ${index + 1}. ${categoryName}`));
+            });
+
+            console.log('');
+            const { confirm } = await inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'confirm',
+                    message: `Начать парсинг ${finalCategories.length} выбранных категорий?`,
+                    default: true,
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                        }
+                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                    }
+                }
+            ]);
+
+            if (!confirm) {
+                return;
+            }
+
+            // Показываем прогресс
+            const spinner = ora('🚀 Запуск парсера для выбранных категорий...').start();
+            
+            const results = await this.parser.parseAllCategories(
+                finalCategories, 
+                this.config.saveProgressively, 
+                this.config.batchSize, 
+                this.config.autoGetTokens,
+                this.config.createCommonCSV,
+                this.config.createCommonJSON,
+                this.config.saveFormats
+            );
+
+            spinner.succeed('✅ Парсинг выбранных категорий завершен!');
+
+            // Показываем результаты
+            this.showParseResults(results);
+
+        } catch (error) {
+            console.log(chalk.red(`❌ Ошибка: ${error.message}`));
+        }
+
+        await this.waitForEnter();
+    }
+
     // Парсинг нескольких файлов
     async parseMultipleFiles(filePaths) {
         this.showHeader();
@@ -1649,6 +2324,259 @@ class HotlineCLI {
             );
 
             spinner.succeed('✅ Парсинг завершен!');
+
+            // Показываем результаты
+            this.showParseResults(results);
+
+            // Дополнительная статистика по файлам
+            console.log('');
+            console.log(chalk.blue('📊 Результаты по файлам:'));
+            
+            let totalSuccess = 0;
+            let totalErrors = 0;
+            
+            for (const stat of fileStats) {
+                let fileSuccess = 0;
+                let fileErrors = 0;
+                
+                for (const category of stat.categories) {
+                    const categoryName = this.parser.extractPathFromUrl(category);
+                    if (results[categoryName] && !results[categoryName].error) {
+                        fileSuccess++;
+                    } else {
+                        fileErrors++;
+                    }
+                }
+                
+                const color = fileErrors === 0 ? chalk.green : fileErrors > fileSuccess ? chalk.red : chalk.yellow;
+                console.log(color(`   📄 ${stat.file}: ${fileSuccess} успешно, ${fileErrors} ошибок`));
+                
+                totalSuccess += fileSuccess;
+                totalErrors += fileErrors;
+            }
+
+            console.log('');
+            console.log(chalk.blue('📈 Итоговая статистика по файлам:'));
+            console.log(chalk.green(`   Успешно обработано: ${totalSuccess} категорий`));
+            console.log(chalk.red(`   Ошибок: ${totalErrors} категорий`));
+
+        } catch (error) {
+            console.log(chalk.red(`❌ Ошибка: ${error.message}`));
+        }
+
+        await this.waitForEnter();
+    }
+
+    // Парсинг выбранных категорий из нескольких файлов
+    async parseSelectedCategoriesFromMultipleFiles(filePaths) {
+        this.showHeader();
+        console.log(chalk.blue('✅ Парсинг выбранных категорий из нескольких файлов'));
+        console.log(chalk.cyan(`📁 Выбрано файлов: ${filePaths.length}`));
+        console.log('');
+
+        try {
+            const fs = require('fs').promises;
+            let allCategories = [];
+            const fileStats = [];
+
+            // Читаем все файлы и собираем категории
+            console.log(chalk.blue('📖 Чтение файлов...'));
+            
+            for (const filePath of filePaths) {
+                try {
+                    const content = await fs.readFile(filePath, 'utf8');
+                    const categories = content
+                        .split('\n')
+                        .map(line => line.trim())
+                        .filter(line => line.length > 0 && !line.startsWith('#'))
+                        .filter(line => line.includes('hotline.ua'));
+
+                    fileStats.push({
+                        file: filePath,
+                        count: categories.length,
+                        categories: categories
+                    });
+
+                    allCategories.push(...categories);
+                    console.log(chalk.cyan(`   📄 ${filePath}: ${categories.length} категорий`));
+
+                } catch (error) {
+                    console.log(chalk.red(`   ❌ ${filePath}: ошибка чтения - ${error.message}`));
+                }
+            }
+
+            // Убираем дубликаты URL
+            const uniqueCategories = [...new Set(allCategories)];
+
+            if (uniqueCategories.length === 0) {
+                console.log(chalk.red('❌ Нет валидных URL во всех файлах!'));
+                await this.waitForEnter();
+                return;
+            }
+
+            console.log('');
+            console.log(chalk.green(`✅ Всего уникальных категорий: ${uniqueCategories.length}`));
+            
+            if (uniqueCategories.length !== allCategories.length) {
+                console.log(chalk.yellow(`⚠️  Удалено ${allCategories.length - uniqueCategories.length} дубликатов`));
+            }
+
+            // Показываем статистику по файлам
+            console.log('');
+            console.log(chalk.blue('📊 Статистика по файлам:'));
+            fileStats.forEach((stat, index) => {
+                const color = stat.count > 50 ? chalk.green : stat.count > 20 ? chalk.yellow : chalk.cyan;
+                console.log(color(`   ${index + 1}. ${stat.file}: ${stat.count} категорий`));
+            });
+
+            console.log('');
+            console.log(chalk.cyan('Выберите категории для парсинга:'));
+
+            // Создаем список категорий с чекбоксами
+            const categoryChoices = uniqueCategories.map((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                return {
+                    name: `${categoryName}`,
+                    value: url,
+                    short: categoryName,
+                    checked: false
+                };
+            });
+
+            // Добавляем опции действий
+            categoryChoices.push(
+                new inquirer.Separator('Действия'),
+                { name: '✅ Выбрать все категории', value: 'select_all' },
+                { name: '❌ Снять выбор со всех', value: 'deselect_all' },
+                { name: '🔍 Показать статистику выбранных', value: 'show_stats' },
+                { name: '💾 Сохранить выбор в файл', value: 'save_selection' },
+                { name: '📂 Загрузить сохраненный выбор', value: 'load_selection' }
+            );
+
+            const { selectedCategories } = await inquirer.prompt([
+                {
+                    type: 'checkbox',
+                    name: 'selectedCategories',
+                    message: 'Выберите категории для парсинга (пробел для выбора):',
+                    choices: categoryChoices,
+                    pageSize: 20,
+                    loop: true,
+                    highlight: true,
+                    validate: (input) => {
+                        if (input.length === 0) {
+                            return 'Выберите хотя бы одну категорию';
+                        }
+                        return true;
+                    },
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return chalk.bold.yellow(`▶ ${input} ◀`);
+                        }
+                        return chalk.bold.yellow(`▶ ${input} ◀`);
+                    }
+                }
+            ]);
+
+            if (selectedCategories.length === 0) {
+                console.log(chalk.yellow('⚠️  Категории не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Обрабатываем специальные действия
+            let finalCategories = [];
+            for (const category of selectedCategories) {
+                if (category === 'select_all') {
+                    // Выбираем все категории
+                    finalCategories = uniqueCategories;
+                    break;
+                } else if (category === 'deselect_all') {
+                    // Снимаем выбор со всех
+                    finalCategories = [];
+                    break;
+                } else if (category === 'show_stats') {
+                    // Показываем статистику выбранных
+                    const selectedUrls = selectedCategories.filter(cat => 
+                        cat !== 'select_all' && cat !== 'deselect_all' && cat !== 'show_stats' &&
+                        cat !== 'save_selection' && cat !== 'load_selection'
+                    );
+                    this.showSelectedCategoriesStats(selectedUrls);
+                    continue;
+                } else if (category === 'save_selection') {
+                    // Сохраняем выбор в файл
+                    const selectedUrls = selectedCategories.filter(cat => 
+                        cat !== 'select_all' && cat !== 'deselect_all' && cat !== 'show_stats' &&
+                        cat !== 'save_selection' && cat !== 'load_selection'
+                    );
+                    await this.saveCategorySelection(selectedUrls);
+                    continue;
+                } else if (category === 'load_selection') {
+                    // Загружаем сохраненный выбор
+                    const loadedSelection = await this.loadCategorySelection();
+                    if (loadedSelection.length > 0) {
+                        console.log(chalk.green(`✅ Загружено ${loadedSelection.length} сохраненных категорий`));
+                        finalCategories = loadedSelection;
+                    }
+                    continue;
+                } else {
+                    // Обычная категория
+                    if (!finalCategories.includes(category)) {
+                        finalCategories.push(category);
+                    }
+                }
+            }
+
+            // Убираем дубликаты
+            finalCategories = [...new Set(finalCategories)];
+
+            if (finalCategories.length === 0) {
+                console.log(chalk.yellow('⚠️  Категории не выбраны'));
+                await this.waitForEnter();
+                return;
+            }
+
+            // Показываем выбранные категории
+            console.log('');
+            console.log(chalk.green(`✅ Выбрано ${finalCategories.length} категорий:`));
+            finalCategories.forEach((url, index) => {
+                const categoryName = this.parser.extractPathFromUrl(url);
+                console.log(chalk.cyan(`   ${index + 1}. ${categoryName}`));
+            });
+
+            console.log('');
+            const { confirm } = await inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'confirm',
+                    message: `Начать парсинг ${finalCategories.length} выбранных категорий?`,
+                    default: true,
+                    transformer: (input, { isFinal }) => {
+                        if (isFinal) {
+                            return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                        }
+                        return input ? chalk.bold.green('✅ ДА') : chalk.bold.red('❌ НЕТ');
+                    }
+                }
+            ]);
+
+            if (!confirm) {
+                return;
+            }
+
+            // Показываем прогресс
+            const spinner = ora('🚀 Запуск парсера для выбранных категорий...').start();
+            
+            const results = await this.parser.parseAllCategories(
+                finalCategories, 
+                this.config.saveProgressively, 
+                this.config.batchSize, 
+                this.config.autoGetTokens,
+                this.config.createCommonCSV,
+                this.config.createCommonJSON,
+                this.config.saveFormats
+            );
+
+            spinner.succeed('✅ Парсинг выбранных категорий завершен!');
 
             // Показываем результаты
             this.showParseResults(results);

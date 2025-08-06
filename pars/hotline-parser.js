@@ -629,22 +629,54 @@ class HotlineParser {
 
     async saveToFileProgressive(products, filename = '../JSON/hotline-products.json') {
         try {
+            const maxSizeMB = 300; // Максимальный размер файла в МБ
+            const pathParts = filename.split('.');
+            const extension = pathParts.pop();
+            const baseName = pathParts.join('.');
+            
+            // Находим последний существующий файл или начинаем с первого
+            let fileNumber = 0;
+            let finalFilename = filename;
+            
+            while (true) {
+                const currentFilename = fileNumber === 0 ? filename : `${baseName}-${fileNumber}.${extension}`;
+                
+                try {
+                    const stats = await fs.stat(currentFilename);
+                    const fileSizeMB = stats.size / (1024 * 1024); // Размер в МБ
+                    
+                    if (fileSizeMB > maxSizeMB) {
+                        // Этот файл превышает лимит, переходим к следующему
+                        fileNumber++;
+                        continue;
+                    } else {
+                        // Этот файл подходит, используем его
+                        finalFilename = currentFilename;
+                        break;
+                    }
+                } catch (error) {
+                    // Файл не существует, используем его
+                    finalFilename = currentFilename;
+                    break;
+                }
+            }
+
             // Если файл существует, читаем его и добавляем новые данные
             let existingProducts = [];
             try {
-                const fileContent = await fs.readFile(filename, 'utf8');
+                const fileContent = await fs.readFile(finalFilename, 'utf8');
                 existingProducts = JSON.parse(fileContent);
             } catch (error) {
                 // Файл не существует или пустой, начинаем с пустого массива
-                this.log('Создаем новый файл для сохранения данных');
+                this.log('📋 Создаем новый файл для сохранения данных');
             }
 
             // Добавляем новые продукты
             const allProducts = existingProducts.concat(products);
             
             // Сохраняем обновленный файл
-            await fs.writeFile(filename, JSON.stringify(allProducts, null, 2), 'utf8');
-            this.log(`✅ Данные сохранены в файл: ${filename} (всего товаров: ${allProducts.length})`);
+            await fs.writeFile(finalFilename, JSON.stringify(allProducts, null, 2), 'utf8');
+            this.log(`✅ Данные сохранены в файл: ${finalFilename} (всего товаров: ${allProducts.length})`);
         } catch (error) {
             this.log('❌ Ошибка при сохранении файла: ' + error.message);
             throw error;
@@ -653,10 +685,42 @@ class HotlineParser {
 
     async saveToFile(products, filename = 'JSON/hotline-products.json') {
         try {
-            await fs.writeFile(filename, JSON.stringify(products, null, 2), 'utf8');
-            this.log(`Данные сохранены в файл: ${filename}`);
+            const maxSizeMB = 300; // Максимальный размер файла в МБ
+            const pathParts = filename.split('.');
+            const extension = pathParts.pop();
+            const baseName = pathParts.join('.');
+            
+            // Находим последний существующий файл или начинаем с первого
+            let fileNumber = 0;
+            let finalFilename = filename;
+            
+            while (true) {
+                const currentFilename = fileNumber === 0 ? filename : `${baseName}-${fileNumber}.${extension}`;
+                
+                try {
+                    const stats = await fs.stat(currentFilename);
+                    const fileSizeMB = stats.size / (1024 * 1024); // Размер в МБ
+                    
+                    if (fileSizeMB > maxSizeMB) {
+                        // Этот файл превышает лимит, переходим к следующему
+                        fileNumber++;
+                        continue;
+                    } else {
+                        // Этот файл подходит, используем его
+                        finalFilename = currentFilename;
+                        break;
+                    }
+                } catch (error) {
+                    // Файл не существует, используем его
+                    finalFilename = currentFilename;
+                    break;
+                }
+            }
+            
+            await fs.writeFile(finalFilename, JSON.stringify(products, null, 2), 'utf8');
+            this.log(`📋 Данные сохранены в файл: ${finalFilename}`);
         } catch (error) {
-            this.log('Ошибка при сохранении файла: ' + error.message);
+            this.log('❌ Ошибка при сохранении файла: ' + error.message);
             throw error;
         }
     }
@@ -673,6 +737,38 @@ class HotlineParser {
 
     async saveToCSV(products, filename = 'CSV/hotline-products.csv') {
         try {
+            const maxSizeMB = 300; // Максимальный размер файла в МБ
+            const pathParts = filename.split('.');
+            const extension = pathParts.pop();
+            const baseName = pathParts.join('.');
+            
+            // Находим последний существующий файл или начинаем с первого
+            let fileNumber = 0;
+            let finalFilename = filename;
+            
+            while (true) {
+                const currentFilename = fileNumber === 0 ? filename : `${baseName}-${fileNumber}.${extension}`;
+                
+                try {
+                    const stats = await fs.stat(currentFilename);
+                    const fileSizeMB = stats.size / (1024 * 1024); // Размер в МБ
+                    
+                    if (fileSizeMB > maxSizeMB) {
+                        // Этот файл превышает лимит, переходим к следующему
+                        fileNumber++;
+                        continue;
+                    } else {
+                        // Этот файл подходит, используем его
+                        finalFilename = currentFilename;
+                        break;
+                    }
+                } catch (error) {
+                    // Файл не существует, используем его
+                    finalFilename = currentFilename;
+                    break;
+                }
+            }
+            
             // Добавляем BOM для корректного отображения кириллицы в Excel
             const BOM = '\uFEFF';
             
@@ -723,10 +819,10 @@ class HotlineParser {
             });
 
             const csvContent = csvHeader + csvRows.join('\n');
-            await fs.writeFile(filename, csvContent, 'utf8');
-            this.log(`Данные сохранены в CSV файл: ${filename}`);
+            await fs.writeFile(finalFilename, csvContent, 'utf8');
+            this.log(`📊 Данные сохранены в CSV файл: ${finalFilename}`);
         } catch (error) {
-            this.log('Ошибка при сохранении CSV файла: ' + error.message);
+            this.log('❌ Ошибка при сохранении CSV файла: ' + error.message);
             throw error;
         }
     }
@@ -818,7 +914,7 @@ class HotlineParser {
     }
 
     // Парсинг всех категорий
-    async parseAllCategories(categories, saveProgressively = true, batchSize = 15, autoGetTokens = true, createCommonCSV = true) {
+    async parseAllCategories(categories, saveProgressively = true, batchSize = 15, autoGetTokens = true, createCommonCSV = true, createCommonJSON = true, saveFormats = 'both') {
         const allResults = {};
         let totalProducts = 0;
         
@@ -862,13 +958,18 @@ class HotlineParser {
                 
                 this.log(`✅ Категория ${categoryName}: получено ${products.length} товаров`);
                 
-                // Сохраняем отдельный файл для каждой категории
-                const filename = `JSON/hotline-${categoryName.replace(/[^a-zA-Z0-9]/g, '-')}.json`;
-                await this.saveToFile(products, filename);
+                // Сохраняем файлы в зависимости от выбранного формата
+                if (saveFormats === 'both' || saveFormats === 'json') {
+                    const filename = `JSON/hotline-${categoryName.replace(/[^a-zA-Z0-9]/g, '-')}.json`;
+                    await this.saveToFile(products, filename);
+                    this.log(`📋 JSON файл сохранен: ${filename}`);
+                }
                 
-                // Сохраняем CSV файл для каждой категории
-                const csvFilename = `CSV/hotline-${categoryName.replace(/[^a-zA-Z0-9]/g, '-')}.csv`;
-                await this.saveToCSV(products, csvFilename);
+                if (saveFormats === 'both' || saveFormats === 'csv') {
+                    const csvFilename = `CSV/hotline-${categoryName.replace(/[^a-zA-Z0-9]/g, '-')}.csv`;
+                    await this.saveToCSV(products, csvFilename);
+                    this.log(`📊 CSV файл сохранен: ${csvFilename}`);
+                }
                 
                 // Небольшая пауза между категориями
                 if (i < categories.length - 1) {
@@ -911,8 +1012,35 @@ class HotlineParser {
         await this.saveToFile(report, 'JSON/hotline-all-categories-report.json');
         this.log('📊 Отчет сохранен в JSON/hotline-all-categories-report.json');
         
-        // Создаем общий CSV файл со всеми товарами (если включено)
-        if (createCommonCSV) {
+        // Создаем общий JSON файл со всеми товарами (если включено и выбран формат JSON)
+        if (createCommonJSON && (saveFormats === 'both' || saveFormats === 'json')) {
+            this.log('📋 Создание общего JSON файла...');
+            const allProducts = [];
+            Object.keys(allResults).forEach(categoryName => {
+                const result = allResults[categoryName];
+                if (result.products && result.products.length > 0) {
+                    // Добавляем информацию о категории к каждому товару
+                    const productsWithCategory = result.products.map(product => ({
+                        ...product,
+                        category: categoryName,
+                        categoryUrl: result.url
+                    }));
+                    allProducts.push(...productsWithCategory);
+                }
+            });
+            
+            if (allProducts.length > 0) {
+                await this.saveToFile(allProducts, 'JSON/hotline-all-categories.json');
+                this.log(`📋 Общий JSON файл создан: JSON/hotline-all-categories.json (${allProducts.length} товаров)`);
+            }
+        } else if (createCommonJSON && saveFormats === 'csv') {
+            this.log('📄 Создание общего JSON файла отключено (выбран только формат CSV)');
+        } else {
+            this.log('📄 Создание общего JSON файла отключено в настройках');
+        }
+        
+        // Создаем общий CSV файл со всеми товарами (если включено и выбран формат CSV)
+        if (createCommonCSV && (saveFormats === 'both' || saveFormats === 'csv')) {
             this.log('📊 Создание общего CSV файла...');
             const allProducts = [];
             Object.keys(allResults).forEach(categoryName => {
@@ -932,6 +1060,8 @@ class HotlineParser {
                 await this.saveToCSV(allProducts, 'CSV/hotline-all-categories.csv');
                 this.log(`📊 Общий CSV файл создан: CSV/hotline-all-categories.csv (${allProducts.length} товаров)`);
             }
+        } else if (createCommonCSV && saveFormats === 'json') {
+            this.log('📄 Создание общего CSV файла отключено (выбран только формат JSON)');
         } else {
             this.log('📄 Создание общего CSV файла отключено в настройках');
         }
@@ -1014,7 +1144,7 @@ async function main() {
             }
             
             // Парсим все категории
-            const allResults = await parser.parseAllCategories(categories, true, BATCH_SIZE, AUTO_GET_TOKENS, true);
+            const allResults = await parser.parseAllCategories(categories, true, BATCH_SIZE, AUTO_GET_TOKENS, true, true, 'both');
             
             // Выводим итоговую статистику
             parser.log('\n📊 Итоговая статистика:');

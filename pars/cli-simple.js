@@ -13,12 +13,24 @@ class SimpleCLI {
             saveProgressively: true,
             saveInterval: 25,
             maxBatchSize: 25,
-            createCommonCSV: true
+            createCommonCSV: true,
+            createCommonJSON: true,
+            saveFormats: 'both' // 'both', 'json', 'csv'
         };
         this.rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout
         });
+    }
+
+    // Получение отображения форматов сохранения
+    getSaveFormatsDisplay() {
+        switch (this.config.saveFormats) {
+            case 'both': return 'JSON + CSV';
+            case 'json': return 'Только JSON';
+            case 'csv': return 'Только CSV';
+            default: return 'JSON + CSV';
+        }
     }
 
     // Простые цвета
@@ -139,7 +151,9 @@ class SimpleCLI {
                 this.config.saveProgressively, 
                 this.config.batchSize, 
                 this.config.autoGetTokens,
-                this.config.createCommonCSV
+                this.config.createCommonCSV,
+                this.config.createCommonJSON,
+                this.config.saveFormats
             );
 
             console.log(this.colors.green('✅ Парсинг завершен!'));
@@ -204,10 +218,12 @@ class SimpleCLI {
         console.log(`4. ⏱️  Интервал сохранения: ${this.config.saveInterval}`);
         console.log(`5. 🧪 Максимальный размер батча для тестов: ${this.config.maxBatchSize}`);
         console.log(`6. 📄 Создание общих CSV файлов: ${this.config.createCommonCSV ? 'ВКЛ' : 'ВЫКЛ'}`);
+        console.log(`7. 📋 Создание общих JSON файлов: ${this.config.createCommonJSON ? 'ВКЛ' : 'ВЫКЛ'}`);
+        console.log(`8. 💾 Форматы сохранения: ${this.getSaveFormatsDisplay()}`);
         console.log('0. 🔙 Назад');
         console.log('');
 
-        const choice = await this.question('Выберите настройку для изменения (0-6): ');
+        const choice = await this.question('Выберите настройку для изменения (0-8): ');
 
         switch (choice.trim()) {
             case '1':
@@ -227,6 +243,12 @@ class SimpleCLI {
                 break;
             case '6':
                 await this.toggleCommonCSV();
+                break;
+            case '7':
+                await this.toggleCommonJSON();
+                break;
+            case '8':
+                await this.changeSaveFormats();
                 break;
             case '0':
                 return;
@@ -312,6 +334,60 @@ class SimpleCLI {
         } else {
             console.log(this.colors.yellow('   ⚠️  Общие CSV файлы создаваться не будут'));
             console.log(this.colors.yellow('   📁 Будут создаваться только отдельные файлы для каждой категории'));
+        }
+    }
+
+    // Переключение создания общих JSON файлов
+    async toggleCommonJSON() {
+        const input = await this.question(`Создание общих JSON файлов: ${this.config.createCommonJSON ? 'ВКЛ' : 'ВЫКЛ'} (y/n): `);
+        const createCommonJSON = input.toLowerCase() === 'y' || input.toLowerCase() === 'yes';
+        
+        this.config.createCommonJSON = createCommonJSON;
+        console.log(this.colors.green(`✅ Создание общих JSON файлов: ${createCommonJSON ? 'ВКЛ' : 'ВЫКЛ'}`));
+        
+        if (createCommonJSON) {
+            console.log(this.colors.cyan('   📋 Будут создаваться общие JSON файлы со всеми товарами'));
+            console.log(this.colors.cyan('   📊 Файлы будут сохранены в папке JSON/'));
+        } else {
+            console.log(this.colors.yellow('   ⚠️  Общие JSON файлы создаваться не будут'));
+            console.log(this.colors.yellow('   📁 Будут создаваться только отдельные файлы для каждой категории'));
+        }
+    }
+
+    // Изменение форматов сохранения
+    async changeSaveFormats() {
+        console.log(this.colors.blue('💾 Выберите форматы для сохранения файлов:'));
+        console.log('1. 📄 JSON + CSV (оба формата)');
+        console.log('2. 📋 Только JSON');
+        console.log('3. 📊 Только CSV');
+        console.log('0. 🔙 Назад');
+        console.log('');
+
+        const choice = await this.question('Введите номер (0-3): ');
+
+        switch (choice.trim()) {
+            case '1':
+                this.config.saveFormats = 'both';
+                console.log(this.colors.green('✅ Форматы сохранения изменены на: JSON + CSV'));
+                console.log(this.colors.cyan('   📄 Будут создаваться файлы в форматах JSON и CSV'));
+                break;
+            case '2':
+                this.config.saveFormats = 'json';
+                console.log(this.colors.green('✅ Форматы сохранения изменены на: Только JSON'));
+                console.log(this.colors.cyan('   📋 Будут создаваться только JSON файлы'));
+                console.log(this.colors.yellow('   ⚠️  CSV файлы создаваться не будут'));
+                break;
+            case '3':
+                this.config.saveFormats = 'csv';
+                console.log(this.colors.green('✅ Форматы сохранения изменены на: Только CSV'));
+                console.log(this.colors.cyan('   📊 Будут создаваться только CSV файлы'));
+                console.log(this.colors.yellow('   ⚠️  JSON файлы создаваться не будут'));
+                break;
+            case '0':
+                return;
+            default:
+                console.log(this.colors.red('❌ Неверный выбор!'));
+                await this.waitForEnter();
         }
     }
 

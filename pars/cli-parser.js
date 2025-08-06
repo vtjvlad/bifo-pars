@@ -37,9 +37,21 @@ class HotlineCLI {
             saveInterval: 25,
             testPerformance: false,
             maxBatchSize: 25,
-            createCommonCSV: true
+            createCommonCSV: true,
+            createCommonJSON: true,
+            saveFormats: 'both' // 'both', 'json', 'csv'
         };
         this.selectedCategoriesFile = 'tctgr/categories.txt'; // Файл по умолчанию
+    }
+
+    // Получение отображения форматов сохранения
+    getSaveFormatsDisplay() {
+        switch (this.config.saveFormats) {
+            case 'both': return 'JSON + CSV';
+            case 'json': return 'Только JSON';
+            case 'csv': return 'Только CSV';
+            default: return 'JSON + CSV';
+        }
     }
 
     // Показываем красивый заголовок
@@ -611,7 +623,10 @@ class HotlineCLI {
                 categories, 
                 this.config.saveProgressively, 
                 this.config.batchSize, 
-                this.config.autoGetTokens
+                this.config.autoGetTokens,
+                this.config.createCommonCSV,
+                this.config.createCommonJSON,
+                this.config.saveFormats
             );
 
             spinner.succeed('✅ Парсинг завершен!');
@@ -687,6 +702,8 @@ class HotlineCLI {
                     { name: `⏱️  Интервал сохранения: ${this.config.saveInterval}`, value: 'save_interval' },
                     { name: `🧪 Максимальный размер батча для тестов: ${this.config.maxBatchSize}`, value: 'max_batch' },
                     { name: `📄 Создание общих CSV файлов: ${this.config.createCommonCSV ? 'ВКЛ' : 'ВЫКЛ'}`, value: 'common_csv' },
+                    { name: `📋 Создание общих JSON файлов: ${this.config.createCommonJSON ? 'ВКЛ' : 'ВЫКЛ'}`, value: 'common_json' },
+                    { name: `💾 Форматы сохранения: ${this.getSaveFormatsDisplay()}`, value: 'save_formats' },
                     { name: '🔙 Назад', value: 'back' }
                 ],
                 pageSize: 15,
@@ -719,6 +736,12 @@ class HotlineCLI {
                 break;
             case 'common_csv':
                 await this.toggleCommonCSV();
+                break;
+            case 'common_json':
+                await this.toggleCommonJSON();
+                break;
+            case 'save_formats':
+                await this.changeSaveFormats();
                 break;
             case 'back':
                 return;
@@ -846,6 +869,80 @@ class HotlineCLI {
         } else {
             console.log(chalk.yellow('   ⚠️  Общие CSV файлы создаваться не будут'));
             console.log(chalk.yellow('   📁 Будут создаваться только отдельные файлы для каждой категории'));
+        }
+    }
+
+    // Переключение создания общих JSON файлов
+    async toggleCommonJSON() {
+        const { createCommonJSON } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'createCommonJSON',
+                message: 'Создавать общие JSON файлы со всеми товарами?',
+                default: this.config.createCommonJSON,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                    }
+                    return input ? chalk.bold.green('✅ ВКЛ') : chalk.bold.red('❌ ВЫКЛ');
+                }
+            }
+        ]);
+
+        this.config.createCommonJSON = createCommonJSON;
+        console.log(chalk.green(`✅ Создание общих JSON файлов: ${createCommonJSON ? 'ВКЛ' : 'ВЫКЛ'}`));
+        
+        if (createCommonJSON) {
+            console.log(chalk.cyan('   📋 Будут создаваться общие JSON файлы со всеми товарами'));
+            console.log(chalk.cyan('   📊 Файлы будут сохранены в папке JSON/'));
+        } else {
+            console.log(chalk.yellow('   ⚠️  Общие JSON файлы создаваться не будут'));
+            console.log(chalk.yellow('   📁 Будут создаваться только отдельные файлы для каждой категории'));
+        }
+    }
+
+    // Изменение форматов сохранения
+    async changeSaveFormats() {
+        const { saveFormats } = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'saveFormats',
+                message: 'Выберите форматы для сохранения файлов:',
+                choices: [
+                    { name: '📄 JSON + CSV (оба формата)', value: 'both' },
+                    { name: '📋 Только JSON', value: 'json' },
+                    { name: '📊 Только CSV', value: 'csv' }
+                ],
+                default: this.config.saveFormats,
+                pageSize: 10,
+                loop: true,
+                highlight: true,
+                transformer: (input, { isFinal }) => {
+                    if (isFinal) {
+                        return chalk.bold.blue(`▶ ${input} ◀`);
+                    }
+                    return chalk.bold.blue(`▶ ${input} ◀`);
+                }
+            }
+        ]);
+
+        this.config.saveFormats = saveFormats;
+        console.log(chalk.green(`✅ Форматы сохранения изменены на: ${this.getSaveFormatsDisplay()}`));
+        
+        switch (saveFormats) {
+            case 'both':
+                console.log(chalk.cyan('   📄 Будут создаваться файлы в форматах JSON и CSV'));
+                console.log(chalk.cyan('   📁 Отдельные файлы для каждой категории'));
+                console.log(chalk.cyan('   📊 Общие файлы (если включены в настройках)'));
+                break;
+            case 'json':
+                console.log(chalk.cyan('   📋 Будут создаваться только JSON файлы'));
+                console.log(chalk.yellow('   ⚠️  CSV файлы создаваться не будут'));
+                break;
+            case 'csv':
+                console.log(chalk.cyan('   📊 Будут создаваться только CSV файлы'));
+                console.log(chalk.yellow('   ⚠️  JSON файлы создаваться не будут'));
+                break;
         }
     }
 
@@ -1444,7 +1541,10 @@ class HotlineCLI {
                 categories, 
                 this.config.saveProgressively, 
                 this.config.batchSize, 
-                this.config.autoGetTokens
+                this.config.autoGetTokens,
+                this.config.createCommonCSV,
+                this.config.createCommonJSON,
+                this.config.saveFormats
             );
 
             spinner.succeed('✅ Парсинг завершен!');
@@ -1543,7 +1643,9 @@ class HotlineCLI {
                 this.config.saveProgressively, 
                 this.config.batchSize, 
                 this.config.autoGetTokens,
-                this.config.createCommonCSV
+                this.config.createCommonCSV,
+                this.config.createCommonJSON,
+                this.config.saveFormats
             );
 
             spinner.succeed('✅ Парсинг завершен!');

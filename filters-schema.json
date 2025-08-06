@@ -1,0 +1,277 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Filter Schema",
+  "description": "Схема для документов коллекции filters",
+  "type": "object",
+  "required": ["_id", "title", "type", "sectionId", "values"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "Уникальный ID фильтра в формате sectionId_title",
+      "pattern": "^\\d+_[a-zA-Z0-9_]+$",
+      "examples": ["11_vendor", "11_series", "168_brand"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Название фильтра",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["vendor", "series", "brand", "color"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Описание фильтра",
+      "maxLength": 500
+    },
+    "type": {
+      "type": "string",
+      "description": "Тип фильтра",
+      "enum": ["checkbox", "range", "select"],
+      "default": "checkbox"
+    },
+    "weight": {
+      "type": "number",
+      "description": "Вес/приоритет фильтра",
+      "default": 0,
+      "minimum": 0
+    },
+    "values": {
+      "type": "array",
+      "description": "Массив значений фильтра",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/definitions/FilterValue"
+      }
+    },
+    "topValues": {
+      "type": "array",
+      "description": "Топ значения фильтра",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/definitions/FilterValue"
+      },
+      "default": []
+    },
+    "valueGroups": {
+      "type": "array",
+      "description": "Группы значений",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/definitions/FilterValueGroup"
+      },
+      "default": []
+    },
+    "popularity": {
+      "type": "number",
+      "description": "Популярность фильтра",
+      "default": 0,
+      "minimum": 0
+    },
+    "isPublic": {
+      "type": "boolean",
+      "description": "Публичный ли фильтр",
+      "default": true
+    },
+    "isWrappable": {
+      "type": "boolean",
+      "description": "Можно ли обернуть фильтр",
+      "default": false
+    },
+    "isExcludable": {
+      "type": "boolean",
+      "description": "Можно ли исключить фильтр",
+      "default": false
+    },
+    "useValuesSearch": {
+      "type": "boolean",
+      "description": "Использовать поиск по значениям",
+      "default": false
+    },
+    "sectionId": {
+      "type": "number",
+      "description": "ID секции/категории",
+      "minimum": 1
+    },
+    "categoryUrl": {
+      "type": "string",
+      "description": "URL категории",
+      "format": "uri",
+      "maxLength": 200
+    },
+    "categoryName": {
+      "type": "string",
+      "description": "Название категории",
+      "maxLength": 200
+    },
+    "__typename": {
+      "type": "string",
+      "description": "Тип объекта",
+      "enum": ["Filter"],
+      "default": "Filter"
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "Дата создания",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "description": "Дата обновления",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "FilterValue": {
+      "type": "object",
+      "required": ["_id", "title"],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "Уникальный ID значения",
+          "pattern": "^[a-zA-Z0-9_]+_value_\\d+$",
+          "examples": ["11_vendor_value_0", "11_vendor_value_1"]
+        },
+        "isNoFollow": {
+          "type": "boolean",
+          "description": "Не следовать по ссылке",
+          "default": false
+        },
+        "title": {
+          "type": "string",
+          "description": "Название значения",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "alias": {
+          "type": "string",
+          "description": "Алиас значения",
+          "maxLength": 100
+        },
+        "description": {
+          "type": "string",
+          "description": "Описание значения",
+          "maxLength": 500
+        },
+        "weight": {
+          "type": "number",
+          "description": "Вес значения",
+          "default": 0,
+          "minimum": 0
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "Публичное ли значение",
+          "default": true
+        },
+        "productsCount": {
+          "type": "number",
+          "description": "Количество товаров с этим значением",
+          "default": 0,
+          "minimum": 0
+        },
+        "totalProductsCount": {
+          "type": "number",
+          "description": "Общее количество товаров",
+          "default": 0,
+          "minimum": 0
+        },
+        "popularity": {
+          "type": "number",
+          "description": "Популярность значения",
+          "default": 0,
+          "minimum": 0
+        },
+        "groupId": {
+          "type": "string",
+          "description": "ID группы",
+          "maxLength": 100
+        },
+        "groupTitle": {
+          "type": "string",
+          "description": "Название группы",
+          "maxLength": 200
+        },
+        "__typename": {
+          "type": "string",
+          "description": "Тип объекта",
+          "enum": ["FilterValue"],
+          "default": "FilterValue"
+        }
+      }
+    },
+    "FilterValueGroup": {
+      "type": "object",
+      "required": ["_id", "title"],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "Уникальный ID группы",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "title": {
+          "type": "string",
+          "description": "Название группы",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "values": {
+          "type": "array",
+          "description": "Массив значений в группе",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/definitions/FilterValue"
+          }
+        },
+        "__typename": {
+          "type": "string",
+          "description": "Тип объекта",
+          "enum": ["FilterValueGroup"],
+          "default": "FilterValueGroup"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "_id": "11_vendor",
+      "title": "vendor",
+      "description": "Производитель товара",
+      "type": "checkbox",
+      "weight": 0,
+      "values": [
+        {
+          "_id": "11_vendor_value_0",
+          "title": "OnePlus",
+          "isPublic": true,
+          "productsCount": 0,
+          "totalProductsCount": 0,
+          "popularity": 0,
+          "__typename": "FilterValue"
+        },
+        {
+          "_id": "11_vendor_value_1",
+          "title": "Apple",
+          "isPublic": true,
+          "productsCount": 0,
+          "totalProductsCount": 0,
+          "popularity": 0,
+          "__typename": "FilterValue"
+        }
+      ],
+      "topValues": [],
+      "valueGroups": [],
+      "popularity": 0,
+      "isPublic": true,
+      "isWrappable": false,
+      "isExcludable": false,
+      "useValuesSearch": false,
+      "sectionId": 11,
+      "categoryUrl": "/mobile/mobilnye-telefony-i-smartfony/",
+      "categoryName": "Смартфоны и мобильные телефоны",
+      "__typename": "Filter",
+      "createdAt": "2024-01-15T10:30:00.000Z",
+      "updatedAt": "2024-01-15T10:30:00.000Z"
+    }
+  ]
+} 

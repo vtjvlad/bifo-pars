@@ -1,326 +1,400 @@
 const express = require('express');
+const Filter = require('../models/Filter');
 const router = express.Router();
-const Filter = require('../models/Filter.js');
 
-// GET /api/filters - Получить все фильтры
-router.get('/', async (req, res) => {
+/**
+ * GET /api/filters/section/:sectionId
+ * Получить все фильтры для конкретной секции
+ */
+router.get('/section/:sectionId', async (req, res) => {
     try {
-        const { 
-            sectionId, 
-            categoryUrl, 
-            type, 
-            search, 
-            limit = 50, 
-            page = 1 
-        } = req.query;
+        const { sectionId } = req.params;
+        const { limit, offset, type } = req.query;
 
-        // Строим фильтр запроса
-        const filterQuery = {};
+        // Базовый запрос
+        const query = { sectionId: parseInt(sectionId) };
         
-        if (sectionId) {
-            filterQuery.sectionId = parseInt(sectionId);
-        }
-        
-        if (categoryUrl) {
-            filterQuery.categoryUrl = categoryUrl;
-        }
-        
+        // Фильтр по типу
         if (type) {
-            filterQuery.type = type;
-        }
-        
-        if (search) {
-            filterQuery.$text = { $search: search };
+            query.type = type;
         }
 
-        // Выполняем запрос с пагинацией
-        const skip = (parseInt(page) - 1) * parseInt(limit);
-        
-        const filters = await Filter.find(filterQuery)
-            .sort({ weight: -1, title: 1 })
-            .skip(skip)
-            .limit(parseInt(limit));
+        // Построение запроса с пагинацией
+        let dbQuery = Filter.find(query)
+            .select('-__v')
+            .sort({ weight: -1, popularity: -1 });
 
-        // Получаем общее количество
-        const total = await Filter.countDocuments(filterQuery);
+        if (limit) {
+            dbQuery = dbQuery.limit(parseInt(limit));
+        }
+
+        if (offset) {
+            dbQuery = dbQuery.skip(parseInt(offset));
+        }
+
+        const filters = await dbQuery.lean();
+        
+        // Получаем общее количество для пагинации
+        const total = await Filter.countDocuments(query);
 
         res.json({
-            success: true,
-            data: filters,
+            filters,
             pagination: {
-                page: parseInt(page),
-                limit: parseInt(limit),
                 total,
-                pages: Math.ceil(total / parseInt(limit))
+                limit: limit ? parseInt(limit) : filters.length,
+                offset: offset ? parseInt(offset) : 0
             }
         });
-
     } catch (error) {
-        console.error('Ошибка при получении фильтров:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при получении фильтров'
+        console.error('Ошибка при получении фильтров секции:', error);
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении фильтров',
+            message: error.message 
         });
     }
 });
 
-// GET /api/filters/:id - Получить фильтр по ID
-router.get('/:id', async (req, res) => {
+/**
+ * GET /api/filters/:filterId
+ * Получить конкретный фильтр по ID
+ */
+router.get('/:filterId', async (req, res) => {
     try {
-        const filter = await Filter.findById(req.params.id);
-        
+        const { filterId } = req.params;
+
+        const filter = await Filter.findById(filterId)
+            .select('-__v')
+            .lean();
+
         if (!filter) {
-            return res.status(404).json({
-                success: false,
-                error: 'Фильтр не найден'
+            return res.status(404).json({ 
+                error: 'Фильтр не найден',
+                filterId 
             });
         }
 
-        res.json({
-            success: true,
-            data: filter
-        });
-
+        res.json(filter);
     } catch (error) {
         console.error('Ошибка при получении фильтра:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при получении фильтра'
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении фильтра',
+            message: error.message 
         });
     }
 });
 
-// GET /api/filters/section/:sectionId - Получить фильтры по section ID
-router.get('/section/:sectionId', async (req, res) => {
+/**
+ * GET /api/filters/search
+ * Поиск фильтров по тексту
+ */
+router.get('/search', async (req, res) => {
     try {
-        const sectionId = parseInt(req.params.sectionId);
-        
-        const filters = await Filter.find({ sectionId })
-            .sort({ weight: -1, title: 1 });
+        const { q: query, sectionId, limit = 20, offset = 0 } = req.query;
+
+        if (!query || query.trim().length < 2) {
+            return res.status(400).json({ 
+                error: 'Поисковый запрос должен содержать минимум 2 символа' 
+            });
+        }
+
+        // Базовый запрос для текстового поиска
+        const searchQuery = {
+            $text: { $search: query }
+        };
+
+        // Добавляем фильтр по секции если указан
+        if (sectionId) {
+            searchQuery.sectionId = parseInt(sectionId);
+        }
+
+        const filters = await Filter.find(searchQuery)
+            .select('-__v')
+            .score({ $meta: 'textScore' })
+            .sort({ score: { $meta: 'textScore' }, weight: -1 })
+            .limit(parseInt(limit))
+            .skip(parseInt(offset))
+            .lean();
+
+        const total = await Filter.countDocuments(searchQuery);
 
         res.json({
-            success: true,
-            data: filters,
-            count: filters.length
+            filters,
+            query: query,
+            pagination: {
+                total,
+                limit: parseInt(limit),
+                offset: parseInt(offset)
+            }
         });
-
     } catch (error) {
-        console.error('Ошибка при получении фильтров категории:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при получении фильтров категории'
+        console.error('Ошибка при поиске фильтров:', error);
+        res.status(500).json({ 
+            error: 'Ошибка сервера при поиске фильтров',
+            message: error.message 
         });
     }
 });
 
-// GET /api/filters/category/:categoryName - Получить фильтры по названию категории
-router.get('/category/:categoryName', async (req, res) => {
+/**
+ * GET /api/filters/popular
+ * Получить популярные фильтры
+ */
+router.get('/popular', async (req, res) => {
     try {
-        const categoryName = req.params.categoryName;
-        
-        const filters = await Filter.find({ 
-            categoryName: { $regex: categoryName, $options: 'i' }
-        }).sort({ weight: -1, title: 1 });
+        const { limit = 10, sectionId } = req.query;
 
-        res.json({
-            success: true,
-            data: filters,
-            count: filters.length
-        });
+        const query = { 
+            isPublic: true,
+            popularity: { $gt: 0 }
+        };
 
+        if (sectionId) {
+            query.sectionId = parseInt(sectionId);
+        }
+
+        const filters = await Filter.find(query)
+            .select('-__v')
+            .sort({ popularity: -1, weight: -1 })
+            .limit(parseInt(limit))
+            .lean();
+
+        res.json(filters);
     } catch (error) {
-        console.error('Ошибка при получении фильтров категории:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при получении фильтров категории'
+        console.error('Ошибка при получении популярных фильтров:', error);
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении популярных фильтров',
+            message: error.message 
         });
     }
 });
 
-// GET /api/filters/types - Получить все типы фильтров
+/**
+ * GET /api/filters/types
+ * Получить доступные типы фильтров
+ */
 router.get('/types', async (req, res) => {
     try {
-        const types = await Filter.distinct('type');
-        
-        res.json({
-            success: true,
-            data: types
-        });
+        const { sectionId } = req.query;
 
+        const matchStage = sectionId ? 
+            { $match: { sectionId: parseInt(sectionId) } } : 
+            { $match: {} };
+
+        const types = await Filter.aggregate([
+            matchStage,
+            { $group: { _id: '$type', count: { $sum: 1 } } },
+            { $sort: { count: -1 } }
+        ]);
+
+        res.json(types.map(type => ({
+            type: type._id,
+            count: type.count
+        })));
     } catch (error) {
         console.error('Ошибка при получении типов фильтров:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при получении типов фильтров'
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении типов фильтров',
+            message: error.message 
         });
     }
 });
 
-// GET /api/filters/sections - Получить все section ID
+/**
+ * GET /api/filters/sections
+ * Получить секции с количеством фильтров
+ */
 router.get('/sections', async (req, res) => {
     try {
         const sections = await Filter.aggregate([
-            {
-                $group: {
-                    _id: '$sectionId',
+            { $match: { isPublic: true } },
+            { 
+                $group: { 
+                    _id: '$sectionId', 
+                    count: { $sum: 1 },
                     categoryName: { $first: '$categoryName' },
-                    categoryUrl: { $first: '$categoryUrl' },
-                    filterCount: { $sum: 1 }
-                }
+                    categoryUrl: { $first: '$categoryUrl' }
+                } 
             },
-            { $sort: { _id: 1 } }
+            { $sort: { count: -1 } }
         ]);
 
-        res.json({
-            success: true,
-            data: sections
-        });
-
+        res.json(sections.map(section => ({
+            sectionId: section._id,
+            filtersCount: section.count,
+            categoryName: section.categoryName,
+            categoryUrl: section.categoryUrl
+        })));
     } catch (error) {
-        console.error('Ошибка при получении section ID:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при получении section ID'
+        console.error('Ошибка при получении секций:', error);
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении секций',
+            message: error.message 
         });
     }
 });
 
-// GET /api/filters/stats - Получить статистику фильтров
-router.get('/stats', async (req, res) => {
+/**
+ * GET /api/filters/values/:filterId
+ * Получить значения конкретного фильтра
+ */
+router.get('/values/:filterId', async (req, res) => {
     try {
-        const totalFilters = await Filter.countDocuments();
-        const uniqueCategories = await Filter.distinct('sectionId');
-        const filterTypes = await Filter.distinct('type');
-        
-        // Статистика по категориям
-        const categoryStats = await Filter.aggregate([
-            {
-                $group: {
-                    _id: '$sectionId',
-                    categoryName: { $first: '$categoryName' },
-                    count: { $sum: 1 }
-                }
-            },
-            { $sort: { count: -1 } }
-        ]);
+        const { filterId } = req.params;
+        const { search, limit, offset = 0, sortBy = 'popularity' } = req.query;
 
-        // Статистика по типам
-        const typeStats = await Filter.aggregate([
-            {
-                $group: {
-                    _id: '$type',
-                    count: { $sum: 1 }
+        const filter = await Filter.findById(filterId)
+            .select('values topValues')
+            .lean();
+
+        if (!filter) {
+            return res.status(404).json({ 
+                error: 'Фильтр не найден',
+                filterId 
+            });
+        }
+
+        let values = [...filter.values];
+        
+        // Добавляем топ значения
+        if (filter.topValues && filter.topValues.length > 0) {
+            filter.topValues.forEach(topValue => {
+                if (!values.find(value => value._id === topValue._id)) {
+                    values.unshift(topValue);
                 }
-            },
-            { $sort: { count: -1 } }
-        ]);
+            });
+        }
+
+        // Фильтрация по поиску
+        if (search && search.trim().length > 0) {
+            const searchLower = search.toLowerCase();
+            values = values.filter(value => 
+                value.title.toLowerCase().includes(searchLower) ||
+                (value.alias && value.alias.toLowerCase().includes(searchLower))
+            );
+        }
+
+        // Сортировка
+        if (sortBy === 'popularity') {
+            values.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+        } else if (sortBy === 'count') {
+            values.sort((a, b) => (b.productsCount || 0) - (a.productsCount || 0));
+        } else if (sortBy === 'title') {
+            values.sort((a, b) => a.title.localeCompare(b.title));
+        }
+
+        // Пагинация
+        const total = values.length;
+        const startIndex = parseInt(offset);
+        const endIndex = limit ? startIndex + parseInt(limit) : values.length;
+        values = values.slice(startIndex, endIndex);
 
         res.json({
-            success: true,
-            data: {
-                totalFilters,
-                uniqueCategories: uniqueCategories.length,
-                filterTypes,
-                categoryStats,
-                typeStats
+            values,
+            pagination: {
+                total,
+                limit: limit ? parseInt(limit) : values.length,
+                offset: startIndex
             }
         });
+    } catch (error) {
+        console.error('Ошибка при получении значений фильтра:', error);
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении значений фильтра',
+            message: error.message 
+        });
+    }
+});
 
+/**
+ * POST /api/filters/batch
+ * Получить несколько фильтров по списку ID
+ */
+router.post('/batch', async (req, res) => {
+    try {
+        const { filterIds } = req.body;
+
+        if (!Array.isArray(filterIds) || filterIds.length === 0) {
+            return res.status(400).json({ 
+                error: 'Требуется массив ID фильтров' 
+            });
+        }
+
+        if (filterIds.length > 50) {
+            return res.status(400).json({ 
+                error: 'Максимальное количество фильтров за запрос: 50' 
+            });
+        }
+
+        const filters = await Filter.find({ 
+            _id: { $in: filterIds } 
+        })
+        .select('-__v')
+        .lean();
+
+        res.json(filters);
+    } catch (error) {
+        console.error('Ошибка при получении фильтров по списку:', error);
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении фильтров',
+            message: error.message 
+        });
+    }
+});
+
+/**
+ * GET /api/filters/stats
+ * Получить статистику по фильтрам
+ */
+router.get('/stats', async (req, res) => {
+    try {
+        const stats = await Filter.aggregate([
+            {
+                $group: {
+                    _id: null,
+                    totalFilters: { $sum: 1 },
+                    publicFilters: { 
+                        $sum: { $cond: [{ $eq: ['$isPublic', true] }, 1, 0] } 
+                    },
+                    averageValuesPerFilter: { 
+                        $avg: { $size: '$values' } 
+                    },
+                    filtersByType: {
+                        $push: {
+                            type: '$type',
+                            count: 1
+                        }
+                    }
+                }
+            }
+        ]);
+
+        const typeStats = await Filter.aggregate([
+            { $group: { _id: '$type', count: { $sum: 1 } } },
+            { $sort: { count: -1 } }
+        ]);
+
+        const sectionStats = await Filter.aggregate([
+            { $group: { _id: '$sectionId', count: { $sum: 1 } } },
+            { $sort: { count: -1 } },
+            { $limit: 10 }
+        ]);
+
+        res.json({
+            general: stats[0] || {
+                totalFilters: 0,
+                publicFilters: 0,
+                averageValuesPerFilter: 0
+            },
+            byType: typeStats,
+            topSections: sectionStats
+        });
     } catch (error) {
         console.error('Ошибка при получении статистики:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при получении статистики'
+        res.status(500).json({ 
+            error: 'Ошибка сервера при получении статистики',
+            message: error.message 
         });
     }
 });
 
-// POST /api/filters - Создать новый фильтр
-router.post('/', async (req, res) => {
-    try {
-        const filterData = req.body;
-        
-        // Проверяем, существует ли уже фильтр с таким ID
-        const existingFilter = await Filter.findById(filterData._id);
-        
-        if (existingFilter) {
-            return res.status(400).json({
-                success: false,
-                error: 'Фильтр с таким ID уже существует'
-            });
-        }
-
-        const newFilter = new Filter(filterData);
-        await newFilter.save();
-
-        res.status(201).json({
-            success: true,
-            data: newFilter
-        });
-
-    } catch (error) {
-        console.error('Ошибка при создании фильтра:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при создании фильтра'
-        });
-    }
-});
-
-// PUT /api/filters/:id - Обновить фильтр
-router.put('/:id', async (req, res) => {
-    try {
-        const updatedFilter = await Filter.findByIdAndUpdate(
-            req.params.id,
-            req.body,
-            { new: true, runValidators: true }
-        );
-
-        if (!updatedFilter) {
-            return res.status(404).json({
-                success: false,
-                error: 'Фильтр не найден'
-            });
-        }
-
-        res.json({
-            success: true,
-            data: updatedFilter
-        });
-
-    } catch (error) {
-        console.error('Ошибка при обновлении фильтра:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при обновлении фильтра'
-        });
-    }
-});
-
-// DELETE /api/filters/:id - Удалить фильтр
-router.delete('/:id', async (req, res) => {
-    try {
-        const deletedFilter = await Filter.findByIdAndDelete(req.params.id);
-
-        if (!deletedFilter) {
-            return res.status(404).json({
-                success: false,
-                error: 'Фильтр не найден'
-            });
-        }
-
-        res.json({
-            success: true,
-            message: 'Фильтр успешно удален'
-        });
-
-    } catch (error) {
-        console.error('Ошибка при удалении фильтра:', error);
-        res.status(500).json({
-            success: false,
-            error: 'Ошибка при удалении фильтра'
-        });
-    }
-});
-
-module.exports = router; 
+module.exports = router;

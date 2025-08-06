@@ -20,7 +20,11 @@
     "dev": "nodemon server.js",
     "seed": "node seed-products.js",
     "get-tokens": "node get-tokens.js",
-    "get-tokens-headless": "node get-tokens-headless.js"
+    "get-tokens-headless": "node get-tokens-headless.js",
+    "process-filters": "node process-filters.js",
+    "export-filters": "node export-filters-json.js",
+    "process-filters-stream": "node process-filters-stream.js",
+    "export-filters-stream": "node export-filters-stream.js"
   },
   "dependencies": {
     "axios": "^1.6.0",

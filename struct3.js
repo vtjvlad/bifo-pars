@@ -121,38 +121,70 @@ function destructureNestedObjects(products) {
             offers = [],
         } = product;
 
-        const imageLinksArray = imageLinks.map(image => {
-            if (image) {
-                const { thumb, basic, small, big } = image;
-                return {
-                    thumb: thumb ? thumb.replace('https://hotline.ua', 'https://bifo.in.ua') : thumb,
-                    basic: basic ? basic.replace('https://hotline.ua', 'https://bifo.in.ua') : basic,
-                    small: small ? small.replace('https://hotline.ua', 'https://bifo.in.ua') : small,
-                    big: big ? big.replace('https://hotline.ua', 'https://bifo.in.ua') : big,
-                };
-            }
-        });
-
         let processedColorsProduct = [];
 
         if (Array.isArray(colorsProduct)) {
             processedColorsProduct = colorsProduct.map(color => {
-                if (color && typeof color === 'object' && color.pathImgBig) {
+                if (color && typeof color === 'object' && color.pathImg) {
                     return {
-                        ...color,   
-                        pathImgBig: color.pathImgBig ? color.pathImgBig.replace('https://hotline.ua', 'https://bifo.in.ua') : color.pathImgBig,
+                        ...color,
+                        pathImg: `https://bifo.in.ua${color.pathImg}`,
+                        pathImgSmall: `https://bifo.in.ua${color.pathImgSmall}`
                     };
                 }
                 return color;
             });
         } else if (colorsProduct && typeof colorsProduct === 'object') {
-            processedColorsProduct = [{ 
+            processedColorsProduct = [{
                 ...colorsProduct,
-                pathImgBig: colorsProduct.pathImgBig ? colorsProduct.pathImgBig.replace('https://hotline.ua', 'https://bifo.in.ua') : colorsProduct.pathImgBig,
+                ...(colorsProduct.pathImg && {
+                    pathImg: `https://bifo.in.ua${colorsProduct.pathImg}`,
+                    pathImgSmall: `https://bifo.in.ua${colorsProduct.pathImgSmall}`
+                })
             }];
         }
-        
+
+        let processedCrossSelling = [];
+        if (Array.isArray(crossSelling)) {
+            processedCrossSelling = crossSelling.map(item => {
+                return {
+                    ...item,
+                    image: `https://bifo.in.ua${item.image}`
+                };
+            });
+        } else if (crossSelling && typeof crossSelling === 'object') {
+            processedCrossSelling = [{
+                ...crossSelling,
+                image: `https://bifo.in.ua${crossSelling.image}`
+            }];
+        }
+
+        let processedNewProducts = [];
+
+        if (Array.isArray(newProducts)) {
+            processedNewProducts = newProducts.map(item => {
+                return {
+                    ...item,
+                    image: `https://bifo.in.ua${item.image}`
+                };
+            });
+        } else if (newProducts && typeof newProducts === 'object') {
+            processedNewProducts = [{
+                ...newProducts,
+                image: `https://bifo.in.ua${newProducts.image}`
+            }];
+        }
     
+        
+        let processedSimilarProductsProducts = [];
+        if (Array.isArray(similarProducts.products)) {
+            processedSimilarProductsProducts = similarProducts.products.map(item => {
+                return {
+                    ...item,
+                    image: `https://bifo.in.ua${item.image}`
+                };
+            });
+        }
 
         return {
             id,
@@ -176,7 +208,7 @@ function destructureNestedObjects(products) {
             reviewsCount,
             questionsCount,
             url,
-            imageLinks: imageLinksArray,
+            imageLinks,
             videos,
             videoInstagramHash,
             minPrice,
@@ -202,14 +234,61 @@ function destructureNestedObjects(products) {
                     sizeId: color.sizeId || null,
                     sizeName: color.sizeName || null,
                     sizeChart: color.sizeChart || null,
-                    pathImg: color.pathImg || null,
-                    pathImgBig: color.pathImgBig ? color.pathImgBig : null,
-                    pathImgSmall: color.pathImgSmall || null,
+                    pathImg: color.pathImg ? color.pathImg : null,
+                    pathImgBig: color.pathImgBig || null,
+                    pathImgSmall: color.pathImgSmall ? color.pathImgSmall : null,
                 }))
                 : [],
-            crossSelling,
-            similarProducts,
-            newProducts,
+            crossSelling: Array.isArray(processedCrossSelling)
+                ? processedCrossSelling.map(item => ({
+                    title: item.title || null,
+                    image: item.image || null,
+                    path: item.path || null
+                }))
+                : [],
+            similarProducts: {
+                products: Array.isArray(processedSimilarProductsProducts)
+                    ? processedSimilarProductsProducts.map(item => ({
+                        id: item.id || null,
+                        title: item.title || null,
+                        path: item.path || null,
+                        image: item.image ? item.image : null,
+                        minPrice: item.minPrice || null,
+                        quantity: item.quantity || null,
+                        vendor: item.vendor || null,
+                        vendorId: item.vendorId || null,
+                        sectionId: item.sectionId || null,
+                        popularity: item.popularity || null,
+                        isNew: item.isNew || null,
+                    }))
+                    : [],
+                filters: Array.isArray(similarProducts.filters)
+                    ? similarProducts.filters.map(item => ({
+                        filterValueId: item.filterValueId || null,
+                        filterValueTitle: item.filterValueTitle || null,
+                        filterValueTitleUk: item.filterValueTitleUk || null,
+                        filterTitle: item.filterTitle || null,
+                        filterTitleUk: item.filterTitleUk || null,
+                    }))
+                    :   [],
+                    priceRange: {
+                        from: similarProducts.priceRange.from || null,
+                        to: similarProducts.priceRange.to || null
+                    }
+            },
+            newProducts: Array.isArray(processedNewProducts)
+                ? processedNewProducts.map(item => ({
+                    id: item.id || null,
+                    title: item.title || null,
+                    path: item.path || null,
+                    image: item.image ? item.image : null,
+                    minPrice: item.minPrice || null,
+                    quantity: item.quantity || null,
+                    vendor: item.vendor || null,
+                    vendorId: item.vendorId || null,
+                    isNew: item.isNew || null
+                }))
+                : [],
             prcCount,
             prcArray,
             offers,
@@ -226,7 +305,7 @@ function destructureNestedObjects(products) {
 const processedProducts = destructureNestedObjects(productsToProcess);
 
 // Определяем имя выходного файла
-const outputFile = testMode ? `./test_struct2_${documentsCount}_${orderType}.json` : './test_struct2.json';
+const outputFile = testMode ? `./test_struct2_${documentsCount}_${orderType}.json` : './test_struct3.json';
 
 // Сохраняем результат в новый файл
 fs.writeFileSync(outputFile, JSON.stringify(processedProducts, null, 2));

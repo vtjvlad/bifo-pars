@@ -59,6 +59,34 @@ const productSchema = new mongoose.Schema({
   collection: 'products' // Указывает имя коллекции в MongoDB
 });
 
+// Добавление индексов для оптимизации запросов
+productSchema.index({ id: 1 }, { unique: true }); // Уникальный индекс по id
+productSchema.index({ hlSectionId: 1 }); // Индекс по разделу
+productSchema.index({ title: 'text' }); // Текстовый индекс для поиска по названию
+productSchema.index({ currentPrice: 1 }); // Индекс по текущей цене
+productSchema.index({ isPromo: 1 }); // Индекс по промо-товарам
+productSchema.index({ isNew: 1 }); // Индекс по новым товарам
+productSchema.index({ madeInUkraine: 1 }); // Индекс по товарам из Украины
+productSchema.index({ createdAt: -1 }); // Индекс по дате создания (для сортировки)
+productSchema.index({ updatedAt: -1 }); // Индекс по дате обновления
+productSchema.index({ salesCount: -1 }); // Индекс по количеству продаж
+productSchema.index({ reviewsCount: -1 }); // Индекс по количеству отзывов
+
+// Составные индексы для сложных запросов
+productSchema.index({ hlSectionId: 1, currentPrice: 1 }); // Раздел + цена
+productSchema.index({ isPromo: 1, currentPrice: 1 }); // Промо + цена
+productSchema.index({ isNew: 1, createdAt: -1 }); // Новые товары + дата создания
+productSchema.index({ madeInUkraine: 1, currentPrice: 1 }); // Украинские товары + цена
+
+// Индекс для поиска по диапазону цен
+productSchema.index({ minPrice: 1, maxPrice: 1 });
+
+// Индекс для поиска по вендору
+productSchema.index({ 'vendor.id': 1 });
+
+// Индекс для поиска по секции
+productSchema.index({ 'section.id': 1 });
+
 // Создание модели на основе схемы
 const Products = mongoose.model('Products', productSchema);
 
